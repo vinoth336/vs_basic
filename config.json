@@ -1,0 +1,525 @@
+{
+  "categories": {
+    "ooty": {
+      "name": {
+        "en": "Ooty Vegetables",
+        "ta": "ஊட்டி காய்கறிகள்"
+      },
+      "icon": "🏔️",
+      "order": 1,
+      "visible": true
+    },
+    "country": {
+      "name": {
+        "en": "Country Vegetables",
+        "ta": "நாட்டு காய்கறிகள்"
+      },
+      "icon": "🌾",
+      "order": 2,
+      "visible": true
+    },
+    "onions": {
+      "name": {
+        "en": "Onions & Small Onions",
+        "ta": "வெங்காயம் & சின்ன வெங்காயம்"
+      },
+      "icon": "🧅",
+      "order": 3,
+      "visible": true
+    },
+    "spinach": {
+      "name": {
+        "en": "Spinach",
+        "ta": "கீரை வகைகள்"
+      },
+      "icon": "🥬",
+      "order": 4,
+      "visible": true
+    },
+    "coconuts": {
+      "name": {
+        "en": "Coconuts",
+        "ta": "தேங்காய்"
+      },
+      "icon": "🥥",
+      "order": 5,
+      "visible": true
+    },
+    "nuts": {
+      "name": {
+        "en": "Nuts & Dry Fruits",
+        "ta": "கொட்டைகள் & உலர் பழங்கள்"
+      },
+      "icon": "🥜",
+      "order": 6,
+      "visible": true
+    },
+    "budget": {
+      "name": {
+        "en": "Budget Veggies",
+        "ta": "பட்ஜெட் காய்கறிகள்"
+      },
+      "icon": "💰",
+      "order": 7,
+      "visible": true
+    }
+  },
+  "products": {
+    "ooty": [
+      {
+        "id": "fresh-carrots",
+        "name": {
+          "en": "Fresh Carrots",
+          "ta": "கேரட்"
+        },
+        "price": 80,
+        "unit": "Kg",
+        "icon": "🥕",
+        "images": [
+          "https://img.freepik.com/free-psd/bunch-fresh-vibrant-orange-carrots-with-lush-green-tops-ready-be-enjoyed_191095-86001.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          20,
+          25
+        ]
+      },
+      {
+        "id": "green-beans",
+        "name": {
+          "en": "Green Beans",
+          "ta": "பீன்ஸ்"
+        },
+        "price": 60,
+        "unit": "Kg",
+        "icon": "🫘",
+        "images": [
+          "http://localhost/vsv/attached_assets/green_beans.png"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "bell-peppers",
+        "name": {
+          "en": "Capcium",
+          "ta": "குடமிளகாய்"
+        },
+        "price": 80,
+        "unit": "Kg",
+        "icon": "🫑",
+        "images": [
+          "http://localhost/vsv/attached_assets/capcium.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      }
+    ],
+    "country": [
+      {
+        "id": "okra-bhindi",
+        "name": {
+          "en": "LadyFinger (Okra)",
+          "ta": "வெண்டைக்காய்"
+        },
+        "price": 30,
+        "unit": "Kg",
+        "icon": "🌶️",
+        "images": [
+          "http://localhost/vsv/attached_assets/vendakkai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "eggplant",
+        "name": {
+          "en": "Brinjal",
+          "ta": "கத்தரிக்காய்"
+        },
+        "price": 45,
+        "unit": "Kg",
+        "icon": "🍆",
+        "images": [
+          "http://localhost/vsv/attached_assets/brinjal.jpeg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "ridge-gourd",
+        "name": {
+          "en": "Ridge Gourd",
+          "ta": "பீர்க்கங்காய்"
+        },
+        "price": 45,
+        "unit": "Kg",
+        "icon": "🥒",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      }
+    ],
+    "onions": [
+      {
+        "id": "big-onions",
+        "name": {
+          "en": "Big Onions",
+          "ta": "பெரிய வெங்காயம்"
+        },
+        "price": 30,
+        "unit": "Kg",
+        "icon": "🧅",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "small-onions",
+        "name": {
+          "en": "Small Onions",
+          "ta": "சின்ன வெங்காயம்"
+        },
+        "price": 80,
+        "unit": "Kg",
+        "icon": "🧅",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "red-onions",
+        "name": {
+          "en": "Red Onions",
+          "ta": "சிவப்பு வெங்காயம்"
+        },
+        "price": 35,
+        "unit": "Kg",
+        "icon": "🧅",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      }
+    ],
+    "spinach": [
+      {
+        "id": "fresh-spinach",
+        "name": {
+          "en": "Fresh Spinach",
+          "ta": "பசலைக்கீரை"
+        },
+        "price": 25,
+        "unit": "Bunch",
+        "icon": "🥬",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "mint-leaves",
+        "name": {
+          "en": "Mint Leaves",
+          "ta": "புதினா"
+        },
+        "price": 15,
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          5,
+          10,
+          15
+        ]
+      },
+      {
+        "id": "coriander",
+        "name": {
+          "en": "Coriander",
+          "ta": "கொத்தமல்லி"
+        },
+        "price": 10,
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          5,
+          10,
+          15
+        ]
+      }
+    ],
+    "coconuts": [
+      {
+        "id": "fresh-coconut",
+        "name": {
+          "en": "Fresh Coconut",
+          "ta": "தேங்காய்"
+        },
+        "price": 40,
+        "unit": "Pcs",
+        "icon": "🥥",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "tender-coconut",
+        "name": {
+          "en": "Tender Coconut",
+          "ta": "இளநீர்"
+        },
+        "price": 30,
+        "unit": "Pcs",
+        "icon": "🥥",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "grated-coconut",
+        "name": {
+          "en": "Grated Coconut",
+          "ta": "தேங்காய் துருவல்"
+        },
+        "price": 25,
+        "unit": "Grams",
+        "icon": "🥥",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      }
+    ],
+    "nuts": [
+      {
+        "id": "almonds",
+        "name": {
+          "en": "Almonds",
+          "ta": "பாதாம்"
+        },
+        "price": 800,
+        "unit": "Kg",
+        "icon": "🥜",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "cashews",
+        "name": {
+          "en": "Cashews",
+          "ta": "முந்திரி"
+        },
+        "price": 600,
+        "unit": "Kg",
+        "icon": "🥜",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "dates",
+        "name": {
+          "en": "Dates",
+          "ta": "பேரீச்சம்பழம்"
+        },
+        "price": 300,
+        "unit": "Kg",
+        "icon": "🌰",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      }
+    ],
+    "budget": [
+      {
+        "id": "budget-tomatoes",
+        "name": {
+          "en": "Budget Tomatoes",
+          "ta": "தக்காளி (பட்ஜெட்)"
+        },
+        "price": 20,
+        "unit": "Kg",
+        "icon": "🍅",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "budget-potatoes",
+        "name": {
+          "en": "Budget Potatoes",
+          "ta": "உருளைக்கிழங்கு (பட்ஜெட்)"
+        },
+        "price": 15,
+        "unit": "Kg",
+        "icon": "🥔",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "curry-leaves",
+        "name": {
+          "en": "Curry Leaves",
+          "ta": "கறிவேப்பிலை"
+        },
+        "price": 8,
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "attached_assets/carrot_1756286601381.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          20,
+          25,
+          50
+        ]
+      }
+    ]
+  },
+  "localization": {
+    "en": {
+      "logo": "Vs Vegetables",
+      "allCategories": "All",
+      "ooty": "Ooty Vegetables",
+      "country": "Country Vegetables",
+      "onions": "Onions & Small Onions",
+      "spinach": "Spinach",
+      "coconuts": "Coconuts",
+      "nuts": "Nuts & Dry Fruits",
+      "budget": "Budget Veggies",
+      "heroTitle": "Fresh Vegetables Delivered to Your Door",
+      "heroSubtitle": "Farm-fresh produce delivered within hours. Quality guaranteed!",
+      "productsTitle": "Our Fresh Products",
+      "contactTitle": "Contact Us",
+      "phone": "Phone",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "addToCart": "Add to Cart",
+      "cartItems": "items in cart",
+      "orderSummary": "Order Summary",
+      "total": "Total: ",
+      "deliveryTime": "Select Delivery Time:",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening",
+      "express": "Express",
+      "expressTime": "Next 30 mins",
+      "placeOrder": "Place Order via WhatsApp",
+      "remove": "Remove",
+      "searchPlaceholder": "Search vegetables...",
+      "resultsFound": "results found",
+      "showAll": "Show All",
+      "categoriesMenu": "Categories"
+    },
+    "ta": {
+      "logo": "வி.எஸ் காய்கறிகள்",
+      "allCategories": "அனைத்தும்",
+      "ooty": "ஊட்டி காய்கறிகள்",
+      "country": "நாட்டு காய்கறிகள்",
+      "onions": "வெங்காயம் & சின்ன வெங்காயம்",
+      "spinach": "கீரை வகைகள்",
+      "coconuts": "தேங்காய்",
+      "nuts": "கொட்டைகள் & உலர் பழங்கள்",
+      "budget": "பட்ஜெட் காய்கறிகள்",
+      "heroTitle": "உங்கள் வீட்டு வாசலுக்கு புதிய காய்கறிகள்",
+      "heroSubtitle": "வயலில் இருந்து வீடு வரை, மணிக்குள் டெலிவரி. தரத்திற்கு உத்தரவாதம்!",
+      "productsTitle": "எங்கள் புதிய பொருட்கள்",
+      "contactTitle": "எங்களை தொடர்பு கொள்ளுங்கள்",
+      "phone": "தொலைபேசி",
+      "email": "மின்னஞ்சல்",
+      "whatsapp": "வாட்ஸ்ஆப்",
+      "addToCart": "கார்ட்டில் சேர்க்க",
+      "cartItems": "கார்ட்டில் பொருட்கள்",
+      "orderSummary": "ஆர்டர் சுருக்கம்",
+      "total": "மொத்தம்: ",
+      "deliveryTime": "டெலிவரி நேரம் தேர்ந்தெடுக்கவும்:",
+      "morning": "காலை",
+      "afternoon": "மதியம்",
+      "evening": "மாலை",
+      "express": "எக்ஸ்பிரஸ்",
+      "expressTime": "அடுத்த 30 நிமிடங்கள்",
+      "placeOrder": "வாட்ஸ்ஆப் மூலம் ஆர்டர் செய்யுங்கள்",
+      "remove": "அகற்று",
+      "searchPlaceholder": "காய்கறிகளைத் தேடுங்கள்...",
+      "resultsFound": "முடிவுகள் கிடைத்தன",
+      "showAll": "அனைத்தையும் காட்டு",
+      "categoriesMenu": "வகைகள்"
+    }
+  }
+}
