@@ -76,7 +76,7 @@
         "unit": "Kg",
         "icon": "🥕",
         "images": [
-          "https://img.freepik.com/free-psd/bunch-fresh-vibrant-orange-carrots-with-lush-green-tops-ready-be-enjoyed_191095-86001.jpg"
+          "https://thevsv.in/attached_assets/carrot.jpeg"
         ],
         "available": true,
         "tags": [],
@@ -96,12 +96,15 @@
         "unit": "Kg",
         "icon": "🫘",
         "images": [
-          "http://localhost/vsv/attached_assets/green_beans.png"
+          "https://thevsv.in/attached_assets/green_beans.png"
         ],
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": []
+        "budgetOptions": [
+          20,
+          25
+        ]
       },
       {
         "id": "bell-peppers",
@@ -113,12 +116,49 @@
         "unit": "Kg",
         "icon": "🫑",
         "images": [
-          "http://localhost/vsv/attached_assets/capcium.jpg"
+          "https://thevsv.in/attached_assets/capcium.jpg"
         ],
         "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": []
+      },
+      {
+        "id": "potato",
+        "name": {
+          "en": "Potato",
+          "ta": "Ooty உருளைக் கிழங்கு"
+        },
+        "price": 55,
+        "unit": "Kg",
+        "icon": "🥔",
+        "images": [
+          "https://thevsv.in/attached_assets/potato.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "beet-root",
+        "name": {
+          "en": "Beet Root",
+          "ta": "பீட்ரூட்"
+        },
+        "price": 60,
+        "unit": "Kg",
+        "icon": "🌰",
+        "images": [
+          "https://thevsv.in/attached_assets/beetroot.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [
+          15,
+          20
+        ]
       }
     ],
     "country": [
@@ -132,7 +172,7 @@
         "unit": "Kg",
         "icon": "🌶️",
         "images": [
-          "http://localhost/vsv/attached_assets/vendakkai.jpg"
+          "https://thevsv.in/attached_assets/vendakkai.jpg"
         ],
         "available": true,
         "tags": [],
@@ -149,7 +189,7 @@
         "unit": "Kg",
         "icon": "🍆",
         "images": [
-          "http://localhost/vsv/attached_assets/brinjal.jpeg"
+          "https://thevsv.in/attached_assets/brinjal.jpeg"
         ],
         "available": true,
         "tags": [],
@@ -166,7 +206,137 @@
         "unit": "Kg",
         "icon": "🥒",
         "images": [
-          "attached_assets/carrot_1756286601381.jpg"
+          "https://thevsv.in/attached_assets/peerkankkai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [
+          20,
+          25
+        ]
+      },
+      {
+        "id": "ginger",
+        "name": {
+          "en": "Ginger",
+          "ta": "இஞ்சி"
+        },
+        "price": 90,
+        "unit": "Kg",
+        "icon": "🫚",
+        "images": [
+          "https://thevsv.in/attached_assets/Ginger.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          10,
+          20,
+          25
+        ]
+      },
+      {
+        "id": "drumstick",
+        "name": {
+          "en": "DrumStick",
+          "ta": "முருங்கைக்காய்"
+        },
+        "price": 10,
+        "unit": "Bunch",
+        "icon": "🥒",
+        "images": [
+          "https://thevsv.in/attached_assets/drumsticks.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "green-chilli",
+        "name": {
+          "en": "Green Chilli",
+          "ta": "மிளகாய்"
+        },
+        "price": 85,
+        "unit": "Kg",
+        "icon": "🌶️",
+        "images": [
+          "https://thevsv.in/attached_assets/green_chilli.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [
+          10,
+          15,
+          20
+        ]
+      },
+      {
+        "id": "radish",
+        "name": {
+          "en": "Radish",
+          "ta": "முள்ளங்கி"
+        },
+        "price": 30,
+        "unit": "Kg",
+        "icon": "🥬",
+        "images": [
+          "https://thevsv.in/attached_assets/mullangi.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "snake-gourd",
+        "name": {
+          "en": "Snake Gourd",
+          "ta": "புடலங்காய்"
+        },
+        "price": 40,
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/pudalangai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "gooseberry",
+        "name": {
+          "en": "GooseBerry",
+          "ta": "கோவக்காய்"
+        },
+        "price": 50,
+        "unit": "Kg",
+        "icon": "🥒",
+        "images": [
+          "https://thevsv.in/attached_assets/kovakkai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": []
+      },
+      {
+        "id": "broad-beans",
+        "name": {
+          "en": "Broad Beans",
+          "ta": "அவரைக்காய்"
+        },
+        "price": 50,
+        "unit": "Kg",
+        "icon": "🥒",
+        "images": [
+          "https://thevsv.in/attached_assets/patta_avarakkai.jpg"
         ],
         "available": true,
         "tags": [],
@@ -185,12 +355,15 @@
         "unit": "Kg",
         "icon": "🧅",
         "images": [
-          "attached_assets/carrot_1756286601381.jpg"
+          "https://thevsv.in/attached_assets/big_onion.jpg"
         ],
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": []
+        "budgetOptions": [
+          20,
+          25
+        ]
       },
       {
         "id": "small-onions",
@@ -202,49 +375,18 @@
         "unit": "Kg",
         "icon": "🧅",
         "images": [
-          "attached_assets/carrot_1756286601381.jpg"
+          "https://thevsv.in/attached_assets/small_onion.jpg"
         ],
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": []
-      },
-      {
-        "id": "red-onions",
-        "name": {
-          "en": "Red Onions",
-          "ta": "சிவப்பு வெங்காயம்"
-        },
-        "price": 35,
-        "unit": "Kg",
-        "icon": "🧅",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
+        "budgetOptions": [
+          20,
+          25
+        ]
       }
     ],
     "spinach": [
-      {
-        "id": "fresh-spinach",
-        "name": {
-          "en": "Fresh Spinach",
-          "ta": "பசலைக்கீரை"
-        },
-        "price": 25,
-        "unit": "Bunch",
-        "icon": "🥬",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
-      },
       {
         "id": "mint-leaves",
         "name": {
@@ -305,130 +447,10 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": []
-      },
-      {
-        "id": "tender-coconut",
-        "name": {
-          "en": "Tender Coconut",
-          "ta": "இளநீர்"
-        },
-        "price": 30,
-        "unit": "Pcs",
-        "icon": "🥥",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
-      },
-      {
-        "id": "grated-coconut",
-        "name": {
-          "en": "Grated Coconut",
-          "ta": "தேங்காய் துருவல்"
-        },
-        "price": 25,
-        "unit": "Grams",
-        "icon": "🥥",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
       }
     ],
-    "nuts": [
-      {
-        "id": "almonds",
-        "name": {
-          "en": "Almonds",
-          "ta": "பாதாம்"
-        },
-        "price": 800,
-        "unit": "Kg",
-        "icon": "🥜",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
-      },
-      {
-        "id": "cashews",
-        "name": {
-          "en": "Cashews",
-          "ta": "முந்திரி"
-        },
-        "price": 600,
-        "unit": "Kg",
-        "icon": "🥜",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
-      },
-      {
-        "id": "dates",
-        "name": {
-          "en": "Dates",
-          "ta": "பேரீச்சம்பழம்"
-        },
-        "price": 300,
-        "unit": "Kg",
-        "icon": "🌰",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
-      }
-    ],
+    "nuts": [],
     "budget": [
-      {
-        "id": "budget-tomatoes",
-        "name": {
-          "en": "Budget Tomatoes",
-          "ta": "தக்காளி (பட்ஜெட்)"
-        },
-        "price": 20,
-        "unit": "Kg",
-        "icon": "🍅",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
-      },
-      {
-        "id": "budget-potatoes",
-        "name": {
-          "en": "Budget Potatoes",
-          "ta": "உருளைக்கிழங்கு (பட்ஜெட்)"
-        },
-        "price": 15,
-        "unit": "Kg",
-        "icon": "🥔",
-        "images": [
-          "attached_assets/carrot_1756286601381.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
-      },
       {
         "id": "curry-leaves",
         "name": {
