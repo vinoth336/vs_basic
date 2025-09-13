@@ -63,7 +63,7 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 80,
+        "price": 70,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 20,
@@ -193,7 +193,7 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 30,
+        "price": 35,
         "unit": "Kg",
         "icon": "🌶️",
         "images": [
@@ -227,7 +227,7 @@
           "en": "Ridge Gourd",
           "ta": "பீர்க்கங்காய்"
         },
-        "price": 45,
+        "price": 50,
         "unit": "Kg",
         "icon": "🥒",
         "images": [
@@ -285,7 +285,7 @@
           "en": "Green Chilli",
           "ta": "மிளகாய்"
         },
-        "price": 85,
+        "price": 65,
         "unit": "Kg",
         "icon": "🌶️",
         "images": [
@@ -376,7 +376,7 @@
           "en": "Big Onions",
           "ta": "பெரிய வெங்காயம்"
         },
-        "price": 30,
+        "price": 26,
         "unit": "Kg",
         "icon": "🧅",
         "images": [
@@ -396,7 +396,7 @@
           "en": "Small Onions",
           "ta": "சின்ன வெங்காயம்"
         },
-        "price": 80,
+        "price": 40,
         "unit": "Kg",
         "icon": "🧅",
         "images": [
@@ -513,7 +513,7 @@
           "en": "Coconut",
           "ta": "தேங்காய்"
         },
-        "price": 70,
+        "price": 75,
         "unit": "Kg",
         "icon": "🥥",
         "images": [
