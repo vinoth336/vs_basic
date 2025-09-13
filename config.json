@@ -709,6 +709,31 @@
         ],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "baby-corn",
+        "name": {
+          "en": "Baby Corn",
+          "ta": "Baby Corn"
+        },
+        "price": 50,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 50,
+        "displayUnit": "Box",
+        "unit": "Box",
+        "icon": "🌾",
+        "images": [
+          "https://thevsv.in/attached_assets/baby_corn.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [
+          15
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ]
   },
