@@ -173,7 +173,7 @@
         "unit": "Kg",
         "icon": "🥬",
         "images": [
-          "http://localhost/vsv/attached_assets/cabbage.jpg"
+          "https://thevsv.in/attached_assets/cabbage.jpg"
         ],
         "available": true,
         "tags": [],
@@ -344,7 +344,7 @@
         "unit": "Kg",
         "icon": "🥒",
         "images": [
-          "http://localhost/vsv/attached_assets/kovakkai.jpg"
+          "https://thevsv.in/attached_assets/kovakkai.jpg"
         ],
         "available": true,
         "tags": [],
@@ -422,7 +422,7 @@
         "unit": "Bunch",
         "icon": "🌿",
         "images": [
-          "http://localhost/vsv/attached_assets/mint_leaves.jpg"
+          "https://thevsv.in/attached_assets/mint_leaves.jpg"
         ],
         "available": true,
         "tags": [
@@ -457,7 +457,7 @@
         "unit": "Bunch",
         "icon": "🌿",
         "images": [
-          "http://localhost/vsv/attached_assets/coriander.jpg"
+          "https://thevsv.in/attached_assets/coriander.jpg"
         ],
         "available": true,
         "tags": [
@@ -489,14 +489,14 @@
           "ta": "நாட்டு மல்லி இலை"
         },
         "price": 25,
-        "unitValue": 25,
+        "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 1,
+        "displayAmount": 25,
         "displayUnit": "Bunch",
         "unit": "Bunch",
         "icon": "📦",
         "images": [
-          "http://localhost/vsv/attached_assets/nattu_malli.jpg"
+          "https://thevsv.in/attached_assets/nattu_malli.jpg"
         ],
         "available": true,
         "tags": [],
@@ -517,7 +517,7 @@
         "unit": "Kg",
         "icon": "🥥",
         "images": [
-          "http://localhost/vsv/attached_assets/coconut.jpg"
+          "https://thevsv.in/attached_assets/coconut.jpg"
         ],
         "available": true,
         "tags": [],
@@ -536,12 +536,15 @@
           "en": "Curry Leaves",
           "ta": "கறிவேப்பிலை"
         },
-        "price": 8,
+        "price": 20,
         "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
         "unit": "Bunch",
         "icon": "🌿",
         "images": [
-          "http://localhost/vsv/attached_assets/curry_leaves.jpg"
+          "https://thevsv.in/attached_assets/curry_leaves.jpg"
         ],
         "available": true,
         "tags": [
@@ -556,15 +559,13 @@
             "categoryKey": "uncategorized",
             "productId": "curry-leaves",
             "quantity": 5,
-            "unit": "Small Bunch",
-            "unitValue": 1
+            "unit": "Small Bunch"
           },
           {
             "categoryKey": "spinach",
             "productId": "coriander",
             "quantity": 5,
-            "unit": "Small Bunch",
-            "unitValue": 1
+            "unit": "Small Bunch"
           }
         ]
       },
@@ -579,7 +580,7 @@
         "unit": "Pcs",
         "icon": "🥬",
         "images": [
-          "http://localhost/vsv/attached_assets/Cauliflower.jpg"
+          "https://thevsv.in/attached_assets/Cauliflower.jpg"
         ],
         "available": true,
         "tags": [],
