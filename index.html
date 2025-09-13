@@ -86,7 +86,7 @@
         /* Category Section */
         .category-section {
             background: #f8f9fa;
-            padding: 30px 0;
+            padding: 50px 0 30px 0;
         }
 
         .category-menu {
@@ -1068,112 +1068,6 @@
             font-weight: 600;
         }
 
-        /* Promotional Banner Styles */
-        .promotional-banners {
-            background: linear-gradient(135deg, #28a745, #20c997);
-            padding: 0;
-            margin: 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner-slider {
-            position: relative;
-            height: 200px;
-        }
-
-        .banner-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            background: linear-gradient(135deg, #28a745, #20c997);
-        }
-
-        .banner-slide.active {
-            opacity: 1;
-        }
-
-        .banner-slide:nth-child(2) {
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
-        }
-
-        .banner-slide:nth-child(3) {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-        }
-
-        .banner-content {
-            text-align: center;
-            color: white;
-            max-width: 600px;
-            padding: 20px;
-        }
-
-        .banner-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .banner-content p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.95;
-        }
-
-        .banner-cta {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .banner-cta:hover {
-            background: white;
-            color: #28a745;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .banner-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        .dot:hover {
-            background: rgba(255,255,255,0.8);
-        }
 
         /* Budget Pick Styles */
         .product-actions {
@@ -1224,6 +1118,82 @@
         .budget-pick-btn::before {
             content: "💰";
             margin-right: 5px;
+        }
+
+        .combo-btn {
+            flex: 1;
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .combo-btn:hover {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(142, 68, 173, 0.3);
+        }
+
+        .combo-btn::before {
+            content: "🔗";
+            margin-right: 5px;
+        }
+
+        .badge-combo {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+
+        .combo-details {
+            margin: 8px 0;
+            padding: 8px;
+            background: rgba(142, 68, 173, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #8e44ad;
+        }
+
+        .combo-label {
+            color: #8e44ad;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .combo-items-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .combo-item {
+            background: rgba(142, 68, 173, 0.2);
+            color: #8e44ad;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .combo-more {
+            background: rgba(142, 68, 173, 0.3);
+            color: #8e44ad;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-style: italic;
         }
 
         .product-info {
@@ -1367,6 +1337,115 @@
             color: #333;
         }
 
+        /* Combo Popup Styles */
+        .combo-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .combo-popup {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+            position: relative;
+        }
+
+        .combo-popup-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .combo-popup-title {
+            font-size: 1.5rem;
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+
+        .combo-popup-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .combo-items-section {
+            margin: 20px 0;
+        }
+
+        .combo-section-title {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .combo-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .combo-price-input {
+            width: 80px;
+            padding: 6px 8px;
+            border: 2px solid #8e44ad;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .combo-total {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .combo-popup-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .combo-popup-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #999;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+        }
+
+        .combo-popup-close:hover {
+            color: #333;
+        }
+
         .show-all-btn {
             background: #28a745;
             color: white;
@@ -1493,37 +1572,6 @@
         </div>
     </section>
 
-    <!-- Promotional Banner Section -->
-    <section class="promotional-banners">
-        <div class="banner-slider">
-            <div class="banner-slide active">
-                <div class="banner-content">
-                    <h2>🌱 Fresh Farm Vegetables</h2>
-                    <p>Direct from farm to your doorstep • Free delivery above ₹500</p>
-                    <button class="banner-cta" onclick="showCategory('all')">Shop Now</button>
-                </div>
-            </div>
-            <div class="banner-slide">
-                <div class="banner-content">
-                    <h2>🥕 Special Offers</h2>
-                    <p>Get 20% off on Ooty vegetables • Limited time offer</p>
-                    <button class="banner-cta" onclick="showCategory('ooty')">View Offers</button>
-                </div>
-            </div>
-            <div class="banner-slide">
-                <div class="banner-content">
-                    <h2>⚡ Express Delivery</h2>
-                    <p>Get fresh vegetables delivered in 30 minutes</p>
-                    <button class="banner-cta" onclick="showCategory('budget')">Order Express</button>
-                </div>
-            </div>
-        </div>
-        <div class="banner-dots">
-            <span class="dot active" onclick="showBannerSlide(0)"></span>
-            <span class="dot" onclick="showBannerSlide(1)"></span>
-            <span class="dot" onclick="showBannerSlide(2)"></span>
-        </div>
-    </section>
 
     <!-- Categories Submenu Section -->
     <section class="categories-submenu">
@@ -1606,6 +1654,16 @@
             </div>
             <div class="budget-popup-footer">
                 <button class="budget-popup-cancel" onclick="closeBudgetPopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Combo Popup -->
+    <div class="combo-popup-overlay" id="comboPopup">
+        <div class="combo-popup">
+            <button class="combo-popup-close" onclick="closeComboPopup()">&times;</button>
+            <div id="comboPopupContent">
+                <!-- Content will be populated by JavaScript -->
             </div>
         </div>
     </div>
@@ -1990,8 +2048,8 @@
                     <div class="product-info">
                         <h4 class="product-name">${productName}</h4>
                         <div class="price-unit">
-                            <p class="product-price">₹${product.price}</p>
-                            <p class="product-unit">${product.unit}</p>
+                            <p class="product-price">₹${calculateDisplayPrice(product)}</p>
+                            <p class="product-unit">${product.displayUnitValue || product.unitValue || 1} ${product.displayUnit || product.unit}</p>
                         </div>
                     </div>
                     ${quantity > 0 ? `
@@ -2005,7 +2063,8 @@
                             <button class="add-to-cart-btn" onclick="updateQuantity('${productId}', 1)" ${!isAvailable ? 'disabled' : ''}>
                                 ${isAvailable ? 'Add to Cart' : 'Out of Stock'}
                             </button>
-                            ${product.isBudgetPick ? `<button class="budget-pick-btn" onclick="showBudgetPopup('${productId}')">Budget Pick</button>` : ''}
+                            ${product.isBudgetPick && !product.isCombo ? `<button class="budget-pick-btn" onclick="showBudgetPopup('${productId}')">Budget Pick</button>` : ''}
+                            ${product.isCombo ? `<button class="combo-btn" onclick="showComboPopup('${productId}')">Combo Deal</button>` : ''}
                         </div>
                     `}
                 </div>
@@ -2047,17 +2106,21 @@
         }
 
         function generateProductBadges(product) {
-            if (!product.tags || product.tags.length === 0) return '';
-            
             let badgesHtml = '<div class="status-badges">';
             
-            product.tags.forEach(tag => {
-                if (tag === 'new-arrival') {
-                    badgesHtml += '<span class="badge new-arrival">New</span>';
-                } else if (tag === 'combo') {
-                    badgesHtml += '<span class="badge combo">Combo</span>';
-                }
-            });
+            // Add combo badge for combo products
+            if (product.isCombo) {
+                badgesHtml += '<span class="badge-combo">கூட்டு</span>';
+            }
+            
+            // Add tag-based badges
+            if (product.tags && product.tags.length > 0) {
+                product.tags.forEach(tag => {
+                    if (tag === 'new-arrival') {
+                        badgesHtml += '<span class="badge new-arrival">புதியது</span>';
+                    }
+                });
+            }
             
             badgesHtml += '</div>';
             return badgesHtml;
@@ -2070,12 +2133,42 @@
         }
 
         function generateComboDetails(product) {
-            if (!product.comboItems || product.comboItems.length === 0) return '';
+            if (!product.isCombo || !product.combo || product.combo.length === 0) return '';
+            
+            const comboHints = product.combo.map(comboItem => {
+                // Find the product by categoryKey and productId
+                const categoryProducts = config.products[comboItem.categoryKey];
+                if (!categoryProducts) return null;
+                
+                const foundProduct = categoryProducts.find(p => p.id === comboItem.productId);
+                if (!foundProduct) return null;
+                
+                // Get localized name
+                const itemName = foundProduct.name[currentLanguage] || foundProduct.name.en;
+                
+                // Build display text with unit and unitValue if available, but always show quantity (amount)
+                let displayText = itemName;
+                if (comboItem.unit && comboItem.unitValue) {
+                    displayText += ` - ${comboItem.unitValue} ${comboItem.unit} (₹${comboItem.quantity})`;
+                } else if (comboItem.unit) {
+                    displayText += ` - ${comboItem.unit} (₹${comboItem.quantity})`;
+                } else {
+                    displayText += ` (₹${comboItem.quantity})`;
+                }
+                
+                return displayText;
+            }).filter(item => item !== null);
+            
+            if (comboHints.length === 0) return '';
             
             return `
                 <div class="combo-details">
-                    <div class="combo-items">
-                        ${product.comboItems.map(item => `<span class="combo-item">${item}</span>`).join('')}
+                    <small class="combo-label">Combo includes:</small>
+                    <div class="combo-items-list">
+                        ${comboHints.slice(0, 2).map(item => 
+                            `<span class="combo-item">${item}</span>`
+                        ).join('')}
+                        ${comboHints.length > 2 ? `<span class="combo-more">+${comboHints.length - 2} more</span>` : ''}
                     </div>
                 </div>
             `;
@@ -2202,8 +2295,8 @@
                 } else {
                     cart[productId] = {
                         name: product.name,
-                        price: product.price,
-                        unit: product.unit,
+                        price: calculateDisplayPrice(product),
+                        unit: product.displayUnit || product.unit,
                         quantity: quantities[productId],
                         category: product.category || extractCategoryFromId(productId),
                         productId: product.id || productId
@@ -2274,6 +2367,10 @@
 
         function removeFromCart(productId) {
             delete cart[productId];
+            // Also clean up quantities to ensure fresh start for re-adding
+            if (quantities[productId]) {
+                quantities[productId] = 0;
+            }
             updateCartDisplay();
             updateOrderSummary();
             
@@ -2288,6 +2385,35 @@
             cart[productId].quantity = Math.max(1, cart[productId].quantity + change);
             updateCartDisplay();
             updateOrderSummary();
+        }
+
+        // Calculate proportional price based on display unit value
+        function calculateDisplayPrice(product) {
+            if (!product.displayUnitValue || product.displayUnitValue === product.unitValue) {
+                return product.price;
+            }
+            
+            const actualUnitValue = product.unitValue || 1;
+            const displayUnitValue = product.displayUnitValue;
+            const actualUnit = product.unit;
+            const displayUnit = product.displayUnit || product.unit;
+            
+            // Handle unit conversion (kg to grams)
+            let conversionFactor = 1;
+            if (actualUnit === "Kg" && displayUnit === "Grams") {
+                conversionFactor = 1000; // 1 kg = 1000 grams
+            } else if (actualUnit === "Grams" && displayUnit === "Kg") {
+                conversionFactor = 0.001; // 1 gram = 0.001 kg
+            }
+            
+            // Convert display unit value to actual unit value for calculation
+            const convertedDisplayValue = displayUnitValue / conversionFactor;
+            
+            // Calculate proportional price: (price * convertedDisplayValue) / actualUnitValue
+            const proportionalPrice = (product.price * convertedDisplayValue) / actualUnitValue;
+            
+            // Round up to nearest integer
+            return Math.ceil(proportionalPrice);
         }
 
         // Cart display updates
@@ -2341,6 +2467,37 @@
             arrow.classList.remove('up');
         }
 
+        // Smart unit display with gram-to-kg conversion
+        function getSmartUnitDisplay(quantity, unit, price) {
+            const totalPrice = price * quantity;
+            
+            // Check if it's a gram-based unit
+            if (unit && (unit.toLowerCase().includes('gram') || unit === 'Grams')) {
+                // Calculate gram equivalents
+                const totalGrams = quantity * price; // Assuming price represents grams per unit
+                
+                // Special case: if price is the per-gram price, calculate differently
+                // For products priced per gram, quantity is the number of units and price is per gram
+                const actualGrams = quantity * 250; // Assuming 250g standard units for conversion
+                
+                if (actualGrams >= 1000) {
+                    const kg = Math.floor(actualGrams / 1000);
+                    const remainingGrams = actualGrams % 1000;
+                    
+                    if (remainingGrams === 0) {
+                        return `₹${price} × ${quantity} = ₹${totalPrice} (${kg}kg)`;
+                    } else {
+                        return `₹${price} × ${quantity} = ₹${totalPrice} (${kg}kg ${remainingGrams}g)`;
+                    }
+                } else {
+                    return `₹${price} × ${quantity} = ₹${totalPrice} (${actualGrams}g)`;
+                }
+            }
+            
+            // Default display for non-gram units
+            return `₹${price} × ${quantity} = ₹${totalPrice}`;
+        }
+
         function updateOrderSummary() {
             const cartItems = document.getElementById('cartItems');
             const orderTotal = document.getElementById('orderTotal');
@@ -2359,11 +2516,14 @@
                     ? (item.name[currentLanguage] || item.name.en)
                     : item.name;
                 
+                // Smart unit conversion for grams
+                const displayInfo = getSmartUnitDisplay(item.quantity, item.unit, item.price);
+                
                 html += `
                     <div class="cart-item">
                         <div class="cart-item-info">
                             <div class="cart-item-name">${productName}</div>
-                            <div class="cart-item-price">₹${item.price} × ${item.quantity} = ₹${itemTotal}</div>
+                            <div class="cart-item-price">${displayInfo}</div>
                         </div>
                         <div class="cart-item-controls">
                             <button class="qty-btn" onclick="updateCartItemQuantity('${productId}', -1)">−</button>
@@ -2692,6 +2852,203 @@
             currentBudgetProductId = '';
         }
 
+        // Combo Functions
+        let currentComboProductId = null;
+        let comboItems = {};
+
+        function showComboPopup(productId) {
+            currentComboProductId = productId;
+            const product = findProductById(productId);
+            
+            if (!product) {
+                console.error('Product not found for combo popup:', productId);
+                return;
+            }
+            
+            const productName = product.name[currentLanguage] || product.name.en;
+            
+            // Initialize combo items with main product and combo items
+            comboItems = {
+                main: {
+                    name: productName,
+                    price: product.price,
+                    unitValue: product.displayUnitValue || product.unitValue || 1,
+                    unit: product.unit
+                }
+            };
+            
+            // Add combo items from combo builder
+            if (product.combo && product.combo.length > 0) {
+                product.combo.forEach((comboItem, index) => {
+                    // Find the product by categoryKey and productId
+                    const categoryProducts = config.products[comboItem.categoryKey];
+                    if (!categoryProducts) return;
+                    
+                    const foundProduct = categoryProducts.find(p => p.id === comboItem.productId);
+                    if (!foundProduct) return;
+                    
+                    // Get localized name
+                    const itemName = foundProduct.name[currentLanguage] || foundProduct.name.en;
+                    
+                    // Use combo builder unit/unitValue if provided, otherwise fall back to product defaults
+                    const unitText = comboItem.unit || foundProduct.unit || 'item';
+                    const unitValue = comboItem.unitValue || foundProduct.unitValue || 1;
+                    
+                    // Build display name with unit and unitValue, but always show quantity (amount)
+                    let displayName = itemName;
+                    if (comboItem.unit && comboItem.unitValue) {
+                        displayName += ` - ${comboItem.unitValue} ${comboItem.unit} (₹${comboItem.quantity})`;
+                    } else if (comboItem.unit) {
+                        displayName += ` - ${comboItem.unit} (₹${comboItem.quantity})`;
+                    } else {
+                        displayName += ` (₹${comboItem.quantity})`;
+                    }
+                    
+                    comboItems[`combo_${index}`] = {
+                        name: displayName,
+                        price: Math.floor(product.price * 0.2), // Default to 20% of main price
+                        unitValue: unitValue,
+                        unit: unitText,
+                        quantity: comboItem.quantity
+                    };
+                });
+            }
+            
+            renderComboPopup(productName, product);
+            document.getElementById('comboPopup').style.display = 'flex';
+        }
+
+        function renderComboPopup(productName, product) {
+            const popupContent = document.getElementById('comboPopupContent');
+            const minimum = product.comboMinimum || 50;
+            
+            let html = `
+                <div class="combo-popup-header">
+                    <h3 class="combo-popup-title">${productName} Combo</h3>
+                    <p class="combo-popup-subtitle">Customize your combo package</p>
+                </div>
+                
+                <div class="combo-items-section">
+                    <h4 class="combo-section-title">Main Item</h4>
+                    <div class="combo-item-row">
+                        <span>${comboItems.main.name} (${comboItems.main.unitValue} ${comboItems.main.unit})</span>
+                        <input type="number" class="combo-price-input" value="${comboItems.main.price}" 
+                               min="${minimum * 0.6}" onchange="updateComboPrice('main', this.value)">
+                    </div>
+                    
+                    <h4 class="combo-section-title">Combo Items</h4>
+            `;
+            
+            Object.keys(comboItems).forEach(key => {
+                if (key !== 'main') {
+                    const item = comboItems[key];
+                    html += `
+                        <div class="combo-item-row">
+                            <span>${item.name}</span>
+                            <input type="number" class="combo-price-input" value="${item.price}" 
+                                   min="5" onchange="updateComboPrice('${key}', this.value)">
+                        </div>
+                    `;
+                }
+            });
+            
+            const total = calculateComboTotal();
+            
+            html += `
+                </div>
+                
+                <div class="combo-total">
+                    Total: ₹<span id="comboTotal">${total}</span>
+                    <div style="font-size: 0.9rem; margin-top: 5px; opacity: 0.9;">
+                        Minimum: ₹${minimum}
+                    </div>
+                </div>
+                
+                <div class="combo-popup-actions">
+                    <button class="budget-popup-cancel" onclick="closeComboPopup()">Cancel</button>
+                    <button class="add-to-cart-btn" onclick="addComboToCart()" 
+                            ${total < minimum ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
+                        Add to Cart
+                    </button>
+                </div>
+            `;
+            
+            popupContent.innerHTML = html;
+        }
+
+        function updateComboPrice(itemKey, value) {
+            const price = parseFloat(value) || 0;
+            comboItems[itemKey].price = price;
+            
+            const total = calculateComboTotal();
+            document.getElementById('comboTotal').textContent = total;
+            
+            // Check minimum requirement
+            const product = findProductById(currentComboProductId);
+            const minimum = product.comboMinimum || 50;
+            const addButton = document.querySelector('.combo-popup-actions .add-to-cart-btn');
+            
+            if (total < minimum) {
+                addButton.disabled = true;
+                addButton.style.opacity = '0.5';
+                addButton.style.cursor = 'not-allowed';
+            } else {
+                addButton.disabled = false;
+                addButton.style.opacity = '1';
+                addButton.style.cursor = 'pointer';
+            }
+        }
+
+        function calculateComboTotal() {
+            return Object.values(comboItems).reduce((sum, item) => sum + item.price, 0);
+        }
+
+        function addComboToCart() {
+            const total = calculateComboTotal();
+            const product = findProductById(currentComboProductId);
+            
+            if (total < (product.comboMinimum || 50)) {
+                alert(`Minimum order amount is ₹${product.comboMinimum || 50}`);
+                return;
+            }
+            
+            // Add to cart with combo details
+            if (!quantities[currentComboProductId]) quantities[currentComboProductId] = 0;
+            quantities[currentComboProductId]++;
+            
+            // Add to cart object for display
+            cart[currentComboProductId] = {
+                name: product.name,
+                price: total,
+                unit: product.displayUnit || product.unit,
+                quantity: quantities[currentComboProductId],
+                category: 'combo',
+                originalProduct: product.name[currentLanguage] || product.name.en,
+                isCombo: true,
+                comboItems: product.combo
+            };
+            
+            // Store combo details for this instance
+            if (!window.comboDetails) window.comboDetails = {};
+            window.comboDetails[currentComboProductId] = {
+                items: { ...comboItems },
+                total: total
+            };
+            
+            updateCartDisplay();
+            
+            // Show frozen footer if cart has items
+            if (Object.keys(cart).length > 0) {
+                showFrozenFooter();
+            }
+            
+            closeComboPopup();
+        }
+
+        function closeComboPopup() {
+            document.getElementById('comboPopup').style.display = 'none';
+        }
+
         function selectBudgetAmount(amount) {
             if (currentBudgetProductId) {
                 const product = findProductById(currentBudgetProductId);
@@ -2711,13 +3068,18 @@
                 cart[budgetProductId] = {
                     name: product.name,
                     price: amount,
-                    unit: product.unit,
+                    unit: product.displayUnit || product.unit,
                     quantity: quantities[budgetProductId],
                     category: 'budget',
                     originalProduct: product.name[currentLanguage] || product.name.en
                 };
                 
                 updateCartDisplay();
+                
+                // Show frozen footer if cart has items
+                if (Object.keys(cart).length > 0) {
+                    showFrozenFooter();
+                }
                 
                 // Re-render current view to update UI
                 if (currentCategory === 'all') {
@@ -2730,33 +3092,6 @@
             }
         }
 
-        // Banner Slider functionality
-        let currentBannerSlide = 0;
-        const totalBannerSlides = 3;
-
-        function showBannerSlide(slideIndex) {
-            // Remove active class from all slides and dots
-            document.querySelectorAll('.banner-slide').forEach(slide => {
-                slide.classList.remove('active');
-            });
-            document.querySelectorAll('.dot').forEach(dot => {
-                dot.classList.remove('active');
-            });
-            
-            // Add active class to current slide and dot
-            document.querySelectorAll('.banner-slide')[slideIndex].classList.add('active');
-            document.querySelectorAll('.dot')[slideIndex].classList.add('active');
-            
-            currentBannerSlide = slideIndex;
-        }
-
-        function nextBannerSlide() {
-            currentBannerSlide = (currentBannerSlide + 1) % totalBannerSlides;
-            showBannerSlide(currentBannerSlide);
-        }
-
-        // Auto-rotate banner slides every 4 seconds
-        setInterval(nextBannerSlide, 4000);
     </script>
 </body>
 </html>

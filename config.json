@@ -45,22 +45,13 @@
       "order": 5,
       "visible": true
     },
-    "nuts": {
+    "uncategorized": {
       "name": {
-        "en": "Nuts & Dry Fruits",
-        "ta": "கொட்டைகள் & உலர் பழங்கள்"
+        "en": "Others",
+        "ta": "மற்றவை "
       },
-      "icon": "🥜",
-      "order": 6,
-      "visible": true
-    },
-    "budget": {
-      "name": {
-        "en": "Budget Veggies",
-        "ta": "பட்ஜெட் காய்கறிகள்"
-      },
-      "icon": "💰",
-      "order": 7,
+      "icon": "📦",
+      "order": 999,
       "visible": true
     }
   },
@@ -73,6 +64,10 @@
           "ta": "கேரட்"
         },
         "price": 80,
+        "unitValue": 1,
+        "displayUnitValue": 250,
+        "displayAmount": 20,
+        "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥕",
         "images": [
@@ -84,7 +79,9 @@
         "budgetOptions": [
           20,
           25
-        ]
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       },
       {
         "id": "green-beans",
@@ -100,10 +97,11 @@
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": false,
+        "isBudgetPick": true,
         "budgetOptions": [
-          20,
-          25
+          10,
+          15,
+          20
         ]
       },
       {
@@ -120,8 +118,12 @@
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
+        "isBudgetPick": true,
+        "budgetOptions": [
+          13,
+          18,
+          25
+        ]
       },
       {
         "id": "potato",
@@ -159,6 +161,29 @@
           15,
           20
         ]
+      },
+      {
+        "id": "cabbage",
+        "name": {
+          "en": "Cabbage",
+          "ta": "முட்டைக்கோஸ்"
+        },
+        "price": 40,
+        "unitValue": 1,
+        "unit": "Kg",
+        "icon": "🥬",
+        "images": [
+          "http://localhost/vsv/attached_assets/cabbage.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          10,
+          15
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "country": [
@@ -185,7 +210,7 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 45,
+        "price": 40,
         "unit": "Kg",
         "icon": "🍆",
         "images": [
@@ -210,10 +235,10 @@
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": false,
+        "isBudgetPick": true,
         "budgetOptions": [
-          20,
-          25
+          15,
+          20
         ]
       },
       {
@@ -268,7 +293,7 @@
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": false,
+        "isBudgetPick": true,
         "budgetOptions": [
           10,
           15,
@@ -319,7 +344,7 @@
         "unit": "Kg",
         "icon": "🥒",
         "images": [
-          "https://thevsv.in/attached_assets/kovakkai.jpg"
+          "http://localhost/vsv/attached_assets/kovakkai.jpg"
         ],
         "available": true,
         "tags": [],
@@ -397,15 +422,29 @@
         "unit": "Bunch",
         "icon": "🌿",
         "images": [
-          "attached_assets/carrot_1756286601381.jpg"
+          "http://localhost/vsv/attached_assets/mint_leaves.jpg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "combo"
+        ],
         "isBudgetPick": true,
         "budgetOptions": [
           5,
           10,
           15
+        ],
+        "combo": [
+          {
+            "categoryKey": "uncategorized",
+            "productId": "curry-leaves",
+            "quantity": 5
+          },
+          {
+            "categoryKey": "spinach",
+            "productId": "coriander",
+            "quantity": 5
+          }
         ]
       },
       {
@@ -414,43 +453,83 @@
           "en": "Coriander",
           "ta": "கொத்தமல்லி"
         },
-        "price": 10,
+        "price": 15,
         "unit": "Bunch",
         "icon": "🌿",
         "images": [
-          "attached_assets/carrot_1756286601381.jpg"
+          "http://localhost/vsv/attached_assets/coriander.jpg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "combo"
+        ],
         "isBudgetPick": true,
         "budgetOptions": [
           5,
           10,
           15
+        ],
+        "combo": [
+          {
+            "categoryKey": "uncategorized",
+            "productId": "curry-leaves",
+            "quantity": 5
+          },
+          {
+            "categoryKey": "spinach",
+            "productId": "mint-leaves",
+            "quantity": 5
+          }
         ]
+      },
+      {
+        "id": "country-coriander",
+        "name": {
+          "en": "Country Coriander",
+          "ta": "நாட்டு மல்லி இலை"
+        },
+        "price": 25,
+        "unitValue": 25,
+        "displayUnitValue": 1,
+        "displayAmount": 1,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "📦",
+        "images": [
+          "http://localhost/vsv/attached_assets/nattu_malli.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "coconuts": [
       {
         "id": "fresh-coconut",
         "name": {
-          "en": "Fresh Coconut",
+          "en": "Coconut",
           "ta": "தேங்காய்"
         },
-        "price": 40,
-        "unit": "Pcs",
+        "price": 70,
+        "unit": "Kg",
         "icon": "🥥",
         "images": [
-          "attached_assets/carrot_1756286601381.jpg"
+          "http://localhost/vsv/attached_assets/coconut.jpg"
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": []
+        "isBudgetPick": true,
+        "budgetOptions": [
+          20,
+          30,
+          35
+        ]
       }
     ],
-    "nuts": [],
-    "budget": [
+    "uncategorized": [
       {
         "id": "curry-leaves",
         "name": {
@@ -458,19 +537,58 @@
           "ta": "கறிவேப்பிலை"
         },
         "price": 8,
+        "unitValue": 1,
         "unit": "Bunch",
         "icon": "🌿",
         "images": [
-          "attached_assets/carrot_1756286601381.jpg"
+          "http://localhost/vsv/attached_assets/curry_leaves.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "combo"
+        ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": true,
+        "comboMinimum": 20,
+        "combo": [
+          {
+            "categoryKey": "uncategorized",
+            "productId": "curry-leaves",
+            "quantity": 5,
+            "unit": "Small Bunch",
+            "unitValue": 1
+          },
+          {
+            "categoryKey": "spinach",
+            "productId": "coriander",
+            "quantity": 5,
+            "unit": "Small Bunch",
+            "unitValue": 1
+          }
+        ]
+      },
+      {
+        "id": "cauliflower",
+        "name": {
+          "en": "Cauliflower",
+          "ta": "காலிஃபிளவர்"
+        },
+        "price": 40,
+        "unitValue": 1,
+        "unit": "Pcs",
+        "icon": "🥬",
+        "images": [
+          "http://localhost/vsv/attached_assets/Cauliflower.jpg"
         ],
         "available": true,
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
-          20,
-          25,
-          50
-        ]
+          35
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ]
   },
@@ -510,7 +628,7 @@
       "categoriesMenu": "Categories"
     },
     "ta": {
-      "logo": "வி.எஸ் காய்கறிகள்",
+      "logo": "VS Vegetables",
       "allCategories": "அனைத்தும்",
       "ooty": "ஊட்டி காய்கறிகள்",
       "country": "நாட்டு காய்கறிகள்",
@@ -519,8 +637,8 @@
       "coconuts": "தேங்காய்",
       "nuts": "கொட்டைகள் & உலர் பழங்கள்",
       "budget": "பட்ஜெட் காய்கறிகள்",
-      "heroTitle": "உங்கள் வீட்டு வாசலுக்கு புதிய காய்கறிகள்",
-      "heroSubtitle": "வயலில் இருந்து வீடு வரை, மணிக்குள் டெலிவரி. தரத்திற்கு உத்தரவாதம்!",
+      "heroTitle": "",
+      "heroSubtitle": "எங்களிடம் இயற்கையான வளம் நிறைந்த மற்றும் விலை குறைந்த காய்கறிகள், கீரைகள், பழங்கள் போன்ற அனைத்ததும் ஆடர் முறையில் நேரடியாக வீட்டிற்கே டெலிவரி செய்யப்படும். மேலும் தங்க்களின் வீடு, கடை மற்றும் விசேஷங்களுக்கு மொத்தமாகவும், சில்றையா களாகவும் காய்கறிகள் கிடைக்கும்.",
       "productsTitle": "எங்கள் புதிய பொருட்கள்",
       "contactTitle": "எங்களை தொடர்பு கொள்ளுங்கள்",
       "phone": "தொலைபேசி",
