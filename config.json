@@ -475,6 +475,31 @@
         ],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "tomatto",
+        "name": {
+          "en": "Tomatto",
+          "ta": "தக்காளி"
+        },
+        "price": 23,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 23,
+        "displayUnit": "Kg",
+        "unit": "Kg",
+        "icon": "🍅",
+        "images": [
+          "https://thevsv.in/attached_assets/tomatto.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          15
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "onions": [
