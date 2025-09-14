@@ -53,6 +53,15 @@
       "icon": "📦",
       "order": 999,
       "visible": true
+    },
+    "egg": {
+      "name": {
+        "en": "Egg",
+        "ta": "முட்டை"
+      },
+      "icon": "",
+      "order": 4,
+      "visible": true
     }
   },
   "products": {
@@ -63,7 +72,7 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 80,
+        "price": 70,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 20,
@@ -251,7 +260,7 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 45,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 10,
@@ -330,7 +339,7 @@
           "en": "DrumStick",
           "ta": "முருங்கைக்காய்"
         },
-        "price": 18,
+        "price": 10,
         "unit": "Bunch",
         "icon": "🥒",
         "images": [
@@ -482,7 +491,7 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 25,
+        "price": 23,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 23,
@@ -498,6 +507,29 @@
         "budgetOptions": [
           15
         ],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "banana-flower",
+        "name": {
+          "en": "Banana Flower",
+          "ta": "வாழைப்பூ"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/baby_corn.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       }
@@ -729,9 +761,55 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          15
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      }
+    ],
+    "egg": [
+      {
+        "id": "egg",
+        "name": {
+          "en": "Egg",
+          "ta": "முட்டை"
+        },
+        "price": 6,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 6,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "http://localhost/vsv/attached_assets/muttai.jpg"
         ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "country-chicken-egg",
+        "name": {
+          "en": "Country Chicken Egg",
+          "ta": "நாட்டுக்கோழி முட்டை"
+        },
+        "price": 12,
+        "unitValue": 12,
+        "displayUnitValue": 12,
+        "displayAmount": 12,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "http://localhost/vsv/attached_assets/nattu_kozhi_muttai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       }
