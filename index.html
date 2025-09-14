@@ -2180,7 +2180,7 @@
             // Load configuration from external config.json or use fallback
             async function loadConfiguration() {
                 try {
-                    const response = await fetch("./config.json");
+                    const response = await fetch("./config.json?v=1.0.2");
                     if (response.ok) {
                         config = await response.json();
                         console.log(
