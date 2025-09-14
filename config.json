@@ -63,7 +63,7 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 70,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 20,
@@ -251,7 +251,7 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 40,
+        "price": 45,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 10,
@@ -330,7 +330,7 @@
           "en": "DrumStick",
           "ta": "முருங்கைக்காய்"
         },
-        "price": 10,
+        "price": 18,
         "unit": "Bunch",
         "icon": "🥒",
         "images": [
@@ -482,7 +482,7 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 23,
+        "price": 25,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 23,
@@ -806,5 +806,111 @@
       "showAll": "அனைத்தையும் காட்டு",
       "categoriesMenu": "வகைகள்"
     }
-  }
+  },
+  "globalProductOrder": [
+    {
+      "id": "big-onions",
+      "categoryKey": "onions"
+    },
+    {
+      "id": "tomatto",
+      "categoryKey": "country"
+    },
+    {
+      "id": "fresh-carrots",
+      "categoryKey": "ooty"
+    },
+    {
+      "id": "green-beans",
+      "categoryKey": "ooty"
+    },
+    {
+      "id": "bell-peppers",
+      "categoryKey": "ooty"
+    },
+    {
+      "id": "potato",
+      "categoryKey": "ooty"
+    },
+    {
+      "id": "beet-root",
+      "categoryKey": "ooty"
+    },
+    {
+      "id": "cabbage",
+      "categoryKey": "ooty"
+    },
+    {
+      "id": "okra-bhindi",
+      "categoryKey": "country"
+    },
+    {
+      "id": "eggplant",
+      "categoryKey": "country"
+    },
+    {
+      "id": "ridge-gourd",
+      "categoryKey": "country"
+    },
+    {
+      "id": "ginger",
+      "categoryKey": "country"
+    },
+    {
+      "id": "drumstick",
+      "categoryKey": "country"
+    },
+    {
+      "id": "green-chilli",
+      "categoryKey": "country"
+    },
+    {
+      "id": "radish",
+      "categoryKey": "country"
+    },
+    {
+      "id": "snake-gourd",
+      "categoryKey": "country"
+    },
+    {
+      "id": "gooseberry",
+      "categoryKey": "country"
+    },
+    {
+      "id": "broad-beans",
+      "categoryKey": "country"
+    },
+    {
+      "id": "small-onions",
+      "categoryKey": "onions"
+    },
+    {
+      "id": "coriander",
+      "categoryKey": "spinach"
+    },
+    {
+      "id": "fresh-coconut",
+      "categoryKey": "coconuts"
+    },
+    {
+      "id": "curry-leaves",
+      "categoryKey": "uncategorized"
+    },
+    {
+      "id": "cauliflower",
+      "categoryKey": "uncategorized"
+    },
+    {
+      "id": "country-coriander",
+      "categoryKey": "uncategorized"
+    },
+    {
+      "id": "mint-leaves",
+      "categoryKey": "uncategorized"
+    },
+    {
+      "id": "baby-corn",
+      "categoryKey": "uncategorized"
+    }
+  ]
 }

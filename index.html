@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vs Vegetables - Fresh Vegetables to your Doorstep</title>
+        <title>Vs Vegetables - Fresh Vegetables to Your Door</title>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -658,6 +658,17 @@
                     right: 12px;
                 }
 
+                .sort-container {
+                    flex-direction: column;
+                    gap: 8px;
+                    margin-top: 10px;
+                }
+
+                .sort-select {
+                    min-width: 120px;
+                    font-size: 0.85rem;
+                }
+
                 .search-results-info {
                     flex-direction: column;
                     gap: 10px;
@@ -997,6 +1008,42 @@
 
             .search-container {
                 margin-bottom: 20px;
+            }
+
+            .sort-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .sort-label {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: #666;
+                font-weight: 500;
+                margin: 0;
+            }
+
+            .sort-select {
+                padding: 8px 15px;
+                border: 2px solid #e0e0e0;
+                border-radius: 20px;
+                background: #f8f9fa;
+                font-size: 0.9rem;
+                color: #333;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                min-width: 160px;
+            }
+
+            .sort-select:focus {
+                outline: none;
+                border-color: #28a745;
+                background: white;
+                box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
             }
 
             .search-box {
@@ -1613,6 +1660,47 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Sort Options -->
+                    <div class="sort-container">
+                        <label for="sortSelect" class="sort-label">
+                            <i class="fas fa-sort"></i>
+                            <span data-lang="sortBy">Sort by:</span>
+                        </label>
+                        <select
+                            id="sortSelect"
+                            class="sort-select"
+                            onchange="handleSortChange()"
+                        >
+                            <option value="default" data-lang="sortDefault">
+                                Default
+                            </option>
+                            <option value="name-asc" data-lang="sortNameAZ">
+                                Name A-Z
+                            </option>
+                            <option value="name-desc" data-lang="sortNameZA">
+                                Name Z-A
+                            </option>
+                            <option
+                                value="price-asc"
+                                data-lang="sortPriceLowHigh"
+                            >
+                                Price Low to High
+                            </option>
+                            <option
+                                value="price-desc"
+                                data-lang="sortPriceHighLow"
+                            >
+                                Price High to Low
+                            </option>
+                            <option
+                                value="available-first"
+                                data-lang="sortAvailableFirst"
+                            >
+                                Available First
+                            </option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Search Results Info -->
@@ -1654,7 +1742,7 @@
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <h3 data-lang="email">Email</h3>
-                        <p>orders@vsvegetables.com</p>
+                        <p>orders@thevsv.in</p>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-whatsapp"></i>
@@ -2035,6 +2123,13 @@
                         resultsFound: "results found",
                         showAll: "Show All",
                         categoriesMenu: "Categories",
+                        sortBy: "Sort by:",
+                        sortDefault: "Default",
+                        sortNameAZ: "Name A-Z",
+                        sortNameZA: "Name Z-A",
+                        sortPriceLowHigh: "Price Low to High",
+                        sortPriceHighLow: "Price High to Low",
+                        sortAvailableFirst: "Available First",
                     },
 
                     ta: {
@@ -2071,6 +2166,13 @@
                         resultsFound: "முடிவுகள் கிடைத்தன",
                         showAll: "அனைத்தையும் காட்டு",
                         categoriesMenu: "வகைகள்",
+                        sortBy: "வரிசைப்படுத்து:",
+                        sortDefault: "இயல்பு",
+                        sortNameAZ: "பெயர் அ-ஹ",
+                        sortNameZA: "பெயர் ஹ-அ",
+                        sortPriceLowHigh: "விலை குறைவு-அதிகம்",
+                        sortPriceHighLow: "விலை அதிகம்-குறைவு",
+                        sortAvailableFirst: "கிடைக்கும் முதலில்",
                     },
                 },
             };
@@ -2105,6 +2207,7 @@
             let quantities = {};
             let searchQuery = "";
             let currentBudgetProductId = "";
+            let currentSortOrder = "default";
 
             let filteredProducts = [];
 
@@ -2385,16 +2488,51 @@
                 const texts = config.localization[currentLanguage];
                 let allProducts = [];
 
-                // Collect all products from all categories
-                Object.keys(config.products).forEach((category) => {
-                    config.products[category].forEach((product, index) => {
-                        allProducts.push({
-                            ...product,
-                            category: category,
-                            originalIndex: index,
+                // Check if global product order exists
+                if (
+                    config.globalProductOrder &&
+                    Array.isArray(config.globalProductOrder)
+                ) {
+                    // Use global product order
+                    config.globalProductOrder.forEach(
+                        (orderedProduct, globalIndex) => {
+                            const categoryProducts =
+                                config.products[orderedProduct.categoryKey];
+                            if (categoryProducts) {
+                                const product = categoryProducts.find(
+                                    (p) => p.id === orderedProduct.id,
+                                );
+                                if (product) {
+                                    allProducts.push({
+                                        ...product,
+                                        category: orderedProduct.categoryKey,
+                                        originalIndex: globalIndex,
+                                        globalOrder: globalIndex,
+                                    });
+                                }
+                            }
+                        },
+                    );
+                } else {
+                    // Fallback to category-based ordering
+                    Object.keys(config.products).forEach((category) => {
+                        config.products[category].forEach((product, index) => {
+                            allProducts.push({
+                                ...product,
+                                category: category,
+                                originalIndex: index,
+                            });
                         });
                     });
-                });
+                }
+
+                // Apply sorting only if not using global order
+                if (
+                    !config.globalProductOrder ||
+                    !Array.isArray(config.globalProductOrder)
+                ) {
+                    allProducts = sortProducts(allProducts);
+                }
 
                 let html = `
                 <div class="category-section active fade-in">
@@ -2454,7 +2592,7 @@
 
                 const categoryContent =
                     document.getElementById("categoryContent");
-                const products = config.products[category];
+                let products = config.products[category];
                 const texts = config.localization[currentLanguage];
 
                 if (!products) {
@@ -2463,14 +2601,25 @@
                     return;
                 }
 
+                // Convert products to proper format and apply sorting
+                const productsWithCategory = products.map((product, index) => ({
+                    ...product,
+                    category: category,
+                    originalIndex: index,
+                }));
+
+                const sortedProducts = sortProducts(productsWithCategory);
+
                 let html = `
                 <div class="category-section active fade-in">
                     <h3 class="category-title">${texts[category]}</h3>
                     <div class="products">
             `;
 
-                products.forEach((product, index) => {
-                    const productId = product.id || `${category}_${index}`;
+                sortedProducts.forEach((product) => {
+                    const productId =
+                        product.id ||
+                        `${product.category}_${product.originalIndex}`;
                     const quantity = quantities[productId] || 0;
                     const productName =
                         product.name[currentLanguage] || product.name.en;
@@ -2522,6 +2671,15 @@
                             name: product.name,
                             price: calculateDisplayPrice(product),
                             unit: product.displayUnit || product.unit,
+                            unitValue:
+                                product.displayUnitValue ||
+                                product.unitValue ||
+                                1,
+                            displayUnit: product.displayUnit || product.unit,
+                            displayUnitValue:
+                                product.displayUnitValue ||
+                                product.unitValue ||
+                                1,
                             quantity: quantities[productId],
                             category:
                                 product.category ||
@@ -2808,10 +2966,10 @@
 
             // Helper function to format unit display for WhatsApp messages
             function formatUnitDisplay(value, unit) {
-                if (!value || !unit) return '';
-                
+                if (!value || !unit) return "";
+
                 // Handle conversion from grams to kg if needed
-                if (unit === 'Grams' && value >= 1000) {
+                if (unit === "Grams" && value >= 1000) {
                     const kg = Math.floor(value / 1000);
                     const remainingGrams = value % 1000;
                     if (remainingGrams === 0) {
@@ -2820,21 +2978,21 @@
                         return `${kg}kg ${remainingGrams}g`;
                     }
                 }
-                
+
                 // Handle other units
-                switch(unit) {
-                    case 'Kg':
+                switch (unit) {
+                    case "Kg":
                         return `${value}kg`;
-                    case 'Grams':
+                    case "Grams":
                         return `${value}g`;
-                    case 'Litre':
+                    case "Litre":
                         return `${value}L`;
-                    case 'Pcs':
+                    case "Pcs":
                         return `${value} pcs`;
-                    case 'Bunch':
-                        return `${value} bunch${value > 1 ? 'es' : ''}`;
-                    case 'Box':
-                        return `${value} box${value > 1 ? 'es' : ''}`;
+                    case "Bunch":
+                        return `${value} bunch${value > 1 ? "es" : ""}`;
+                    case "Box":
+                        return `${value} box${value > 1 ? "es" : ""}`;
                     default:
                         return `${value} ${unit.toLowerCase()}`;
                 }
@@ -2852,7 +3010,14 @@
                     return;
                 }
 
-                let message = "New Order from Vs Vegetables:\n\n";
+                // Get current date in a readable format
+                const currentDate = new Date().toLocaleDateString("en-IN", {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                });
+
+                let message = `New Order\nDate: ${currentDate}\n\n`;
 
                 let sno = 1;
                 Object.keys(cart).forEach((productId) => {
@@ -2865,42 +3030,77 @@
                             ? item.name[currentLanguage] || item.name.en
                             : item.name;
 
-                    if (item.isCombo && window.comboDetails && window.comboDetails[productId]) {
+                    if (
+                        item.isCombo &&
+                        window.comboDetails &&
+                        window.comboDetails[productId]
+                    ) {
                         // Handle combo items
                         message += `${sno}. ${productName} (Combo): ${item.quantity} × ₹${item.price} = ₹${itemTotal}\n`;
-                        
+
                         // Show combo components from stored comboDetails
                         const comboDetail = window.comboDetails[productId];
                         if (comboDetail.items) {
-                            Object.keys(comboDetail.items).forEach((itemKey) => {
-                                const comboItem = comboDetail.items[itemKey];
-                                
-                                // Skip the main item, only show combo components
-                                if (itemKey !== 'main' && itemKey.startsWith('combo_')) {
-                                    let unitDisplay = '';
-                                    
-                                    // Calculate total unit for this combo item
-                                    if (comboItem.unitValue && comboItem.unit) {
-                                        const totalUnitValue = comboItem.unitValue * item.quantity;
-                                        unitDisplay = formatUnitDisplay(totalUnitValue, comboItem.unit);
-                                    } else if (comboItem.quantity) {
-                                        unitDisplay = `${comboItem.quantity * item.quantity} pcs`;
+                            Object.keys(comboDetail.items).forEach(
+                                (itemKey) => {
+                                    const comboItem =
+                                        comboDetail.items[itemKey];
+
+                                    // Skip the main item, only show combo components
+                                    if (
+                                        itemKey !== "main" &&
+                                        itemKey.startsWith("combo_")
+                                    ) {
+                                        let unitDisplay = "";
+
+                                        // Calculate total unit for this combo item
+                                        if (
+                                            comboItem.unitValue &&
+                                            comboItem.unit
+                                        ) {
+                                            const totalUnitValue =
+                                                comboItem.unitValue *
+                                                item.quantity;
+                                            unitDisplay = formatUnitDisplay(
+                                                totalUnitValue,
+                                                comboItem.unit,
+                                            );
+                                        } else if (comboItem.quantity) {
+                                            unitDisplay = `${comboItem.quantity * item.quantity} pcs`;
+                                        }
+
+                                        // Show price for individual combo item
+                                        const comboItemPrice =
+                                            comboItem.price * item.quantity;
+                                        message += `   • ${comboItem.name}: ${unitDisplay} - ₹${comboItemPrice}\n`;
                                     }
-                                    
-                                    // Show price for individual combo item
-                                    const comboItemPrice = comboItem.price * item.quantity;
-                                    message += `   • ${comboItem.name}: ${unitDisplay} - ₹${comboItemPrice}\n`;
-                                }
-                            });
+                                },
+                            );
                         }
                     } else {
                         // Handle regular items
-                        let unitDisplay = '';
-                        if (item.displayUnitValue) {
-                            const totalUnitValue = item.displayUnitValue * item.quantity;
-                            unitDisplay = formatUnitDisplay(totalUnitValue, item.displayUnit || item.unit);
-                            message += `${sno}. ${productName}: ${unitDisplay} = ₹${itemTotal}\n`;
+                        let unitDisplay = "";
+                        if (item.displayUnitValue && item.displayUnit) {
+                            const totalUnitValue =
+                                item.displayUnitValue * item.quantity;
+                            unitDisplay = formatUnitDisplay(
+                                totalUnitValue,
+                                item.displayUnit,
+                            );
+                            message += `${sno}. ${productName}: ${unitDisplay} × ₹${item.price} = ₹${itemTotal}\n`;
+                        } else if (item.unitValue && item.unit) {
+                            const totalUnitValue =
+                                item.unitValue * item.quantity;
+                            unitDisplay = formatUnitDisplay(
+                                totalUnitValue,
+                                item.unit,
+                            );
+                            message += `${sno}. ${productName}: ${unitDisplay} × ₹${item.price} = ₹${itemTotal}\n`;
+                        } else if (item.unit) {
+                            // Fallback: show quantity with unit
+                            message += `${sno}. ${productName}: ${item.quantity}${item.unit} × ₹${item.price} = ₹${itemTotal}\n`;
                         } else {
+                            // Last fallback: just quantity without units
                             message += `${sno}. ${productName}: ${item.quantity} × ₹${item.price} = ₹${itemTotal}\n`;
                         }
                     }
@@ -2919,6 +3119,88 @@
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
                 window.open(whatsappUrl, "_blank");
+            }
+
+            // Sort functionality
+            function handleSortChange() {
+                const sortSelect = document.getElementById("sortSelect");
+                currentSortOrder = sortSelect.value;
+
+                // Re-render products with new sort order
+                if (searchQuery) {
+                    // If searching, re-run the search with new sort order
+                    performSearch();
+                } else {
+                    // If not searching, re-render current category
+                    if (currentCategory === "all") {
+                        renderAllProducts();
+                    } else {
+                        renderCategory(currentCategory);
+                    }
+                }
+            }
+
+            function sortProducts(products) {
+                if (!products || !Array.isArray(products)) return products;
+
+                const sortedProducts = [...products]; // Create a copy to avoid modifying original
+
+                switch (currentSortOrder) {
+                    case "name-asc":
+                        return sortedProducts.sort((a, b) => {
+                            const nameA = (
+                                a.name[currentLanguage] ||
+                                a.name.en ||
+                                ""
+                            ).toLowerCase();
+                            const nameB = (
+                                b.name[currentLanguage] ||
+                                b.name.en ||
+                                ""
+                            ).toLowerCase();
+                            return nameA.localeCompare(nameB);
+                        });
+
+                    case "name-desc":
+                        return sortedProducts.sort((a, b) => {
+                            const nameA = (
+                                a.name[currentLanguage] ||
+                                a.name.en ||
+                                ""
+                            ).toLowerCase();
+                            const nameB = (
+                                b.name[currentLanguage] ||
+                                b.name.en ||
+                                ""
+                            ).toLowerCase();
+                            return nameB.localeCompare(nameA);
+                        });
+
+                    case "price-asc":
+                        return sortedProducts.sort((a, b) => {
+                            const priceA = parseFloat(a.price) || 0;
+                            const priceB = parseFloat(b.price) || 0;
+                            return priceA - priceB;
+                        });
+
+                    case "price-desc":
+                        return sortedProducts.sort((a, b) => {
+                            const priceA = parseFloat(a.price) || 0;
+                            const priceB = parseFloat(b.price) || 0;
+                            return priceB - priceA;
+                        });
+
+                    case "available-first":
+                        return sortedProducts.sort((a, b) => {
+                            const availableA = a.available !== false ? 1 : 0;
+                            const availableB = b.available !== false ? 1 : 0;
+                            return availableB - availableA;
+                        });
+
+                    case "default":
+                    default:
+                        return sortedProducts; // Return in original order
+                }
             }
 
             // Search and Filter Functionality
@@ -3007,15 +3289,45 @@
 
             function getAllProductsArray() {
                 const allProducts = [];
-                Object.keys(config.products).forEach((category) => {
-                    config.products[category].forEach((product, index) => {
-                        allProducts.push({
-                            ...product,
-                            category: category,
-                            originalIndex: index,
+
+                // Check if global product order exists
+                if (
+                    config.globalProductOrder &&
+                    Array.isArray(config.globalProductOrder)
+                ) {
+                    // Use global product order
+                    config.globalProductOrder.forEach(
+                        (orderedProduct, globalIndex) => {
+                            const categoryProducts =
+                                config.products[orderedProduct.categoryKey];
+                            if (categoryProducts) {
+                                const product = categoryProducts.find(
+                                    (p) => p.id === orderedProduct.id,
+                                );
+                                if (product) {
+                                    allProducts.push({
+                                        ...product,
+                                        category: orderedProduct.categoryKey,
+                                        originalIndex: globalIndex,
+                                        globalOrder: globalIndex,
+                                    });
+                                }
+                            }
+                        },
+                    );
+                } else {
+                    // Fallback to category-based ordering
+                    Object.keys(config.products).forEach((category) => {
+                        config.products[category].forEach((product, index) => {
+                            allProducts.push({
+                                ...product,
+                                category: category,
+                                originalIndex: index,
+                            });
                         });
                     });
-                });
+                }
+
                 return allProducts;
             }
 
@@ -3041,6 +3353,9 @@
                     return;
                 }
 
+                // Apply sorting to search results
+                const sortedResults = sortProducts(results);
+
                 // Render filtered products
                 let html = `
                 <div class="category-section active fade-in">
@@ -3048,7 +3363,7 @@
                     <div class="products">
             `;
 
-                results.forEach((product) => {
+                sortedResults.forEach((product) => {
                     const productId =
                         product.id ||
                         `${product.category}_${product.originalIndex}`;
@@ -3315,11 +3630,10 @@
                 Object.keys(comboItems).forEach((key) => {
                     if (key !== "main") {
                         const item = comboItems[key];
-					    console.log(item);
                         html += `
                         <div class="combo-item-row">
                             <span>${item.name}</span>
-                            <input type="number" class="combo-price-input" value="${item.quantity}" 
+                            <input type="number" class="combo-price-input" value="${item.price}" 
                                    min="5" onchange="updateComboPrice('${key}', this.value)">
                         </div>
                     `;
@@ -3403,6 +3717,11 @@
                     name: product.name,
                     price: total,
                     unit: product.displayUnit || product.unit,
+                    unitValue:
+                        product.displayUnitValue || product.unitValue || 1,
+                    displayUnit: product.displayUnit || product.unit,
+                    displayUnitValue:
+                        product.displayUnitValue || product.unitValue || 1,
                     quantity: quantities[currentComboProductId],
                     category: "combo",
                     originalProduct:
@@ -3456,6 +3775,11 @@
                         name: product.name,
                         price: amount,
                         unit: product.displayUnit || product.unit,
+                        unitValue:
+                            product.displayUnitValue || product.unitValue || 1,
+                        displayUnit: product.displayUnit || product.unit,
+                        displayUnitValue:
+                            product.displayUnitValue || product.unitValue || 1,
                         quantity: quantities[budgetProductId],
                         category: "budget",
                         originalProduct:
