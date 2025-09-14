@@ -3087,7 +3087,7 @@
                                 totalUnitValue,
                                 item.displayUnit,
                             );
-                            message += `${sno}. ${productName}: ${unitDisplay} × ₹${item.price} = ₹${itemTotal}\n`;
+						message += `${sno}. ${productName}: ${unitDisplay} - ${item.quantity} × ₹${item.price} = ₹${itemTotal}\n`;
                         } else if (item.unitValue && item.unit) {
                             const totalUnitValue =
                                 item.unitValue * item.quantity;
@@ -3095,13 +3095,13 @@
                                 totalUnitValue,
                                 item.unit,
                             );
-                            message += `${sno}. ${productName}: ${unitDisplay} × ₹${item.price} = ₹${itemTotal}\n`;
+						message += `${sno}. ${productName}: ${unitDisplay} - ${item.quantity} × ₹${item.price} = ₹${itemTotal}\n`;
                         } else if (item.unit) {
                             // Fallback: show quantity with unit
-                            message += `${sno}. ${productName}: ${item.quantity}${item.unit} × ₹${item.price} = ₹${itemTotal}\n`;
+						message += `${sno}. ${productName}: ${item.quantity}${item.unit}i - ${item.quantity} × ₹${item.price} = ₹${itemTotal}\n`;
                         } else {
                             // Last fallback: just quantity without units
-                            message += `${sno}. ${productName}: ${item.quantity} × ₹${item.price} = ₹${itemTotal}\n`;
+                            message += `${sno}. ${productName}: ${item.quantity} - ₹${item.price} = ₹${itemTotal}\n`;
                         }
                     }
                     sno++;
