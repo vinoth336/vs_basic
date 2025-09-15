@@ -62,6 +62,15 @@
       "icon": "",
       "order": 4,
       "visible": true
+    },
+    "mushroom": {
+      "name": {
+        "en": "Mushroom",
+        "ta": "காளான்"
+      },
+      "icon": "",
+      "order": 2,
+      "visible": true
     }
   },
   "products": {
@@ -223,6 +232,29 @@
           10,
           15
         ],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "mushroom",
+        "name": {
+          "en": "Mushroom",
+          "ta": "காளான்"
+        },
+        "price": 48,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 48,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/button_mushroom.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       }
@@ -813,7 +845,8 @@
         "isCombo": false,
         "comboMinimum": 0
       }
-    ]
+    ],
+    "mushroom": []
   },
   "localization": {
     "en": {
