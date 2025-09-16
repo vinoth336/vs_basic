@@ -234,29 +234,6 @@
         ],
         "isCombo": false,
         "comboMinimum": 0
-      },
-      {
-        "id": "mushroom",
-        "name": {
-          "en": "Mushroom",
-          "ta": "காளான்"
-        },
-        "price": 48,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 48,
-        "displayUnit": "Pcs",
-        "unit": "Pcs",
-        "icon": "📦",
-        "images": [
-          "https://thevsv.in/attached_assets/button_mushroom.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [],
-        "isCombo": false,
-        "comboMinimum": 0
       }
     ],
     "country": [
@@ -796,6 +773,29 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "amla",
+        "name": {
+          "en": "Amla",
+          "ta": "நெல்லிக்காய்"
+        },
+        "price": 70,
+        "unitValue": 70,
+        "displayUnitValue": 250,
+        "displayAmount": 1,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/nellikkai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "egg": [
@@ -846,7 +846,31 @@
         "comboMinimum": 0
       }
     ],
-    "mushroom": []
+    "mushroom": [
+      {
+        "id": "mushroom",
+        "name": {
+          "en": "Mushroom",
+          "ta": "காளான்"
+        },
+        "price": 48,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 48,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/button_mushroom.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      }
+    ]
   },
   "localization": {
     "en": {
