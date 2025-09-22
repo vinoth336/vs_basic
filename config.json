@@ -804,7 +804,7 @@
           "ta": "நெல்லிக்காய்"
         },
         "price": 70,
-        "unitValue": 70,
+        "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 18,
         "displayUnit": "Grams",
@@ -836,7 +836,7 @@
         "unit": "Pcs",
         "icon": "📦",
         "images": [
-          "https://thevsv.in//attached_assets/muttai.jpg"
+          "https://thevsv.in/attached_assets/muttai.jpg"
         ],
         "available": true,
         "tags": [],
@@ -859,7 +859,7 @@
         "unit": "Pcs",
         "icon": "📦",
         "images": [
-          "http://localhost/vsv/attached_assets/nattu_kozhi_muttai.jpg"
+          "https://thevss.in/attached_assets/nattu_kozhi_muttai.jpg"
         ],
         "available": false,
         "tags": [],
