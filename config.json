@@ -234,6 +234,29 @@
         ],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "mushroom",
+        "name": {
+          "en": "Mushroom",
+          "ta": "காளான்"
+        },
+        "price": 48,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 48,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/button_mushroom.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "country": [
@@ -243,7 +266,7 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 35,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 9,
@@ -348,7 +371,7 @@
           "en": "DrumStick",
           "ta": "முருங்கைக்காய்"
         },
-        "price": 10,
+        "price": 15,
         "unit": "Bunch",
         "icon": "🥒",
         "images": [
@@ -365,7 +388,7 @@
           "en": "Green Chilli",
           "ta": "மிளகாய்"
         },
-        "price": 70,
+        "price": 75,
         "unitValue": 1,
         "displayUnitValue": 100,
         "displayAmount": 7,
@@ -392,7 +415,7 @@
           "en": "Radish",
           "ta": "முள்ளங்கி"
         },
-        "price": 30,
+        "price": 35,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 8,
@@ -419,7 +442,7 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 40,
+        "price": 25,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 10,
@@ -473,7 +496,7 @@
           "en": "Broad Beans",
           "ta": "அவரைக்காய்"
         },
-        "price": 50,
+        "price": 85,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 13,
@@ -500,7 +523,7 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 25,
+        "price": 30,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 23,
@@ -629,7 +652,7 @@
           "en": "Coconut",
           "ta": "தேங்காய்"
         },
-        "price": 75,
+        "price": 80,
         "unit": "Kg",
         "icon": "🥥",
         "images": [
@@ -783,7 +806,7 @@
         "price": 70,
         "unitValue": 70,
         "displayUnitValue": 250,
-        "displayAmount": 1,
+        "displayAmount": 18,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -838,7 +861,7 @@
         "images": [
           "http://localhost/vsv/attached_assets/nattu_kozhi_muttai.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
@@ -846,31 +869,7 @@
         "comboMinimum": 0
       }
     ],
-    "mushroom": [
-      {
-        "id": "mushroom",
-        "name": {
-          "en": "Mushroom",
-          "ta": "காளான்"
-        },
-        "price": 48,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 48,
-        "displayUnit": "Pcs",
-        "unit": "Pcs",
-        "icon": "📦",
-        "images": [
-          "https://thevsv.in/attached_assets/button_mushroom.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [],
-        "isCombo": false,
-        "comboMinimum": 0
-      }
-    ]
+    "mushroom": []
   },
   "localization": {
     "en": {
@@ -944,12 +943,16 @@
   },
   "globalProductOrder": [
     {
-      "id": "big-onions",
-      "categoryKey": "onions"
+      "id": "mushroom",
+      "categoryKey": "ooty"
     },
     {
       "id": "tomatto",
       "categoryKey": "country"
+    },
+    {
+      "id": "big-onions",
+      "categoryKey": "onions"
     },
     {
       "id": "fresh-carrots",
@@ -1046,6 +1049,22 @@
     {
       "id": "baby-corn",
       "categoryKey": "uncategorized"
+    },
+    {
+      "id": "banana-flower",
+      "categoryKey": "country"
+    },
+    {
+      "id": "amla",
+      "categoryKey": "uncategorized"
+    },
+    {
+      "id": "egg",
+      "categoryKey": "egg"
+    },
+    {
+      "id": "country-chicken-egg",
+      "categoryKey": "egg"
     }
   ]
 }
