@@ -266,7 +266,7 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 40,
+        "price": 35,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 9,
@@ -442,7 +442,7 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 25,
+        "price": 35,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 10,
@@ -469,7 +469,7 @@
           "en": "GooseBerry",
           "ta": "கோவக்காய்"
         },
-        "price": 50,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 13,
@@ -556,9 +556,9 @@
         "unit": "Pcs",
         "icon": "📦",
         "images": [
-          "https://thevsv.in/attached_assets/baby_corn.jpg"
+          "https://thevsv.in/attached_assets/vazhai_poo.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
@@ -615,7 +615,7 @@
           "en": "Coriander",
           "ta": "கொத்தமல்லி"
         },
-        "price": 15,
+        "price": 20,
         "unit": "Bunch",
         "icon": "🌿",
         "images": [
@@ -709,7 +709,7 @@
         "images": [
           "https://thevsv.in/attached_assets/Cauliflower.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
@@ -861,7 +861,7 @@
         "images": [
           "https://thevss.in/attached_assets/nattu_kozhi_muttai.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
