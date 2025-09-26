@@ -826,7 +826,7 @@
         "price": 100,
         "unitValue": 100,
         "displayUnitValue": 1,
-        "displayAmount": 1,
+        "displayAmount": 100,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
