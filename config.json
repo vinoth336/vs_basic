@@ -824,7 +824,7 @@
           "ta": "நாட்டு மாட்டுப் பன்னீர்"
         },
         "price": 100,
-        "unitValue": 100,
+        "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 100,
         "displayUnit": "Pcs",
