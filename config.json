@@ -266,10 +266,10 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 35,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 9,
+        "displayAmount": 10,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🌶️",
@@ -279,10 +279,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          15
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -819,6 +816,31 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "country-milk-paneer",
+        "name": {
+          "en": "Country Milk Paneer",
+          "ta": "நாட்டு மாட்டுப் பன்னீர்"
+        },
+        "price": 100,
+        "unitValue": 100,
+        "displayUnitValue": 1,
+        "displayAmount": 1,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/paneer.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "new-arrival"
+        ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "egg": [
@@ -943,8 +965,8 @@
   },
   "globalProductOrder": [
     {
-      "id": "mushroom",
-      "categoryKey": "ooty"
+      "id": "country-milk-paneer",
+      "categoryKey": "uncategorized"
     },
     {
       "id": "tomatto",
@@ -953,6 +975,10 @@
     {
       "id": "big-onions",
       "categoryKey": "onions"
+    },
+    {
+      "id": "mushroom",
+      "categoryKey": "ooty"
     },
     {
       "id": "fresh-carrots",
