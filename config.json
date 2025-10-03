@@ -546,7 +546,7 @@
         "images": [
           "https://thevsv.in/attached_assets/vazhai_poo.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
@@ -769,7 +769,7 @@
         "images": [
           "https://thevsv.in/attached_assets/Cauliflower.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
