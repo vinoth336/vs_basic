@@ -161,10 +161,10 @@
           "en": "Potato",
           "ta": "Ooty உருளைக் கிழங்கு"
         },
-        "price": 55,
+        "price": 52,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 14,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥔",
@@ -174,11 +174,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          13,
-          18,
-          25
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -302,10 +298,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          15
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -523,7 +516,7 @@
         "price": 30,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 23,
+        "displayAmount": 30,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
@@ -532,10 +525,8 @@
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          15
-        ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -559,6 +550,78 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "ash-gourd",
+        "name": {
+          "en": "Ash Gourd",
+          "ta": "நீர்ப் பூசணி"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/neerpusani.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "pumpkin",
+        "name": {
+          "en": "Pumpkin",
+          "ta": "பூசணிக்காய்"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/parangikai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "elephant-foot-yam",
+        "name": {
+          "en": "Elephant Foot Yam",
+          "ta": "சேனை கிழங்கு"
+        },
+	"price": 50,
+        "unitValue": 1,
+        "displayUnitValue": 250,
+        "displayAmount": 13,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/sennaikilangu.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          30,
+          40
+        ],
         "isCombo": false,
         "comboMinimum": 0
       }
@@ -672,7 +735,7 @@
           "en": "Curry Leaves",
           "ta": "கறிவேப்பிலை"
         },
-        "price": 10,
+        "price": 15,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 10,
@@ -748,7 +811,7 @@
           "en": "Mint Leaves",
           "ta": "புதினா"
         },
-        "price": 15,
+        "price": 20,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 15,
@@ -862,8 +925,14 @@
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          30,
+          60,
+          90,
+          120,
+          180
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -881,7 +950,7 @@
         "unit": "Pcs",
         "icon": "📦",
         "images": [
-          "https://thevss.in/attached_assets/nattu_kozhi_muttai.jpg"
+          "https://thevsv.in/attached_assets/nattu_kozhi_muttai.jpg"
         ],
         "available": true,
         "tags": [],
@@ -967,6 +1036,18 @@
     {
       "id": "country-milk-paneer",
       "categoryKey": "uncategorized"
+    },
+    {
+      "id": "ash-gourd",
+      "categoryKey": "country"
+    },
+    {
+      "id": "pumpkin",
+      "categoryKey": "country"
+    },
+    {
+      "id": "elephant-foot-yam",
+      "categoryKey": "country"
     },
     {
       "id": "tomatto",
