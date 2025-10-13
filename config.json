@@ -81,10 +81,10 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 80,
+        "price": 65,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 20,
+        "displayAmount": 17,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥕",
@@ -134,10 +134,10 @@
           "en": "Capcium",
           "ta": "குடமிளகாய்"
         },
-        "price": 80,
+        "price": 90,
         "unitValue": 1,
         "displayUnitValue": 150,
-        "displayAmount": 12,
+        "displayAmount": 14,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🫑",
@@ -161,7 +161,7 @@
           "en": "Potato",
           "ta": "Ooty உருளைக் கிழங்கு"
         },
-        "price": 52,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 13,
@@ -174,7 +174,11 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          13,
+          18,
+          25
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -198,9 +202,9 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          13,
-          18,
-          25
+          10,
+          15,
+          20
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -211,10 +215,10 @@
           "en": "Cabbage",
           "ta": "முட்டைக்கோஸ்"
         },
-        "price": 40,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 350,
-        "displayAmount": 14,
+        "displayAmount": 18,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥬",
@@ -285,10 +289,10 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 40,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 10,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🍆",
@@ -298,7 +302,10 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          10,
+          15
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -334,10 +341,10 @@
           "en": "Ginger",
           "ta": "இஞ்சி"
         },
-        "price": 90,
+        "price": 120,
         "unitValue": 1,
         "displayUnitValue": 120,
-        "displayAmount": 11,
+        "displayAmount": 15,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🫚",
@@ -405,10 +412,10 @@
           "en": "Radish",
           "ta": "முள்ளங்கி"
         },
-        "price": 35,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 8,
+        "displayAmount": 10,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥬",
@@ -420,8 +427,8 @@
         "isBudgetPick": false,
         "budgetOptions": [
           10,
-          15,
-          20
+          20,
+          25
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -432,10 +439,10 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 35,
+        "price": 45,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 10,
+        "displayAmount": 12,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -447,8 +454,8 @@
         "isBudgetPick": false,
         "budgetOptions": [
           10,
-          15,
-          20
+          20,
+          25
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -486,10 +493,10 @@
           "en": "Broad Beans",
           "ta": "அவரைக்காய்"
         },
-        "price": 85,
+        "price": 65,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 17,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -501,8 +508,8 @@
         "isBudgetPick": false,
         "budgetOptions": [
           10,
-          15,
-          20
+          20,
+          25
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -592,7 +599,7 @@
         "images": [
           "https://thevsv.in/attached_assets/parangikai.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
@@ -605,10 +612,10 @@
           "en": "Elephant Foot Yam",
           "ta": "சேனை கிழங்கு"
         },
-	"price": 50,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 15,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -653,7 +660,11 @@
           "en": "Small Onions",
           "ta": "சின்ன வெங்காயம்"
         },
-        "price": 40,
+        "price": 45,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 45,
+        "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
         "images": [
@@ -663,48 +674,14 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          20,
-          25
-        ]
+          30,
+          40
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
-    "spinach": [
-      {
-        "id": "coriander",
-        "name": {
-          "en": "Coriander",
-          "ta": "கொத்தமல்லி"
-        },
-        "price": 20,
-        "unit": "Bunch",
-        "icon": "🌿",
-        "images": [
-          "https://thevsv.in/attached_assets/coriander.jpg"
-        ],
-        "available": true,
-        "tags": [
-          "combo"
-        ],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          5,
-          10,
-          15
-        ],
-        "combo": [
-          {
-            "categoryKey": "uncategorized",
-            "productId": "curry-leaves",
-            "quantity": 5
-          },
-          {
-            "categoryKey": "spinach",
-            "productId": "mint-leaves",
-            "quantity": 5
-          }
-        ]
-      }
-    ],
+    "spinach": [],
     "coconuts": [
       {
         "id": "fresh-coconut",
@@ -713,6 +690,10 @@
           "ta": "தேங்காய்"
         },
         "price": 80,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 80,
+        "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🥥",
         "images": [
@@ -722,10 +703,12 @@
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
-          20,
-          30,
-          35
-        ]
+          28,
+          32,
+          40
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "uncategorized": [
@@ -762,8 +745,11 @@
           "en": "Cauliflower",
           "ta": "காலிஃபிளவர்"
         },
-        "price": 40,
+        "price": 50,
         "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 50,
+        "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "🥬",
         "images": [
@@ -773,7 +759,8 @@
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
-          35
+          35,
+          45
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -904,6 +891,34 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "coriander",
+        "name": {
+          "en": "Coriander",
+          "ta": "கொத்தமல்லி"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "https://thevsv.in/attached_assets/coriander.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "combo"
+        ],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          10,
+          25
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "egg": [
@@ -952,7 +967,7 @@
         "images": [
           "https://thevsv.in/attached_assets/nattu_kozhi_muttai.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
