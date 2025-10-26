@@ -71,6 +71,15 @@
       "icon": "",
       "order": 2,
       "visible": true
+    },
+    "leaves": {
+      "name": {
+        "en": "Leaves",
+        "ta": "தாளிப்பு இலைகள்"
+      },
+      "icon": "🌿",
+      "order": 1000,
+      "visible": true
     }
   },
   "products": {
@@ -722,33 +731,6 @@
     ],
     "uncategorized": [
       {
-        "id": "curry-leaves",
-        "name": {
-          "en": "Curry Leaves",
-          "ta": "கறிவேப்பிலை"
-        },
-        "price": 15,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 10,
-        "displayUnit": "Bunch",
-        "unit": "Bunch",
-        "icon": "🌿",
-        "images": [
-          "https://thevsv.in/attached_assets/curry_leaves.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [
-          5,
-          10,
-          15
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
-      },
-      {
         "id": "cauliflower",
         "name": {
           "en": "Cauliflower",
@@ -797,35 +779,6 @@
           10,
           15,
           20
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
-      },
-      {
-        "id": "mint-leaves",
-        "name": {
-          "en": "Mint Leaves",
-          "ta": "புதினா"
-        },
-        "price": 20,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 15,
-        "displayUnit": "Bunch",
-        "unit": "Bunch",
-        "icon": "🌿",
-        "images": [
-          "https://thevsv.in/attached_assets/mint_leaves.jpg"
-        ],
-        "available": true,
-        "tags": [
-          "combo"
-        ],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          5,
-          10,
-          15
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -904,34 +857,6 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
-      },
-      {
-        "id": "coriander",
-        "name": {
-          "en": "Coriander",
-          "ta": "கொத்தமல்லி"
-        },
-        "price": 20,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 20,
-        "displayUnit": "Bunch",
-        "unit": "Bunch",
-        "icon": "🌿",
-        "images": [
-          "https://thevsv.in/attached_assets/coriander.jpg"
-        ],
-        "available": true,
-        "tags": [
-          "combo"
-        ],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          10,
-          25
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
       }
     ],
     "egg": [
@@ -971,8 +896,8 @@
           "ta": "நாட்டுக்கோழி முட்டை"
         },
         "price": 13,
-        "unitValue": 13,
-        "displayUnitValue": 13,
+        "unitValue": 1,
+        "displayUnitValue": 1,
         "displayAmount": 13,
         "displayUnit": "Pcs",
         "unit": "Pcs",
@@ -983,16 +908,97 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          28,
-          32,
-          40
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       }
     ],
-    "mushroom": []
+    "mushroom": [],
+    "leaves": [
+      {
+        "id": "curry-leaves",
+        "name": {
+          "en": "Curry Leaves",
+          "ta": "கறிவேப்பிலை"
+        },
+        "price": 15,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 15,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "https://thevsv.in/attached_assets/curry_leaves.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [
+          10,
+          25
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "mint-leaves",
+        "name": {
+          "en": "Mint Leaves",
+          "ta": "புதினா"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "https://thevsv.in/attached_assets/mint_leaves.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "combo"
+        ],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          5,
+          10,
+          15
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "coriander",
+        "name": {
+          "en": "Coriander",
+          "ta": "கொத்தமல்லி"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "https://thevsv.in/attached_assets/coriander.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "combo"
+        ],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          10,
+          25
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
+      }
+    ]
   },
   "localization": {
     "en": {
@@ -1066,6 +1072,14 @@
   },
   "globalProductOrder": [
     {
+      "id": "big-onions",
+      "categoryKey": "onions"
+    },
+    {
+      "id": "tomatto",
+      "categoryKey": "country"
+    },
+    {
       "id": "country-milk-paneer",
       "categoryKey": "uncategorized"
     },
@@ -1080,14 +1094,6 @@
     {
       "id": "elephant-foot-yam",
       "categoryKey": "country"
-    },
-    {
-      "id": "tomatto",
-      "categoryKey": "country"
-    },
-    {
-      "id": "big-onions",
-      "categoryKey": "onions"
     },
     {
       "id": "mushroom",
@@ -1162,16 +1168,8 @@
       "categoryKey": "onions"
     },
     {
-      "id": "coriander",
-      "categoryKey": "spinach"
-    },
-    {
       "id": "fresh-coconut",
       "categoryKey": "coconuts"
-    },
-    {
-      "id": "curry-leaves",
-      "categoryKey": "uncategorized"
     },
     {
       "id": "cauliflower",
@@ -1179,10 +1177,6 @@
     },
     {
       "id": "country-coriander",
-      "categoryKey": "uncategorized"
-    },
-    {
-      "id": "mint-leaves",
       "categoryKey": "uncategorized"
     },
     {
@@ -1204,6 +1198,18 @@
     {
       "id": "country-chicken-egg",
       "categoryKey": "egg"
+    },
+    {
+      "id": "curry-leaves",
+      "categoryKey": "leaves"
+    },
+    {
+      "id": "mint-leaves",
+      "categoryKey": "leaves"
+    },
+    {
+      "id": "coriander",
+      "categoryKey": "leaves"
     }
   ]
 }
