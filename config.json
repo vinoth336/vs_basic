@@ -81,10 +81,10 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 80,
+        "price": 70,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 20,
+        "displayAmount": 18,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥕",
@@ -520,10 +520,10 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 42,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 42,
+        "displayAmount": 40,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
@@ -643,7 +643,11 @@
           "en": "Big Onions",
           "ta": "பெரிய வெங்காயம்"
         },
-        "price": 26,
+        "price": 30,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 30,
+        "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
         "images": [
@@ -653,9 +657,11 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          20,
-          25
-        ]
+          15,
+          20
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       },
       {
         "id": "small-onions",
@@ -692,12 +698,12 @@
           "en": "Coconut",
           "ta": "தேங்காய்"
         },
-        "price": 77,
+        "price": 28,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 77,
-        "displayUnit": "Kg",
-        "unit": "Kg",
+        "displayAmount": 28,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
         "icon": "🥥",
         "images": [
           "https://thevsv.in/attached_assets/coconut.jpg"
@@ -853,10 +859,10 @@
           "en": "Amla",
           "ta": "நெல்லிக்காய்"
         },
-        "price": 70,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 18,
+        "displayAmount": 20,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -964,20 +970,24 @@
           "en": "Country Chicken Egg",
           "ta": "நாட்டுக்கோழி முட்டை"
         },
-        "price": 12,
-        "unitValue": 12,
-        "displayUnitValue": 12,
-        "displayAmount": 12,
+        "price": 13,
+        "unitValue": 13,
+        "displayUnitValue": 13,
+        "displayAmount": 13,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
         "images": [
           "https://thevsv.in/attached_assets/nattu_kozhi_muttai.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          28,
+          32,
+          40
+        ],
         "isCombo": false,
         "comboMinimum": 0
       }
