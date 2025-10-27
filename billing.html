@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Vegetables - Billing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .bill-header {
+            text-align: center;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .bill-header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: repeating-linear-gradient(
+                to right,
+                #000 0px,
+                #000 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            margin-top: 10px;
+        }
+
+        .bill-header h1 {
+            color: #000;
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .bill-header p {
+            color: #333;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .bill-header .phone {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .bill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 8px 0;
+            font-size: 12px;
+            position: relative;
+        }
+
+        .bill-info::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: repeating-linear-gradient(
+                to right,
+                #999 0px,
+                #999 2px,
+                transparent 2px,
+                transparent 4px
+            );
+        }
+
+        .bill-info div {
+            font-size: 12px;
+        }
+
+        .bill-info strong {
+            color: #000;
+        }
+
+        .product-search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #0c831f;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #0c831f;
+            border-top: none;
+            max-height: 400px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .dropdown.active {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 12px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item.selected {
+            background: #f0f9f1;
+        }
+
+        .dropdown-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .dropdown-item-info {
+            flex: 1;
+        }
+
+        .dropdown-item-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+            font-family: Arial, sans-serif;
+        }
+
+        .dropdown-item-price {
+            color: #0c831f;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+        .billing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+
+        .billing-table thead tr {
+            position: relative;
+        }
+
+        .billing-table thead tr::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: repeating-linear-gradient(
+                to right,
+                #000 0px,
+                #000 3px,
+                transparent 3px,
+                transparent 6px
+            );
+        }
+
+        .billing-table th {
+            background: transparent;
+            color: #000;
+            padding: 6px 4px;
+            text-align: left;
+            font-size: 11px;
+            font-weight: bold;
+            border: none;
+            vertical-align: bottom;
+        }
+
+        .billing-table th.sno {
+            width: 40px;
+            text-align: center;
+        }
+
+        .billing-table th.product {
+            width: 45%;
+        }
+
+        .billing-table th.qty {
+            width: 80px;
+            text-align: center;
+        }
+
+        .billing-table th.amount {
+            text-align: right;
+        }
+
+        .billing-table tbody tr {
+            position: relative;
+        }
+
+        .billing-table tbody tr::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: repeating-linear-gradient(
+                to right,
+                #ccc 0px,
+                #ccc 2px,
+                transparent 2px,
+                transparent 4px
+            );
+        }
+
+        .billing-table td {
+            padding: 8px 4px;
+            border: none;
+            vertical-align: top;
+        }
+
+        .billing-table td.sno {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .billing-table td.qty-cell {
+            text-align: center;
+        }
+
+        .billing-table td.amount-cell {
+            text-align: right;
+        }
+
+        .billing-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .product-name-cell {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .product-name-ta {
+            font-weight: bold;
+            color: #000;
+            display: block;
+        }
+
+        .product-price {
+            color: #666;
+            font-size: 10px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .qty-input, .amount-input {
+            width: 70px;
+            padding: 4px 6px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .item-total {
+            font-weight: bold;
+            color: #000;
+        }
+
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        .remove-btn:hover {
+            background: #c82333;
+        }
+
+        .totals-section {
+            margin-top: 15px;
+            padding: 12px 10px;
+            position: relative;
+        }
+
+        .totals-section::before,
+        .totals-section::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: repeating-linear-gradient(
+                to right,
+                #000 0px,
+                #000 3px,
+                transparent 3px,
+                transparent 6px
+            );
+        }
+
+        .totals-section::before {
+            top: 0;
+        }
+
+        .totals-section::after {
+            bottom: 0;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .total-row.item-count {
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+
+        .total-row.item-count::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: repeating-linear-gradient(
+                to right,
+                #666 0px,
+                #666 2px,
+                transparent 2px,
+                transparent 4px
+            );
+        }
+
+        .total-row.net-amount {
+            font-size: 16px;
+            color: #000;
+        }
+
+        .bill-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 15px;
+            position: relative;
+        }
+
+        .bill-footer::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 2px;
+            background: repeating-linear-gradient(
+                to right,
+                #999 0px,
+                #999 2px,
+                transparent 2px,
+                transparent 4px
+            );
+        }
+
+        .bill-footer h3 {
+            color: #000;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .bill-footer .gpay {
+            font-weight: bold;
+            color: #000;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-preview {
+            background: #0c831f;
+            color: white;
+        }
+
+        .btn-preview:hover {
+            background: #0a6d1a;
+        }
+
+        .btn-cancel {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-cancel:hover {
+            background: #5a6268;
+        }
+
+        .modal-actions .btn-cancel {
+            display: inline-block !important;
+        }
+
+        .btn-print {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-print:hover {
+            background: #0056b3;
+        }
+
+        .btn-clear {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-clear:hover {
+            background: #5a6268;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            font-weight: 600;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1FAD54;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-family: Arial, sans-serif;
+        }
+
+        .customer-info-section {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .customer-field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .customer-field label {
+            font-size: 13px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        .customer-field input {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 220px;
+            font-family: Arial, sans-serif;
+        }
+
+        .customer-field input:focus {
+            border-color: #0c831f;
+            outline: none;
+        }
+
+        .language-toggle {
+            margin-bottom: 15px;
+            text-align: right;
+        }
+
+        .language-toggle label {
+            font-size: 12px;
+            margin-right: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        .language-toggle select {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            max-width: 80mm;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-content .billing-table th:last-child,
+        .modal-content .billing-table td:last-child,
+        .modal-content .remove-btn {
+            display: none !important;
+        }
+
+        .modal-content .qty-value,
+        .modal-content .amount-value {
+            display: block !important;
+        }
+
+        .modal-content .qty-input,
+        .modal-content .amount-input {
+            display: none !important;
+        }
+
+        .modal-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .qty-value, .amount-value {
+            display: none;
+            font-weight: bold;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 5mm;
+                max-width: 80mm;
+                margin: 0;
+            }
+
+            .product-search-section,
+            .action-buttons,
+            .language-toggle {
+                display: none !important;
+            }
+
+            .remove-btn,
+            .qty-input,
+            .amount-input {
+                display: none !important;
+            }
+
+            .qty-value,
+            .amount-value {
+                display: block !important;
+            }
+
+            .billing-table th:last-child,
+            .billing-table td:last-child {
+                display: none !important;
+            }
+
+            .bill-header h1 {
+                font-size: 18px;
+            }
+
+            .bill-header p {
+                font-size: 10px;
+            }
+
+            .billing-table {
+                font-size: 10px;
+            }
+
+            .billing-table th {
+                font-size: 10px;
+            }
+
+            .product-name-cell {
+                font-size: 9px;
+            }
+
+            .product-price {
+                font-size: 8px;
+            }
+
+            .total-row {
+                font-size: 11px;
+            }
+
+            .total-row.net-amount {
+                font-size: 13px;
+            }
+
+            .bill-footer h3 {
+                font-size: 11px;
+            }
+
+            .bill-footer .gpay {
+                font-size: 10px;
+            }
+
+            .bill-info {
+                font-size: 10px;
+            }
+
+            @page {
+                size: 80mm auto;
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .bill-header h1 {
+                font-size: 20px;
+            }
+
+            .billing-table {
+                font-size: 11px;
+            }
+
+            .qty-input, .amount-input {
+                width: 60px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bill-header">
+            <h1>VS Vegetables</h1>
+            <p>Kamachi Amman Kovil, Karur - 639002</p>
+            <p class="phone">Ph - 8300813858</p>
+        </div>
+
+        <div class="bill-info">
+            <div>
+                <strong>Date:</strong> <span id="billDate"></span>
+            </div>
+            <div>
+                <strong>Time:</strong> <span id="billTime"></span>
+            </div>
+        </div>
+
+        <div class="customer-info-section">
+            <div class="customer-field">
+                <label for="customerName">Customer Name:</label>
+                <input 
+                    type="text" 
+                    id="customerName" 
+                    placeholder="Enter customer name..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="customer-field">
+                <label for="customerPhone">Phone Number:</label>
+                <input 
+                    type="tel" 
+                    id="customerPhone" 
+                    placeholder="+91 XXXXXXXXXX"
+                    autocomplete="off"
+                >
+            </div>
+        </div>
+
+        <div class="language-toggle">
+            <label for="langSelect">Language:</label>
+            <select id="langSelect" onchange="changeLanguage()">
+                <option value="ta">தமிழ்</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <div class="product-search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="productSearch" 
+                    placeholder="Search or select product..."
+                    autocomplete="off"
+                >
+                <div class="dropdown" id="productDropdown"></div>
+            </div>
+        </div>
+
+        <table class="billing-table">
+            <thead>
+                <tr>
+                    <th class="sno">S.No</th>
+                    <th class="product">Product Name<br>Our Price</th>
+                    <th class="qty">Qty</th>
+                    <th class="amount">Amount</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="billItems">
+                <tr class="empty-state">
+                    <td colspan="5">No items added yet. Search and select products above.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="totals-section">
+            <div class="total-row item-count">
+                <span>Item Count:</span>
+                <span id="itemCount">0</span>
+            </div>
+            <div class="total-row net-amount">
+                <span>Net Amount:</span>
+                <span id="netAmount">₹0.00</span>
+            </div>
+        </div>
+
+        <div class="bill-footer">
+            <h3>Thank you for choosing VS Vegetables</h3>
+            <p class="gpay">G-Pay: 8122484554, 9626265665</p>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-whatsapp" onclick="shareOnWhatsApp()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 5px;">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+                Share on WhatsApp
+            </button>
+            <button class="btn btn-preview" onclick="showPreviewModal()">👁️ Preview</button>
+            <button class="btn btn-print" onclick="printBill()">🖨️ Print Bill</button>
+            <button class="btn btn-clear" onclick="clearBill()">🗑️ Clear All</button>
+        </div>
+    </div>
+
+    <div class="modal" id="previewModal">
+        <div class="modal-content" id="previewContent">
+            <div class="bill-header">
+                <h1>VS Vegetables</h1>
+                <p>Kamachi Amman Kovil, Karur - 639002</p>
+                <p class="phone">Ph - 8300813858</p>
+            </div>
+
+            <div class="bill-info">
+                <div>
+                    <strong>Date:</strong> <span id="previewDate"></span>
+                </div>
+                <div>
+                    <strong>Time:</strong> <span id="previewTime"></span>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 15px; text-align: center; font-weight: bold; font-family: Arial, sans-serif;">
+                Customer: <span id="previewCustomerName">-</span>
+            </div>
+
+            <table class="billing-table">
+                <thead>
+                    <tr>
+                        <th class="sno">S.No</th>
+                        <th class="product">Product Name<br>Our Price</th>
+                        <th class="qty">Qty</th>
+                        <th class="amount">Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="previewBillItems">
+                </tbody>
+            </table>
+
+            <div class="totals-section">
+                <div class="total-row item-count">
+                    <span>Item Count:</span>
+                    <span id="previewItemCount">0</span>
+                </div>
+                <div class="total-row net-amount">
+                    <span>Net Amount:</span>
+                    <span id="previewNetAmount">₹0.00</span>
+                </div>
+            </div>
+
+            <div class="bill-footer">
+                <h3>Thank you for choosing VS Vegetables</h3>
+                <p class="gpay">G-Pay: 8122484554, 9626265665</p>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-print" onclick="printPreview()">🖨️ Print Bill</button>
+                <button class="btn btn-cancel" onclick="closePreviewModal()">← Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let config = null;
+        let allProducts = [];
+        let billItems = [];
+        let currentLanguage = 'ta';
+        let selectedDropdownIndex = -1;
+
+        async function loadConfig() {
+            try {
+                const response = await fetch('config.json');
+                config = await response.json();
+                loadAllProducts();
+            } catch (error) {
+                console.error('Error loading config:', error);
+            }
+        }
+
+        function loadAllProducts() {
+            allProducts = [];
+            
+            for (const [categoryKey, products] of Object.entries(config.products)) {
+                if (Array.isArray(products)) {
+                    products.forEach(product => {
+                        if (product.available !== false) {
+                            allProducts.push({
+                                ...product,
+                                categoryKey: categoryKey,
+                                categoryName: config.categories[categoryKey]?.name || { en: 'Other', ta: 'மற்றவை' }
+                            });
+                        }
+                    });
+                }
+            }
+        }
+
+        function updateDateTime() {
+            const now = new Date();
+            
+            const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+            document.getElementById('billDate').textContent = now.toLocaleDateString('en-IN', dateOptions);
+            
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            document.getElementById('billTime').textContent = now.toLocaleTimeString('en-IN', timeOptions);
+        }
+
+        const searchInput = document.getElementById('productSearch');
+        const dropdown = document.getElementById('productDropdown');
+
+        searchInput.addEventListener('focus', function() {
+            showAllProducts();
+        });
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            if (searchTerm === '') {
+                showAllProducts();
+            } else {
+                filterProducts(searchTerm);
+            }
+            selectedDropdownIndex = -1;
+        });
+
+        searchInput.addEventListener('keydown', function(e) {
+            if (!dropdown.classList.contains('active')) return;
+
+            const items = dropdown.querySelectorAll('.dropdown-item');
+            
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedDropdownIndex = Math.min(selectedDropdownIndex + 1, items.length - 1);
+                updateDropdownSelection(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedDropdownIndex = Math.max(selectedDropdownIndex - 1, -1);
+                updateDropdownSelection(items);
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedDropdownIndex >= 0 && items[selectedDropdownIndex]) {
+                    items[selectedDropdownIndex].click();
+                } else if (items.length > 0) {
+                    items[0].click();
+                }
+            }
+        });
+
+        function updateDropdownSelection(items) {
+            items.forEach((item, index) => {
+                if (index === selectedDropdownIndex) {
+                    item.classList.add('selected');
+                    item.scrollIntoView({ block: 'nearest' });
+                } else {
+                    item.classList.remove('selected');
+                }
+            });
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+                selectedDropdownIndex = -1;
+            }
+        });
+
+        function showAllProducts() {
+            renderDropdown(allProducts);
+        }
+
+        function filterProducts(searchTerm) {
+            const filtered = allProducts.filter(product => {
+                const nameEn = product.name.en.toLowerCase();
+                const nameTa = product.name.ta.toLowerCase();
+                return nameEn.includes(searchTerm) || nameTa.includes(searchTerm);
+            });
+            renderDropdown(filtered);
+        }
+
+        function renderDropdown(products) {
+            if (products.length === 0) {
+                dropdown.innerHTML = '<div class="dropdown-item">No products found</div>';
+                dropdown.classList.add('active');
+                return;
+            }
+
+            dropdown.innerHTML = products.map(product => {
+                const image = product.images && product.images[0] ? product.images[0] : 'attached_assets/stock_images/fresh_vegetables_mar_dc4363d9.jpg';
+                const price = product.price || 0;
+                const unit = product.unit || 'Kg';
+                
+                return `
+                    <div class="dropdown-item" onclick="addProduct('${product.id}', '${product.categoryKey}')">
+                        <img src="${image}" alt="${product.name.ta}" onerror="this.src='attached_assets/stock_images/fresh_vegetables_mar_dc4363d9.jpg'">
+                        <div class="dropdown-item-info">
+                            <div class="dropdown-item-name">${product.name.ta}</div>
+                        </div>
+                        <div class="dropdown-item-price">₹${price}/${unit}</div>
+                    </div>
+                `;
+            }).join('');
+
+            dropdown.classList.add('active');
+            selectedDropdownIndex = -1;
+        }
+
+        function addProduct(productId, categoryKey) {
+            const product = allProducts.find(p => p.id === productId && p.categoryKey === categoryKey);
+            if (!product) return;
+
+            const existingIndex = billItems.findIndex(item => item.id === productId && item.categoryKey === categoryKey);
+            let newItemIndex = -1;
+            
+            if (existingIndex >= 0) {
+                billItems[existingIndex].qty += 1;
+                billItems[existingIndex].amount = billItems[existingIndex].qty * billItems[existingIndex].rate;
+                newItemIndex = existingIndex;
+            } else {
+                billItems.push({
+                    id: product.id,
+                    categoryKey: product.categoryKey,
+                    nameEn: product.name.en,
+                    nameTa: product.name.ta,
+                    rate: product.price || 0,
+                    unit: product.unit || 'Kg',
+                    qty: 1,
+                    amount: product.price || 0
+                });
+                newItemIndex = billItems.length - 1;
+            }
+
+            searchInput.value = '';
+            dropdown.classList.remove('active');
+            selectedDropdownIndex = -1;
+            renderBillItems();
+
+            setTimeout(() => {
+                const qtyInputs = document.querySelectorAll('.qty-input');
+                if (qtyInputs[newItemIndex]) {
+                    qtyInputs[newItemIndex].focus();
+                    qtyInputs[newItemIndex].select();
+                }
+            }, 100);
+        }
+
+        function renderBillItems() {
+            const tbody = document.getElementById('billItems');
+            
+            if (billItems.length === 0) {
+                tbody.innerHTML = `
+                    <tr class="empty-state">
+                        <td colspan="5">No items added yet. Search and select products above.</td>
+                    </tr>
+                `;
+                updateTotals();
+                return;
+            }
+
+            tbody.innerHTML = billItems.map((item, index) => {
+                const sno = index + 1;
+                const itemTotal = item.amount;
+                const displayName = currentLanguage === 'ta' ? item.nameTa : item.nameEn;
+                
+                return `
+                    <tr>
+                        <td class="sno">${sno}</td>
+                        <td class="product-name-cell">
+                            <span class="product-name-ta">${displayName}</span>
+                            <span class="product-price">₹${item.rate.toFixed(2)}/${item.unit}</span>
+                        </td>
+                        <td class="qty-cell">
+                            <input 
+                                type="number" 
+                                class="qty-input" 
+                                value="${item.qty}" 
+                                min="0.01" 
+                                step="0.01"
+                                onchange="updateQty(${index}, this.value)"
+                            >
+                            <span class="qty-value">${item.qty}</span>
+                        </td>
+                        <td class="amount-cell">
+                            <input 
+                                type="number" 
+                                class="amount-input" 
+                                value="${item.amount.toFixed(2)}" 
+                                min="0"
+                                step="0.01"
+                                onchange="updateAmount(${index}, this.value)"
+                                onkeydown="handleAmountTab(event, ${index})"
+                            >
+                            <span class="amount-value">₹${itemTotal.toFixed(2)}</span>
+                        </td>
+                        <td>
+                            <button class="remove-btn" onclick="removeItem(${index})">×</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            updateTotals();
+        }
+
+        function handleAmountTab(event, currentIndex) {
+            if (event.key === 'Tab' && !event.shiftKey) {
+                event.preventDefault();
+                
+                const isLastRow = currentIndex === billItems.length - 1;
+                
+                if (isLastRow) {
+                    searchInput.focus();
+                } else {
+                    const nextQtyInput = document.querySelectorAll('.qty-input')[currentIndex + 1];
+                    if (nextQtyInput) {
+                        nextQtyInput.focus();
+                        nextQtyInput.select();
+                    }
+                }
+            }
+        }
+
+        function updateQty(index, value) {
+            const qty = parseFloat(value) || 0;
+            billItems[index].qty = qty;
+            billItems[index].amount = qty * billItems[index].rate;
+            renderBillItems();
+        }
+
+        function updateAmount(index, value) {
+            const amount = parseFloat(value) || 0;
+            billItems[index].amount = amount;
+            
+            if (amount > 0 && billItems[index].rate > 0) {
+                billItems[index].qty = amount / billItems[index].rate;
+            } else {
+                billItems[index].qty = 0;
+            }
+            
+            renderBillItems();
+        }
+
+        function removeItem(index) {
+            billItems.splice(index, 1);
+            renderBillItems();
+        }
+
+        function updateTotals() {
+            let netAmount = 0;
+            let itemCount = billItems.length;
+            
+            billItems.forEach(item => {
+                netAmount += item.amount;
+            });
+
+            document.getElementById('itemCount').textContent = itemCount;
+            document.getElementById('netAmount').textContent = `₹${netAmount.toFixed(2)}`;
+        }
+
+        function showPreviewModal() {
+            if (billItems.length === 0) {
+                alert('Please add items to the bill before previewing.');
+                return;
+            }
+
+            const customerName = document.getElementById('customerName').value || '-';
+            
+            document.getElementById('previewDate').textContent = document.getElementById('billDate').textContent;
+            document.getElementById('previewTime').textContent = document.getElementById('billTime').textContent;
+            document.getElementById('previewCustomerName').textContent = customerName;
+            
+            const previewTbody = document.getElementById('previewBillItems');
+            previewTbody.innerHTML = billItems.map((item, index) => {
+                const sno = index + 1;
+                const displayName = currentLanguage === 'ta' ? item.nameTa : item.nameEn;
+                
+                return `
+                    <tr>
+                        <td class="sno">${sno}</td>
+                        <td class="product-name-cell">
+                            <span class="product-name-ta">${displayName}</span>
+                            <span class="product-price">₹${item.rate.toFixed(2)}/${item.unit}</span>
+                        </td>
+                        <td class="qty-cell">
+                            <span class="qty-value">${item.qty}</span>
+                        </td>
+                        <td class="amount-cell">
+                            <span class="amount-value">₹${item.amount.toFixed(2)}</span>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            let netAmount = 0;
+            billItems.forEach(item => {
+                netAmount += item.amount;
+            });
+
+            document.getElementById('previewItemCount').textContent = billItems.length;
+            document.getElementById('previewNetAmount').textContent = `₹${netAmount.toFixed(2)}`;
+
+            document.getElementById('previewModal').classList.add('active');
+        }
+
+        function closePreviewModal() {
+            document.getElementById('previewModal').classList.remove('active');
+        }
+
+        function printPreview() {
+            const modalContent = document.getElementById('previewContent').cloneNode(true);
+            const modalActions = modalContent.querySelector('.modal-actions');
+            if (modalActions) {
+                modalActions.remove();
+            }
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write('<html><head><title>Bill - VS Vegetables</title>');
+            printWindow.document.write('<style>');
+            printWindow.document.write(`
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body { font-family: 'Courier New', monospace; padding: 10mm; max-width: 80mm; margin: 0 auto; }
+                .bill-header { text-align: center; padding-bottom: 10px; margin-bottom: 15px; position: relative; }
+                .bill-header::after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: repeating-linear-gradient(to right, #000 0px, #000 2px, transparent 2px, transparent 4px);
+                    margin-top: 10px;
+                }
+                .bill-header h1 { font-size: 18px; margin-bottom: 8px; font-weight: bold; }
+                .bill-header p { font-size: 10px; line-height: 1.5; }
+                .bill-info { display: flex; justify-content: space-between; margin-bottom: 15px; padding: 8px 0; font-size: 10px; position: relative; }
+                .bill-info::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: repeating-linear-gradient(to right, #999 0px, #999 2px, transparent 2px, transparent 4px);
+                }
+                .billing-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 10px; }
+                .billing-table thead tr { position: relative; }
+                .billing-table thead tr::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: repeating-linear-gradient(to right, #000 0px, #000 3px, transparent 3px, transparent 6px);
+                }
+                .billing-table th { background: transparent; padding: 6px 4px; text-align: left; font-size: 10px; font-weight: bold; border: none; vertical-align: bottom; }
+                .billing-table th.sno { width: 40px; text-align: center; }
+                .billing-table th.qty { text-align: center; }
+                .billing-table th.amount { text-align: right; }
+                .billing-table tbody tr { position: relative; }
+                .billing-table tbody tr::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: repeating-linear-gradient(to right, #ccc 0px, #ccc 2px, transparent 2px, transparent 4px);
+                }
+                .billing-table td { padding: 8px 4px; border: none; vertical-align: top; }
+                .billing-table td.sno { text-align: center; font-weight: bold; }
+                .billing-table td.qty-cell { text-align: center; }
+                .billing-table td.amount-cell { text-align: right; }
+                .product-name-cell { font-size: 9px; line-height: 1.5; }
+                .product-name-ta { font-weight: bold; display: block; }
+                .product-price { font-size: 8px; display: block; margin-top: 2px; color: #666; }
+                .totals-section { margin-top: 15px; padding: 12px 10px; position: relative; }
+                .totals-section::before, .totals-section::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: repeating-linear-gradient(to right, #000 0px, #000 3px, transparent 3px, transparent 6px);
+                }
+                .totals-section::before { top: 0; }
+                .totals-section::after { bottom: 0; }
+                .total-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 11px; font-weight: bold; }
+                .total-row.item-count { padding-bottom: 8px; margin-bottom: 8px; position: relative; }
+                .total-row.item-count::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: repeating-linear-gradient(to right, #666 0px, #666 2px, transparent 2px, transparent 4px);
+                }
+                .total-row.net-amount { font-size: 13px; }
+                .bill-footer { text-align: center; margin-top: 20px; padding-top: 15px; position: relative; }
+                .bill-footer::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: repeating-linear-gradient(to right, #999 0px, #999 2px, transparent 2px, transparent 4px);
+                }
+                .bill-footer h3 { font-size: 11px; margin-bottom: 10px; }
+                .bill-footer .gpay { font-weight: bold; font-size: 10px; }
+                @page { size: 80mm auto; margin: 0; }
+            `);
+            printWindow.document.write('</style></head><body>');
+            printWindow.document.write(modalContent.innerHTML);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            
+            setTimeout(() => {
+                printWindow.print();
+                printWindow.close();
+            }, 250);
+        }
+
+        function changeLanguage() {
+            currentLanguage = document.getElementById('langSelect').value;
+            renderBillItems();
+        }
+
+        function printBill() {
+            if (billItems.length === 0) {
+                alert('Please add items to the bill before printing.');
+                return;
+            }
+            window.print();
+        }
+
+        function clearBill() {
+            if (billItems.length === 0) return;
+            
+            if (confirm('Are you sure you want to clear all items?')) {
+                billItems = [];
+                renderBillItems();
+            }
+        }
+
+        function shareOnWhatsApp() {
+            if (billItems.length === 0) {
+                alert('Please add items to the bill before sharing.');
+                return;
+            }
+
+            const customerPhone = document.getElementById('customerPhone').value.trim();
+            if (!customerPhone) {
+                alert('Please enter customer phone number.');
+                document.getElementById('customerPhone').focus();
+                return;
+            }
+
+            let cleanPhone = customerPhone.replace(/[^0-9+]/g, '');
+            
+            if (!cleanPhone) {
+                alert('Please enter a valid phone number.');
+                document.getElementById('customerPhone').focus();
+                return;
+            }
+
+            cleanPhone = cleanPhone.replace(/^\+/, '');
+
+            const customerName = document.getElementById('customerName').value.trim() || 'Customer';
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+            const timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+            let message = `*VS Vegetables - Bill*\n`;
+            message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+            message += `📅 Date: ${dateStr}\n`;
+            message += `🕐 Time: ${timeStr}\n`;
+            message += `👤 Customer: ${customerName}\n\n`;
+            message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+            message += `*Items:*\n\n`;
+
+            billItems.forEach((item, index) => {
+                const displayName = currentLanguage === 'ta' ? item.nameTa : item.nameEn;
+                const sno = index + 1;
+                message += `${sno}. *${displayName}*\n`;
+                message += `   ₹${item.rate.toFixed(2)}/${item.unit} × ${item.qty} = ₹${item.amount.toFixed(2)}\n\n`;
+            });
+
+            let netAmount = 0;
+            billItems.forEach(item => {
+                netAmount += item.amount;
+            });
+
+            message += `━━━━━━━━━━━━━━━━━━━━\n`;
+            message += `📦 Total Items: ${billItems.length}\n`;
+            message += `💰 *Net Amount: ₹${netAmount.toFixed(2)}*\n`;
+            message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+            message += `Thank you for choosing VS Vegetables! 🥬🍅\n\n`;
+            message += `📞 Ph: 8300813858\n`;
+            message += `💳 G-Pay: 8122484554, 9626265665`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+
+        loadConfig();
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
