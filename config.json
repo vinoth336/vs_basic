@@ -502,10 +502,10 @@
           "en": "Broad Beans",
           "ta": "அவரைக்காய்"
         },
-        "price": 65,
+        "price": 120,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 17,
+        "displayAmount": 30,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -515,11 +515,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          20,
-          25
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
