@@ -275,10 +275,10 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 40,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 10,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🌶️",
@@ -288,7 +288,11 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          10,
+          15,
+          20
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -298,10 +302,10 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 50,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 15,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🍆",
@@ -313,7 +317,8 @@
         "isBudgetPick": false,
         "budgetOptions": [
           10,
-          15
+          15,
+          20
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -383,7 +388,7 @@
         "images": [
           "https://thevsv.in/attached_assets/drumsticks.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": []
@@ -421,10 +426,10 @@
           "en": "Radish",
           "ta": "முள்ளங்கி"
         },
-        "price": 40,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 10,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥬",
@@ -435,9 +440,8 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          10,
-          20,
-          25
+          15,
+          20
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -475,10 +479,10 @@
           "en": "GooseBerry",
           "ta": "கோவக்காய்"
         },
-        "price": 55,
+        "price": 65,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 17,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -489,7 +493,6 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          10,
           15,
           20
         ],
@@ -512,7 +515,7 @@
         "images": [
           "https://thevsv.in/attached_assets/patta_avarakkai.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
@@ -551,7 +554,7 @@
           "en": "Banana Flower",
           "ta": "வாழைப்பூ"
         },
-        "price": 20,
+        "price": 25,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 20,
@@ -674,10 +677,10 @@
           "en": "Small Onions",
           "ta": "சின்ன வெங்காயம்"
         },
-        "price": 65,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 65,
+        "displayAmount": 60,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
@@ -742,7 +745,7 @@
         "images": [
           "https://thevsv.in/attached_assets/Cauliflower.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
@@ -768,7 +771,7 @@
         "images": [
           "https://thevsv.in/attached_assets/nattu_malli.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
@@ -927,7 +930,7 @@
         "images": [
           "https://thevsv.in/attached_assets/curry_leaves.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
@@ -953,7 +956,7 @@
         "images": [
           "https://thevsv.in/attached_assets/mint_leaves.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [
           "combo"
         ],
