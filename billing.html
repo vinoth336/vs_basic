@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VS Vegetables - Billing</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -101,11 +102,14 @@
 
         .product-search-section {
             margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
         }
 
         .search-container {
             position: relative;
-            width: 100%;
+            flex: 1;
         }
 
         .search-input {
@@ -182,6 +186,26 @@
             font-family: Arial, sans-serif;
         }
 
+        .dropdown-item.out-of-stock {
+            opacity: 0.6;
+            background: #f5f5f5;
+        }
+
+        .dropdown-item.out-of-stock:hover {
+            background: #ececec;
+        }
+
+        .out-of-stock-label {
+            display: inline-block;
+            background: #dc3545;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+
         .billing-table {
             width: 100%;
             border-collapse: collapse;
@@ -230,12 +254,22 @@
             width: 45%;
         }
 
+        .billing-table th.rate {
+            width: 90px;
+            text-align: right;
+        }
+
         .billing-table th.qty {
-            width: 80px;
+            width: 70px;
             text-align: center;
         }
 
         .billing-table th.amount {
+            text-align: right;
+            width: 110px;
+        }
+
+        .billing-table td.rate-cell {
             text-align: right;
         }
 
@@ -301,13 +335,27 @@
             margin-top: 2px;
         }
 
-        .qty-input, .amount-input {
+        .rate-input, .qty-input, .amount-input {
             width: 70px;
             padding: 4px 6px;
             border: 1px solid #ddd;
             border-radius: 3px;
             text-align: center;
             font-size: 13px;
+        }
+
+        .rate-input {
+            text-align: right;
+        }
+        
+        .amount-input {
+            width: 90px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 14px;
+            background-color: #f0f8ff;
+            border: 2px solid #4CAF50;
+            color: #000;
         }
 
         .item-total {
@@ -477,6 +525,15 @@
             display: inline-block !important;
         }
 
+        .btn-image {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .btn-image:hover {
+            background: #7c3aed;
+        }
+
         .btn-print {
             background: #007bff;
             color: white;
@@ -503,6 +560,18 @@
 
         .btn-whatsapp:hover {
             background: #1FAD54;
+        }
+
+        .btn-custom-item {
+            background: #ff9800;
+            color: white;
+            font-weight: 600;
+            white-space: nowrap;
+            padding: 12px 20px;
+        }
+
+        .btn-custom-item:hover {
+            background: #e68900;
         }
 
         .empty-state {
@@ -603,11 +672,14 @@
             display: none !important;
         }
 
+        .modal-content .rate-value,
         .modal-content .qty-value,
         .modal-content .amount-value {
-            display: block !important;
+            display: inline-block !important;
+            font-weight: bold;
         }
 
+        .modal-content .rate-input,
         .modal-content .qty-input,
         .modal-content .amount-input {
             display: none !important;
@@ -620,8 +692,15 @@
             justify-content: center;
         }
 
-        .qty-value, .amount-value {
+        .rate-value, .qty-value, .amount-value {
             display: none;
+            font-weight: bold;
+        }
+        
+        #previewContent .rate-value,
+        #previewContent .qty-value,
+        #previewContent .amount-value {
+            display: inline-block !important;
             font-weight: bold;
         }
 
@@ -645,11 +724,13 @@
             }
 
             .remove-btn,
+            .rate-input,
             .qty-input,
             .amount-input {
                 display: none !important;
             }
 
+            .rate-value,
             .qty-value,
             .amount-value {
                 display: block !important;
@@ -794,13 +875,17 @@
                 >
                 <div class="dropdown" id="productDropdown"></div>
             </div>
+            <button class="btn btn-custom-item" onclick="showCustomItemModal()">
+                ➕ Add Custom Item
+            </button>
         </div>
 
         <table class="billing-table">
             <thead>
                 <tr>
                     <th class="sno">S.No</th>
-                    <th class="product">Product Name<br>Our Price</th>
+                    <th class="product">Product Name</th>
+                    <th class="rate">Rate</th>
                     <th class="qty">Qty</th>
                     <th class="amount">Amount</th>
                     <th></th>
@@ -808,7 +893,7 @@
             </thead>
             <tbody id="billItems">
                 <tr class="empty-state">
-                    <td colspan="5">No items added yet. Search and select products above.</td>
+                    <td colspan="6">No items added yet. Search and select products above.</td>
                 </tr>
             </tbody>
         </table>
@@ -817,6 +902,18 @@
             <div class="total-row item-count">
                 <span>Item Count:</span>
                 <span id="itemCount">0</span>
+            </div>
+            <div class="total-row subtotal">
+                <span>Subtotal:</span>
+                <span id="subtotalAmount">₹0.00</span>
+            </div>
+            <div class="total-row charges-row">
+                <span>Delivery Charges:</span>
+                <input type="number" id="deliveryCharges" placeholder="0" step="0.01" min="0" value="0" onchange="updateTotals()" style="width: 100px; padding: 4px 6px; border: 1px solid #ddd; border-radius: 3px; text-align: right; font-size: 13px;">
+            </div>
+            <div class="total-row charges-row">
+                <span>Other Charges:</span>
+                <input type="number" id="otherCharges" placeholder="0" step="0.01" min="0" value="0" onchange="updateTotals()" style="width: 100px; padding: 4px 6px; border: 1px solid #ddd; border-radius: 3px; text-align: right; font-size: 13px;">
             </div>
             <div class="total-row net-amount">
                 <span>Net Amount:</span>
@@ -867,7 +964,8 @@
                 <thead>
                     <tr>
                         <th class="sno">S.No</th>
-                        <th class="product">Product Name<br>Our Price</th>
+                        <th class="product">Product Name</th>
+                        <th class="rate">Rate</th>
                         <th class="qty">Qty</th>
                         <th class="amount">Amount</th>
                     </tr>
@@ -881,6 +979,18 @@
                     <span>Item Count:</span>
                     <span id="previewItemCount">0</span>
                 </div>
+                <div class="total-row subtotal">
+                    <span>Subtotal:</span>
+                    <span id="previewSubtotal">₹0.00</span>
+                </div>
+                <div class="total-row charges-display" id="previewDeliveryRow" style="display: none;">
+                    <span>Delivery Charges:</span>
+                    <span id="previewDeliveryCharges">₹0.00</span>
+                </div>
+                <div class="total-row charges-display" id="previewOtherRow" style="display: none;">
+                    <span>Other Charges:</span>
+                    <span id="previewOtherCharges">₹0.00</span>
+                </div>
                 <div class="total-row net-amount">
                     <span>Net Amount:</span>
                     <span id="previewNetAmount">₹0.00</span>
@@ -893,8 +1003,52 @@
             </div>
 
             <div class="modal-actions">
+                <button class="btn btn-image" onclick="saveAsImage()">📸 Save as Image</button>
                 <button class="btn btn-print" onclick="printPreview()">🖨️ Print Bill</button>
                 <button class="btn btn-cancel" onclick="closePreviewModal()">← Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="customItemModal">
+        <div class="modal-content" style="max-width: 500px;">
+            <h2 style="margin-bottom: 20px; text-align: center; font-family: Arial, sans-serif;">Add Custom Item</h2>
+            
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold; font-family: Arial, sans-serif;">Tamil Name:</label>
+                <input type="text" id="customItemNameTa" placeholder="தமிழ் பெயர்" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; font-size: 14px;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold; font-family: Arial, sans-serif;">English Name:</label>
+                <input type="text" id="customItemNameEn" placeholder="English Name" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; font-size: 14px;">
+            </div>
+
+            <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+                <div style="flex: 1;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: bold; font-family: Arial, sans-serif;">Price (₹):</label>
+                    <input type="number" id="customItemPrice" placeholder="0.00" step="0.01" min="0" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; font-size: 14px;">
+                </div>
+                <div style="flex: 1;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: bold; font-family: Arial, sans-serif;">Unit:</label>
+                    <select id="customItemUnit" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; font-size: 14px;">
+                        <option value="Kg">Kg</option>
+                        <option value="Pc">Pc</option>
+                        <option value="Bunch">Bunch</option>
+                        <option value="Grams">Grams</option>
+                        <option value="Ltr">Ltr</option>
+                    </select>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold; font-family: Arial, sans-serif;">Quantity:</label>
+                <input type="number" id="customItemQty" placeholder="1" step="0.1" min="0" value="1" style="width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; font-size: 14px;">
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn btn-preview" onclick="addCustomItem()" style="background: #0c831f;">✓ Add to Bill</button>
+                <button class="btn btn-cancel" onclick="closeCustomItemModal()">← Cancel</button>
             </div>
         </div>
     </div>
@@ -922,13 +1076,12 @@
             for (const [categoryKey, products] of Object.entries(config.products)) {
                 if (Array.isArray(products)) {
                     products.forEach(product => {
-                        if (product.available !== false) {
-                            allProducts.push({
-                                ...product,
-                                categoryKey: categoryKey,
-                                categoryName: config.categories[categoryKey]?.name || { en: 'Other', ta: 'மற்றவை' }
-                            });
-                        }
+                        allProducts.push({
+                            ...product,
+                            categoryKey: categoryKey,
+                            categoryName: config.categories[categoryKey]?.name || { en: 'Other', ta: 'மற்றவை' },
+                            available: product.available !== false
+                        });
                     });
                 }
             }
@@ -1026,12 +1179,15 @@
                 const image = product.images && product.images[0] ? product.images[0] : 'attached_assets/stock_images/fresh_vegetables_mar_dc4363d9.jpg';
                 const price = product.price || 0;
                 const unit = product.unit || 'Kg';
+                const isAvailable = product.available !== false;
+                const outOfStockClass = !isAvailable ? 'out-of-stock' : '';
+                const outOfStockLabel = !isAvailable ? '<span class="out-of-stock-label">Out of Stock</span>' : '';
                 
                 return `
-                    <div class="dropdown-item" onclick="addProduct('${product.id}', '${product.categoryKey}')">
+                    <div class="dropdown-item ${outOfStockClass}" onclick="addProduct('${product.id}', '${product.categoryKey}')">
                         <img src="${image}" alt="${product.name.ta}" onerror="this.src='attached_assets/stock_images/fresh_vegetables_mar_dc4363d9.jpg'">
                         <div class="dropdown-item-info">
-                            <div class="dropdown-item-name">${product.name.ta}</div>
+                            <div class="dropdown-item-name">${product.name.ta} ${outOfStockLabel}</div>
                         </div>
                         <div class="dropdown-item-price">₹${price}/${unit}</div>
                     </div>
@@ -1087,7 +1243,7 @@
             if (billItems.length === 0) {
                 tbody.innerHTML = `
                     <tr class="empty-state">
-                        <td colspan="5">No items added yet. Search and select products above.</td>
+                        <td colspan="6">No items added yet. Search and select products above.</td>
                     </tr>
                 `;
                 updateTotals();
@@ -1104,7 +1260,17 @@
                         <td class="sno">${sno}</td>
                         <td class="product-name-cell">
                             <span class="product-name-ta">${displayName}</span>
-                            <span class="product-price">₹${item.rate.toFixed(2)}/${item.unit}</span>
+                        </td>
+                        <td class="rate-cell">
+                            <input 
+                                type="number" 
+                                class="rate-input" 
+                                value="${item.rate.toFixed(2)}" 
+                                min="0.01" 
+                                step="0.01"
+                                onchange="updateRate(${index}, this.value)"
+                            >
+                            <span class="rate-value">₹${item.rate.toFixed(2)}</span>
                         </td>
                         <td class="qty-cell">
                             <input 
@@ -1157,6 +1323,13 @@
             }
         }
 
+        function updateRate(index, value) {
+            const rate = parseFloat(value) || 0;
+            billItems[index].rate = rate;
+            billItems[index].amount = billItems[index].qty * rate;
+            renderBillItems();
+        }
+
         function updateQty(index, value) {
             const qty = parseFloat(value) || 0;
             billItems[index].qty = qty;
@@ -1183,14 +1356,19 @@
         }
 
         function updateTotals() {
-            let netAmount = 0;
+            let subtotal = 0;
             let itemCount = billItems.length;
             
             billItems.forEach(item => {
-                netAmount += item.amount;
+                subtotal += item.amount;
             });
 
+            const deliveryCharges = parseFloat(document.getElementById('deliveryCharges').value) || 0;
+            const otherCharges = parseFloat(document.getElementById('otherCharges').value) || 0;
+            const netAmount = subtotal + deliveryCharges + otherCharges;
+
             document.getElementById('itemCount').textContent = itemCount;
+            document.getElementById('subtotalAmount').textContent = `₹${subtotal.toFixed(2)}`;
             document.getElementById('netAmount').textContent = `₹${netAmount.toFixed(2)}`;
         }
 
@@ -1200,7 +1378,7 @@
                 return;
             }
 
-            const customerName = document.getElementById('customerName').value || '-';
+            const customerName = document.getElementById('customerName').value.trim() || '-';
             
             document.getElementById('previewDate').textContent = document.getElementById('billDate').textContent;
             document.getElementById('previewTime').textContent = document.getElementById('billTime').textContent;
@@ -1216,7 +1394,9 @@
                         <td class="sno">${sno}</td>
                         <td class="product-name-cell">
                             <span class="product-name-ta">${displayName}</span>
-                            <span class="product-price">₹${item.rate.toFixed(2)}/${item.unit}</span>
+                        </td>
+                        <td class="rate-cell">
+                            <span class="rate-value">₹${item.rate.toFixed(2)}</span>
                         </td>
                         <td class="qty-cell">
                             <span class="qty-value">${item.qty}</span>
@@ -1228,12 +1408,32 @@
                 `;
             }).join('');
 
-            let netAmount = 0;
+            let subtotal = 0;
             billItems.forEach(item => {
-                netAmount += item.amount;
+                subtotal += item.amount;
             });
 
+            const deliveryCharges = parseFloat(document.getElementById('deliveryCharges').value) || 0;
+            const otherCharges = parseFloat(document.getElementById('otherCharges').value) || 0;
+            const netAmount = subtotal + deliveryCharges + otherCharges;
+
             document.getElementById('previewItemCount').textContent = billItems.length;
+            document.getElementById('previewSubtotal').textContent = `₹${subtotal.toFixed(2)}`;
+            
+            if (deliveryCharges > 0) {
+                document.getElementById('previewDeliveryRow').style.display = 'flex';
+                document.getElementById('previewDeliveryCharges').textContent = `₹${deliveryCharges.toFixed(2)}`;
+            } else {
+                document.getElementById('previewDeliveryRow').style.display = 'none';
+            }
+            
+            if (otherCharges > 0) {
+                document.getElementById('previewOtherRow').style.display = 'flex';
+                document.getElementById('previewOtherCharges').textContent = `₹${otherCharges.toFixed(2)}`;
+            } else {
+                document.getElementById('previewOtherRow').style.display = 'none';
+            }
+            
             document.getElementById('previewNetAmount').textContent = `₹${netAmount.toFixed(2)}`;
 
             document.getElementById('previewModal').classList.add('active');
@@ -1241,6 +1441,49 @@
 
         function closePreviewModal() {
             document.getElementById('previewModal').classList.remove('active');
+        }
+
+        async function saveAsImage() {
+            const previewContent = document.getElementById('previewContent');
+            const modalActions = previewContent.querySelector('.modal-actions');
+            
+            if (modalActions) {
+                modalActions.style.display = 'none';
+            }
+            
+            try {
+                const canvas = await html2canvas(previewContent, {
+                    backgroundColor: '#ffffff',
+                    scale: 2,
+                    logging: false,
+                    windowWidth: 800,
+                    windowHeight: previewContent.scrollHeight
+                });
+                
+                const customerName = document.getElementById('customerName').value.trim() || 'Customer';
+                const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+                const filename = `VS_Vegetables_Bill_${customerName}_${timestamp}.png`;
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(url);
+                    
+                    alert(`Bill saved as image: ${filename}`);
+                });
+            } catch (error) {
+                console.error('Error generating image:', error);
+                alert('Failed to generate image. Please try again.');
+            } finally {
+                if (modalActions) {
+                    modalActions.style.display = '';
+                }
+            }
         }
 
         function printPreview() {
@@ -1306,8 +1549,10 @@
                 }
                 .billing-table td { padding: 8px 4px; border: none; vertical-align: top; }
                 .billing-table td.sno { text-align: center; font-weight: bold; }
+                .billing-table td.rate-cell { text-align: right; }
                 .billing-table td.qty-cell { text-align: center; }
                 .billing-table td.amount-cell { text-align: right; }
+                .rate-value, .qty-value, .amount-value { display: inline-block !important; }
                 .product-name-cell { font-size: 9px; line-height: 1.5; }
                 .product-name-ta { font-weight: bold; display: block; }
                 .product-price { font-size: 8px; display: block; margin-top: 2px; color: #666; }
@@ -1335,6 +1580,8 @@
                     height: 1px;
                     background: repeating-linear-gradient(to right, #666 0px, #666 2px, transparent 2px, transparent 4px);
                 }
+                .total-row.subtotal { font-size: 10px; font-weight: normal; }
+                .total-row.charges-display { font-size: 10px; font-weight: normal; }
                 .total-row.net-amount { font-size: 13px; }
                 .bill-footer { text-align: center; margin-top: 20px; padding-top: 15px; position: relative; }
                 .bill-footer::before {
@@ -1406,7 +1653,7 @@
 
             cleanPhone = cleanPhone.replace(/^\+/, '');
 
-            const customerName = document.getElementById('customerName').value.trim() || 'Customer';
+            const customerName = document.getElementById('customerName').value.trim();
             const now = new Date();
             const dateStr = now.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
             const timeStr = now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
@@ -1415,8 +1662,10 @@
             message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
             message += `📅 Date: ${dateStr}\n`;
             message += `🕐 Time: ${timeStr}\n`;
-            message += `👤 Customer: ${customerName}\n\n`;
-            message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+            if (customerName) {
+                message += `👤 Customer: ${customerName}\n`;
+            }
+            message += `\n━━━━━━━━━━━━━━━━━━━━\n\n`;
             message += `*Items:*\n\n`;
 
             billItems.forEach((item, index) => {
@@ -1426,13 +1675,27 @@
                 message += `   ₹${item.rate.toFixed(2)}/${item.unit} × ${item.qty} = ₹${item.amount.toFixed(2)}\n\n`;
             });
 
-            let netAmount = 0;
+            let subtotal = 0;
             billItems.forEach(item => {
-                netAmount += item.amount;
+                subtotal += item.amount;
             });
+
+            const deliveryCharges = parseFloat(document.getElementById('deliveryCharges').value) || 0;
+            const otherCharges = parseFloat(document.getElementById('otherCharges').value) || 0;
+            const netAmount = subtotal + deliveryCharges + otherCharges;
 
             message += `━━━━━━━━━━━━━━━━━━━━\n`;
             message += `📦 Total Items: ${billItems.length}\n`;
+            message += `💵 Subtotal: ₹${subtotal.toFixed(2)}\n`;
+            
+            if (deliveryCharges > 0) {
+                message += `🚚 Delivery Charges: ₹${deliveryCharges.toFixed(2)}\n`;
+            }
+            
+            if (otherCharges > 0) {
+                message += `➕ Other Charges: ₹${otherCharges.toFixed(2)}\n`;
+            }
+            
             message += `💰 *Net Amount: ₹${netAmount.toFixed(2)}*\n`;
             message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
             message += `Thank you for choosing VS Vegetables! 🥬🍅\n\n`;
@@ -1443,6 +1706,72 @@
             const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
             
             window.open(whatsappUrl, '_blank');
+        }
+
+        function showCustomItemModal() {
+            document.getElementById('customItemNameTa').value = '';
+            document.getElementById('customItemNameEn').value = '';
+            document.getElementById('customItemPrice').value = '';
+            document.getElementById('customItemUnit').value = 'Kg';
+            document.getElementById('customItemQty').value = '1';
+            document.getElementById('customItemModal').classList.add('active');
+            setTimeout(() => {
+                document.getElementById('customItemNameTa').focus();
+            }, 100);
+        }
+
+        function closeCustomItemModal() {
+            document.getElementById('customItemModal').classList.remove('active');
+        }
+
+        function addCustomItem() {
+            const nameTa = document.getElementById('customItemNameTa').value.trim();
+            const nameEn = document.getElementById('customItemNameEn').value.trim();
+            const price = parseFloat(document.getElementById('customItemPrice').value) || 0;
+            const unit = document.getElementById('customItemUnit').value;
+            const qty = parseFloat(document.getElementById('customItemQty').value) || 1;
+
+            if (!nameTa && !nameEn) {
+                alert('Please enter at least one name (Tamil or English).');
+                return;
+            }
+
+            if (price <= 0) {
+                alert('Please enter a valid price greater than 0.');
+                return;
+            }
+
+            if (qty <= 0) {
+                alert('Please enter a valid quantity greater than 0.');
+                return;
+            }
+
+            const customId = 'custom_' + Date.now();
+            const amount = price * qty;
+
+            billItems.push({
+                id: customId,
+                categoryKey: 'custom',
+                nameEn: nameEn || nameTa,
+                nameTa: nameTa || nameEn,
+                rate: price,
+                unit: unit,
+                qty: qty,
+                amount: amount,
+                isCustom: true
+            });
+
+            closeCustomItemModal();
+            renderBillItems();
+
+            setTimeout(() => {
+                const qtyInputs = document.querySelectorAll('.qty-input');
+                const lastIndex = billItems.length - 1;
+                if (qtyInputs[lastIndex]) {
+                    qtyInputs[lastIndex].focus();
+                    qtyInputs[lastIndex].select();
+                }
+            }, 100);
         }
 
         loadConfig();
