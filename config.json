@@ -90,7 +90,7 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 70,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 18,
@@ -116,7 +116,7 @@
           "en": "Green Beans",
           "ta": "பீன்ஸ்"
         },
-        "price": 100,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 25,
@@ -197,7 +197,7 @@
           "en": "Beet Root",
           "ta": "பீட்ரூட்"
         },
-        "price": 60,
+        "price": 75,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -329,7 +329,7 @@
           "en": "Ridge Gourd",
           "ta": "பீர்க்கங்காய்"
         },
-        "price": 45,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 12,
@@ -355,7 +355,7 @@
           "en": "Ginger",
           "ta": "இஞ்சி"
         },
-        "price": 120,
+        "price": 100,
         "unitValue": 1,
         "displayUnitValue": 120,
         "displayAmount": 15,
@@ -452,7 +452,7 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 45,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 12,
@@ -515,7 +515,7 @@
         "images": [
           "https://thevsv.in/attached_assets/patta_avarakkai.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
@@ -528,7 +528,7 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 40,
+        "price": 36,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 40,
@@ -761,7 +761,7 @@
           "en": "Country Coriander",
           "ta": "நாட்டு மல்லி இலை"
         },
-        "price": 25,
+        "price": 30,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 25,
@@ -771,7 +771,7 @@
         "images": [
           "https://thevsv.in/attached_assets/nattu_malli.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
@@ -788,7 +788,7 @@
           "en": "Baby Corn",
           "ta": "Baby Corn"
         },
-        "price": 50,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 50,
@@ -865,7 +865,7 @@
           "en": "Egg",
           "ta": "முட்டை"
         },
-        "price": 6,
+        "price": 6.5,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 6,
@@ -930,7 +930,7 @@
         "images": [
           "https://thevsv.in/attached_assets/curry_leaves.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
@@ -956,7 +956,7 @@
         "images": [
           "https://thevsv.in/attached_assets/mint_leaves.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [
           "combo"
         ],
