@@ -642,6 +642,75 @@
         ],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "raw-banana",
+        "name": {
+          "en": "Raw Banana",
+          "ta": "வாழைக்காய்"
+        },
+        "price": 12,
+        "unitValue": 12,
+        "displayUnitValue": 1,
+        "displayAmount": 1,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/vazhakkai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "bottle-gaurd",
+        "name": {
+          "en": "Bottle Gaurd",
+          "ta": "சுரைக்காய்"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/surakkai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "banana-steam",
+        "name": {
+          "en": "Banana Steam",
+          "ta": "வாழைத்தண்டு"
+        },
+        "price": 15,
+        "unitValue": 15,
+        "displayUnitValue": 1,
+        "displayAmount": 1,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/vazhai_thanthu.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "onions": [
@@ -698,7 +767,100 @@
         "comboMinimum": 0
       }
     ],
-    "spinach": [],
+    "spinach": [
+      {
+        "id": "paalak-keerai",
+        "name": {
+          "en": "Paalak Keerai",
+          "ta": "பாலக் கீரை"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/paalakeerai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "vallarakeerai",
+        "name": {
+          "en": "Vallarakeerai",
+          "ta": "வல்லாரைக் கீரை"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/vallarai_keerai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "siru-keerai",
+        "name": {
+          "en": "Siru Keerai",
+          "ta": "சிறுகீரை"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/siru_keerai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "milagu-thakkali-keerai",
+        "name": {
+          "en": "Milagu Thakkali keerai",
+          "ta": "மணத்தக்காளி கீரை"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/Manathakkali-Keerai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      }
+    ],
     "coconuts": [
       {
         "id": "fresh-coconut",
@@ -1071,6 +1233,22 @@
   },
   "globalProductOrder": [
     {
+      "id": "vallarakeerai",
+      "categoryKey": "spinach"
+    },
+    {
+      "id": "siru-keerai",
+      "categoryKey": "spinach"
+    },
+    {
+      "id": "milagu-thakkali-keerai",
+      "categoryKey": "spinach"
+    },
+    {
+      "id": "paalak-keerai",
+      "categoryKey": "spinach"
+    },
+    {
       "id": "big-onions",
       "categoryKey": "onions"
     },
@@ -1209,6 +1387,18 @@
     {
       "id": "coriander",
       "categoryKey": "leaves"
+    },
+    {
+      "id": "raw-banana",
+      "categoryKey": "country"
+    },
+    {
+      "id": "bottle-gaurd",
+      "categoryKey": "country"
+    },
+    {
+      "id": "banana-steam",
+      "categoryKey": "country"
     }
   ]
 }
