@@ -170,7 +170,7 @@
           "en": "Potato",
           "ta": "Ooty உருளைக் கிழங்கு"
         },
-        "price": 60,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -275,7 +275,7 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 50,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 13,
@@ -302,7 +302,7 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 60,
+        "price": 45,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -329,7 +329,7 @@
           "en": "Ridge Gourd",
           "ta": "பீர்க்கங்காய்"
         },
-        "price": 55,
+        "price": 45,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 12,
@@ -388,7 +388,7 @@
         "images": [
           "https://thevsv.in/attached_assets/drumsticks.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": []
@@ -399,7 +399,7 @@
           "en": "Green Chilli",
           "ta": "மிளகாய்"
         },
-        "price": 75,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 100,
         "displayAmount": 7,
@@ -452,7 +452,7 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 60,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 12,
@@ -479,7 +479,7 @@
           "en": "GooseBerry",
           "ta": "கோவக்காய்"
         },
-        "price": 65,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 17,
@@ -505,7 +505,7 @@
           "en": "Broad Beans",
           "ta": "அவரைக்காய்"
         },
-        "price": 120,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 30,
@@ -528,7 +528,7 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 36,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 40,
@@ -610,7 +610,7 @@
         "images": [
           "https://thevsv.in/attached_assets/parangikai.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
@@ -623,7 +623,7 @@
           "en": "Elephant Foot Yam",
           "ta": "சேனை கிழங்கு"
         },
-        "price": 65,
+        "price": 75,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 17,
@@ -677,7 +677,7 @@
           "en": "Small Onions",
           "ta": "சின்ன வெங்காயம்"
         },
-        "price": 60,
+        "price": 65,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 60,
@@ -745,7 +745,7 @@
         "images": [
           "https://thevsv.in/attached_assets/Cauliflower.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
@@ -865,7 +865,7 @@
           "en": "Egg",
           "ta": "முட்டை"
         },
-        "price": 6.5,
+        "price": 7,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 6,
