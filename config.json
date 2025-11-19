@@ -1018,6 +1018,29 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "lemon",
+        "name": {
+          "en": "Lemon",
+          "ta": "எலுமிச்சை"
+        },
+        "price": 6,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 6,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/lemon.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "egg": [
