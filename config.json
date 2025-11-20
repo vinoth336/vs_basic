@@ -845,20 +845,21 @@
           "ta": "பெரிய வெங்காயம்"
         },
         "price": 30,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 30,
+        "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
         "images": [
           "https://thevsv.in/attached_assets/big_onion.jpg"
         ],
         "available": true,
-        "tags": [
-          "recommended"
-        ],
+        "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          20,
-          25
-        ]
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       },
       {
         "id": "small-onions",
