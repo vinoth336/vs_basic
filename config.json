@@ -650,9 +650,9 @@
           "ta": "வாழைக்காய்"
         },
         "price": 12,
-        "unitValue": 12,
+        "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 1,
+        "displayAmount": 12,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
@@ -696,14 +696,37 @@
           "ta": "வாழைத்தண்டு"
         },
         "price": 15,
-        "unitValue": 15,
+        "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 1,
+        "displayAmount": 15,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
         "images": [
           "https://thevsv.in/attached_assets/vazhai_thanthu.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "lemon",
+        "name": {
+          "en": "Lemon",
+          "ta": "எலுமிச்சை"
+        },
+        "price": 6,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 6,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/lemon.jpg"
         ],
         "available": true,
         "tags": [],
@@ -1014,29 +1037,6 @@
         "tags": [
           "new-arrival"
         ],
-        "isBudgetPick": false,
-        "budgetOptions": [],
-        "isCombo": false,
-        "comboMinimum": 0
-      },
-      {
-        "id": "lemon",
-        "name": {
-          "en": "Lemon",
-          "ta": "எலுமிச்சை"
-        },
-        "price": 6,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 6,
-        "displayUnit": "Pcs",
-        "unit": "Pcs",
-        "icon": "📦",
-        "images": [
-          "https://thevsv.in/attached_assets/lemon.jpg"
-        ],
-        "available": true,
-        "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
         "isCombo": false,
@@ -1421,6 +1421,10 @@
     },
     {
       "id": "banana-steam",
+      "categoryKey": "country"
+    },
+    {
+      "id": "lemon",
       "categoryKey": "country"
     }
   ]
