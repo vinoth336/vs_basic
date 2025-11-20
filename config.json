@@ -632,7 +632,7 @@
         "price": 43,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 30,
+        "displayAmount": 43,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
@@ -640,10 +640,7 @@
           "https://thevsv.in/attached_assets/tomatto.jpg"
         ],
         "available": true,
-        "tags": [
-          "recommended",
-          "seasonal"
-        ],
+        "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
         "isCombo": false,
