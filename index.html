@@ -1667,9 +1667,13 @@
                     ? product.displayQty
                     : defaultDisplayQty;
 
-            // Format display unit text
+            // Format display unit text - use displayUnit if available, otherwise auto-format
             let displayUnitText = "";
-            if (unitText === "Kg") {
+            if (product.displayUnit && product.displayUnitValue !== undefined) {
+                // Use configured display unit
+                const displayValue = product.displayUnitValue;
+                displayUnitText = `${displayValue} ${product.displayUnit}`;
+            } else if (unitText === "Kg") {
                 const grams = Math.round(displayQty * 1000);
                 displayUnitText =
                     grams >= 1000
