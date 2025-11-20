@@ -2299,7 +2299,8 @@
 
                         const defaultDisplayQty = product.unit === "Kg" ? 0.25 : 1;
                         const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
-                        const pricePerUnit = product.price / productDisplayQty;
+                        const unitValue = product.unitValue || 1;
+                        const pricePerUnit = product.price / unitValue;
                         itemTotal = pricePerUnit * quantity;
                         numItems = Math.round(quantity / productDisplayQty);
                         total += itemTotal;
@@ -2482,7 +2483,8 @@
                         const productName = product.name[currentLanguage] || product.name.en;
                         const defaultDisplayQty = product.unit === "Kg" ? 0.25 : 1;
                         const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
-                        const pricePerUnit = product.price / productDisplayQty;
+                        const unitValue = product.unitValue || 1;
+                        const pricePerUnit = product.price / unitValue;
                         const itemTotal = pricePerUnit * quantity;
                         total += itemTotal;
                         const displayQty = quantity.toFixed(2).replace(/\.?0+$/, "");
@@ -2546,7 +2548,8 @@
                         if (product) {
                             const defaultDisplayQty = product.unit === "Kg" ? 0.25 : 1;
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
-                            const pricePerUnit = product.price / productDisplayQty;
+                            const unitValue = product.unitValue || 1;
+                            const pricePerUnit = product.price / unitValue;
                             return sum + pricePerUnit * quantity;
                         }
                     }
@@ -2628,7 +2631,8 @@
                         if (product) {
                             const defaultDisplayQty = product.unit === "Kg" ? 0.25 : 1;
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
-                            const pricePerUnit = product.price / productDisplayQty;
+                            const unitValue = product.unitValue || 1;
+                            const pricePerUnit = product.price / unitValue;
                             return sum + (pricePerUnit * quantity);
                         }
                     }
