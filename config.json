@@ -868,6 +868,10 @@
           "ta": "சின்ன வெங்காயம்"
         },
         "price": 65,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 65,
+        "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
         "images": [
@@ -876,10 +880,9 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          20,
-          25
-        ]
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "spinach": [
