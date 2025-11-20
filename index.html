@@ -1630,6 +1630,25 @@
             return html;
         }
 
+        // Helper: Format Quantity
+        function formatQuantity(quantity, unit) {
+            if (unit === "Kg") {
+                const grams = Math.round(quantity * 1000);
+                if (grams < 1000) {
+                    return `${grams}g`;
+                } else {
+                    const kg = Math.floor(grams / 1000);
+                    const remGrams = grams % 1000;
+                    if (remGrams > 0) {
+                        return `${kg}kg ${remGrams}g`;
+                    } else {
+                        return `${kg}kg`;
+                    }
+                }
+            }
+            return `${quantity} ${unit}`;
+        }
+
         // Render Product Card
         function renderProductCard(product) {
             const productName =
@@ -1647,10 +1666,17 @@
                 displayPrice = product.displayAmount;
             } else {
                 // Calculate based on displayQty and price
-                const defaultDisplayQty = unitText === "Kg" ? 0.25 : 1;
-                const displayQtyCalc = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
+                let displayQty = product.displayQty;
+                if (displayQty === undefined) {
+                    if (product.unit === "Kg" && product.displayUnit === "Grams" && product.displayUnitValue) {
+                        displayQty = product.displayUnitValue / 1000;
+                    } else {
+                        displayQty = product.unit === "Kg" ? 0.25 : 1;
+                    }
+                }
+
                 const unitValue = product.unitValue || 1;
-                displayPrice = (product.price * displayQtyCalc) / unitValue;
+                displayPrice = Math.ceil((product.price * displayQty) / unitValue);
             }
 
             const quantity = cart[product.id] || 0;
@@ -1661,30 +1687,17 @@
             const isBudgetPick = tags.includes("budget-pick");
 
             // Get display quantity with unit
-            const defaultDisplayQty = unitText === "Kg" ? 0.25 : 1;
-            const displayQty =
-                product.displayQty !== undefined
-                    ? product.displayQty
-                    : defaultDisplayQty;
-
-            // Format display unit text - use displayUnit if available, otherwise auto-format
-            let displayUnitText = "";
-            if (product.displayUnit && product.displayUnitValue !== undefined) {
-                // Use configured display unit
-                const displayValue = product.displayUnitValue;
-                displayUnitText = `${displayValue} ${product.displayUnit}`;
-            } else if (unitText === "Kg") {
-                const grams = Math.round(displayQty * 1000);
-                displayUnitText =
-                    grams >= 1000
-                        ? `${(grams / 1000).toFixed(2).replace(/\.?0+$/, "")} Kg`
-                        : `${grams} Grams`;
-            } else if (unitText === "Pcs") {
-                displayUnitText =
-                    displayQty === 1 ? "1 Pc" : `${displayQty} Pcs`;
-            } else {
-                displayUnitText = `${displayQty} ${unitText}`;
+            let displayQty = product.displayQty;
+            if (displayQty === undefined) {
+                if (product.unit === "Kg" && product.displayUnit === "Grams" && product.displayUnitValue) {
+                    displayQty = product.displayUnitValue / 1000;
+                } else {
+                    displayQty = product.unit === "Kg" ? 0.25 : 1;
+                }
             }
+
+            // Format display unit text
+            let displayUnitText = formatQuantity(displayQty, unitText);
 
             return `
                     <div class="product-card">
@@ -1792,7 +1805,13 @@
                 showEasyPickModal(productId);
             } else {
                 // Default to 0.25 for Kg products, 1 for others
-                const defaultQty = product.unit === "Kg" ? 0.25 : 1;
+                let defaultQty;
+                if (product.unit === "Kg" && product.displayUnit === "Grams" && product.displayUnitValue) {
+                    defaultQty = product.displayUnitValue / 1000;
+                } else {
+                    defaultQty = product.unit === "Kg" ? 0.25 : 1;
+                }
+
                 addProductToCart(
                     productId,
                     product.displayQty !== undefined
@@ -1824,7 +1843,13 @@
         // Legacy function for backward compatibility
         function addToCart(productId) {
             const product = findProductById(productId);
-            const defaultQty = product?.unit === "Kg" ? 0.25 : 1;
+            let defaultQty;
+            if (product?.unit === "Kg" && product?.displayUnit === "Grams" && product?.displayUnitValue) {
+                defaultQty = product.displayUnitValue / 1000;
+            } else {
+                defaultQty = product?.unit === "Kg" ? 0.25 : 1;
+            }
+
             addProductToCart(
                 productId,
                 product?.displayQty !== undefined
@@ -1835,7 +1860,13 @@
 
         function incrementProduct(productId) {
             const product = findProductById(productId);
-            const defaultQty = product?.unit === "Kg" ? 0.25 : 1;
+            let defaultQty;
+            if (product?.unit === "Kg" && product?.displayUnit === "Grams" && product?.displayUnitValue) {
+                defaultQty = product.displayUnitValue / 1000;
+            } else {
+                defaultQty = product?.unit === "Kg" ? 0.25 : 1;
+            }
+
             const incrementBy =
                 product?.displayQty !== undefined
                     ? product.displayQty
@@ -1848,7 +1879,13 @@
 
         function decrementProduct(productId) {
             const product = findProductById(productId);
-            const defaultQty = product?.unit === "Kg" ? 0.25 : 1;
+            let defaultQty;
+            if (product?.unit === "Kg" && product?.displayUnit === "Grams" && product?.displayUnitValue) {
+                defaultQty = product.displayUnitValue / 1000;
+            } else {
+                defaultQty = product?.unit === "Kg" ? 0.25 : 1;
+            }
+
             const decrementBy =
                 product?.displayQty !== undefined
                     ? product.displayQty
@@ -2301,17 +2338,17 @@
                         const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                         const unitValue = product.unitValue || 1;
                         const pricePerUnit = product.price / unitValue;
-                        itemTotal = pricePerUnit * quantity;
+                        itemTotal = Math.ceil(pricePerUnit * quantity);
                         numItems = Math.round(quantity / productDisplayQty);
                         total += itemTotal;
 
-                        const totalQuantity = quantity.toFixed(2).replace(/\.?0+$/, "");
+                        const displayQtyText = formatQuantity(quantity, product.unit);
 
                         html += `
                                 <div class="cart-item">
                                     <div class="cart-item-info">
                                         <h4>${productName}</h4>
-                                        <div class="cart-item-details">${totalQuantity} ${product.unit} × ₹${pricePerUnit.toFixed(2)} = ₹${itemTotal.toFixed(2)}</div>
+                                        <div class="cart-item-details">${displayQtyText} × ₹${pricePerUnit.toFixed(2)} = ₹${itemTotal.toFixed(2)}</div>
                                     </div>
                                     <div class="cart-item-controls">
                                         <div class="quantity-controls">
@@ -2485,10 +2522,10 @@
                         const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                         const unitValue = product.unitValue || 1;
                         const pricePerUnit = product.price / unitValue;
-                        const itemTotal = pricePerUnit * quantity;
+                        const itemTotal = Math.ceil(pricePerUnit * quantity);
                         total += itemTotal;
-                        const displayQty = quantity.toFixed(2).replace(/\.?0+$/, "");
-                        message += `• ${productName}: ${displayQty} ${product.unit} × ₹${pricePerUnit.toFixed(2)} = ₹${itemTotal.toFixed(2)}\n`;
+                        const displayQtyText = formatQuantity(quantity, product.unit);
+                        message += `• ${productName}: ${displayQtyText} × ₹${pricePerUnit.toFixed(2)} = ₹${itemTotal.toFixed(2)}\n`;
                     }
                 }
             });
@@ -2550,7 +2587,7 @@
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                             const unitValue = product.unitValue || 1;
                             const pricePerUnit = product.price / unitValue;
-                            return sum + pricePerUnit * quantity;
+                            return sum + Math.ceil(pricePerUnit * quantity);
                         }
                     }
                     return sum;
@@ -2633,7 +2670,7 @@
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                             const unitValue = product.unitValue || 1;
                             const pricePerUnit = product.price / unitValue;
-                            return sum + (pricePerUnit * quantity);
+                            return sum + Math.ceil(pricePerUnit * quantity);
                         }
                     }
                     return sum;
