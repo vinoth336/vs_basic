@@ -1676,7 +1676,7 @@
                 }
 
                 const unitValue = product.unitValue || 1;
-                displayPrice = Math.ceil((product.price * displayQty) / unitValue);
+                displayPrice = Math.ceil(parseFloat(((product.price * displayQty) / unitValue).toFixed(2)));
             }
 
             const quantity = cart[product.id] || 0;
@@ -2338,7 +2338,7 @@
                         const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                         const unitValue = product.unitValue || 1;
                         const pricePerUnit = product.price / unitValue;
-                        itemTotal = Math.ceil(pricePerUnit * quantity);
+                        itemTotal = Math.ceil(parseFloat((pricePerUnit * quantity).toFixed(2)));
                         numItems = Math.round(quantity / productDisplayQty);
                         total += itemTotal;
 
@@ -2522,7 +2522,7 @@
                         const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                         const unitValue = product.unitValue || 1;
                         const pricePerUnit = product.price / unitValue;
-                        const itemTotal = Math.ceil(pricePerUnit * quantity);
+                        const itemTotal = Math.ceil(parseFloat((pricePerUnit * quantity).toFixed(2)));
                         total += itemTotal;
                         const displayQtyText = formatQuantity(quantity, product.unit);
                         message += `• ${productName}: ${displayQtyText} × ₹${pricePerUnit.toFixed(2)} = ₹${itemTotal.toFixed(2)}\n`;
@@ -2587,7 +2587,7 @@
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                             const unitValue = product.unitValue || 1;
                             const pricePerUnit = product.price / unitValue;
-                            return sum + Math.ceil(pricePerUnit * quantity);
+                            return sum + Math.ceil(parseFloat((pricePerUnit * quantity).toFixed(2)));
                         }
                     }
                     return sum;
@@ -2670,7 +2670,7 @@
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
                             const unitValue = product.unitValue || 1;
                             const pricePerUnit = product.price / unitValue;
-                            return sum + Math.ceil(pricePerUnit * quantity);
+                            return sum + Math.ceil(parseFloat((pricePerUnit * quantity).toFixed(2)));
                         }
                     }
                     return sum;
