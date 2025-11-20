@@ -1,4 +1,90 @@
 {
+  "settings": {
+    "freeDelivery": {
+      "enabled": true,
+      "minimumOrder": 200,
+      "message": {
+        "en": "Free delivery on orders above ₹{amount}!",
+        "ta": "₹{amount} க்கு மேல் ஆர்டருக்கு இலவச டெலிவரி!"
+      },
+      "progressMessage": {
+        "en": "Add ₹{remaining} more for free delivery",
+        "ta": "இலவச டெலிவரிக்கு இன்னும் ₹{remaining} சேர்க்கவும்"
+      },
+      "achievedMessage": {
+        "en": "🎉 You've got free delivery!",
+        "ta": "🎉 இலவச டெலிவரி கிடைத்துள்ளது!"
+      }
+    },
+    "sections": {
+      "budgetPicks": {
+        "enabled": true,
+        "name": {
+          "en": "Budget Picks",
+          "ta": "பட்ஜெட் பிக்ஸ்"
+        }
+      },
+      "newArrivals": {
+        "enabled": true,
+        "name": {
+          "en": "New Arrivals",
+          "ta": "புதிதாக வந்தவை"
+        }
+      },
+      "recommended": {
+        "enabled": true,
+        "name": {
+          "en": "Today's Recommended",
+          "ta": "இன்றைய பரிந்துரைகள்"
+        }
+      },
+      "seasonal": {
+        "enabled": true,
+        "name": {
+          "en": "Seasonal Vegetables",
+          "ta": "பருவகால காய்கறிகள்"
+        }
+      },
+      "combos": {
+        "enabled": true,
+        "name": {
+          "en": "Combos",
+          "ta": "கூட்டு சலுகை"
+        }
+      },
+      "offers": {
+        "enabled": true,
+        "name": {
+          "en": "Special Offers",
+          "ta": "சிறப்பு சலுகைகள்"
+        }
+      }
+    },
+    "deliverySlots": {
+      "slot1": {
+        "time": "6:00 AM - 9:00 AM",
+        "name": {
+          "en": "6:00 AM - 9:00 AM",
+          "ta": "காலை 6:00 - 9:00"
+        },
+        "cutoffHour": 17
+      },
+      "slot2": {
+        "time": "12:30 PM - 1:30 PM",
+        "name": {
+          "en": "12:30 PM - 1:30 PM",
+          "ta": "மதியம் 12:30 - 1:30"
+        }
+      },
+      "slot3": {
+        "time": "After 7:00 PM",
+        "name": {
+          "en": "After 7:00 PM",
+          "ta": "மாலை 7:00 க்கு பிறகு"
+        }
+      }
+    }
+  },
   "categories": {
     "ooty": {
       "name": {
@@ -6,6 +92,7 @@
         "ta": "ஊட்டி காய்கறிகள்"
       },
       "icon": "🏔️",
+      "image": "attached_assets/stock_images/mountain_vegetables__77e8377b.jpg",
       "order": 1,
       "visible": true
     },
@@ -15,6 +102,7 @@
         "ta": "நாட்டு காய்கறிகள்"
       },
       "icon": "🌾",
+      "image": "attached_assets/stock_images/fresh_vegetables_mar_dc4363d9.jpg",
       "order": 2,
       "visible": true
     },
@@ -24,6 +112,7 @@
         "ta": "வெங்காயம் & சின்ன வெங்காயம்"
       },
       "icon": "🧅",
+      "image": "attached_assets/stock_images/onions_bulbs_small_o_9f3c42d2.jpg",
       "order": 3,
       "visible": true
     },
@@ -33,6 +122,7 @@
         "ta": "கீரை வகைகள்"
       },
       "icon": "🥬",
+      "image": "attached_assets/stock_images/fresh_spinach_green__588bcadf.jpg",
       "order": 4,
       "visible": true
     },
@@ -42,6 +132,7 @@
         "ta": "தேங்காய்"
       },
       "icon": "🥥",
+      "image": "attached_assets/stock_images/coconuts_fresh_tropi_b4eb63c9.jpg",
       "order": 5,
       "visible": true
     },
@@ -51,6 +142,7 @@
         "ta": "மற்றவை "
       },
       "icon": "📦",
+      "image": "attached_assets/stock_images/fresh_vegetables_mar_dc4363d9.jpg",
       "order": 999,
       "visible": true
     },
@@ -59,7 +151,8 @@
         "en": "Egg",
         "ta": "முட்டை"
       },
-      "icon": "",
+      "icon": "🥚",
+      "image": "attached_assets/stock_images/farm_fresh_eggs_cart_2778d7f9.jpg",
       "order": 4,
       "visible": true
     },
@@ -68,17 +161,9 @@
         "en": "Mushroom",
         "ta": "காளான்"
       },
-      "icon": "",
+      "icon": "🍄",
+      "image": "attached_assets/stock_images/fresh_mushrooms_whit_ddd407cc.jpg",
       "order": 2,
-      "visible": true
-    },
-    "leaves": {
-      "name": {
-        "en": "Leaves",
-        "ta": "தாளிப்பு இலைகள்"
-      },
-      "icon": "🌿",
-      "order": 1000,
       "visible": true
     }
   },
@@ -93,7 +178,7 @@
         "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 18,
+        "displayAmount": 20,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥕",
@@ -101,7 +186,11 @@
           "https://thevsv.in/attached_assets/carrot.jpeg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "recommended",
+          "budget-pick"
+        ],
+        "displayQty": 0.25,
         "isBudgetPick": true,
         "budgetOptions": [
           20,
@@ -116,10 +205,10 @@
           "en": "Green Beans",
           "ta": "பீன்ஸ்"
         },
-        "price": 80,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 25,
+        "displayAmount": 15,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🫘",
@@ -127,7 +216,11 @@
           "https://thevsv.in/attached_assets/green_beans.png"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "seasonal",
+          "budget-pick"
+        ],
+        "displayQty": 0.25,
         "isBudgetPick": true,
         "budgetOptions": [
           10,
@@ -146,7 +239,7 @@
         "price": 100,
         "unitValue": 1,
         "displayUnitValue": 150,
-        "displayAmount": 15,
+        "displayAmount": 12,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🫑",
@@ -154,7 +247,10 @@
           "https://thevsv.in/attached_assets/capcium.jpg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "budget-pick"
+        ],
+        "displayQty": 0.15,
         "isBudgetPick": true,
         "budgetOptions": [
           13,
@@ -173,7 +269,7 @@
         "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 15,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥔",
@@ -181,13 +277,12 @@
           "https://thevsv.in/attached_assets/potato.jpg"
         ],
         "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [
-          13,
-          18,
-          25
+        "tags": [
+          "new-arrival"
         ],
+        "displayQty": 0.5,
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -211,9 +306,9 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          10,
-          15,
-          20
+          13,
+          18,
+          25
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -224,10 +319,10 @@
           "en": "Cabbage",
           "ta": "முட்டைக்கோஸ்"
         },
-        "price": 50,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 350,
-        "displayAmount": 18,
+        "displayAmount": 14,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥬",
@@ -235,7 +330,10 @@
           "https://thevsv.in/attached_assets/cabbage.jpg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "budget-pick"
+        ],
+        "displayQty": 0.35,
         "isBudgetPick": true,
         "budgetOptions": [
           10,
@@ -261,7 +359,9 @@
           "https://thevsv.in/attached_assets/button_mushroom.jpg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "new-arrival"
+        ],
         "isBudgetPick": false,
         "budgetOptions": [],
         "isCombo": false,
@@ -275,10 +375,10 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 40,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 10,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🌶️",
@@ -286,13 +386,12 @@
           "https://thevsv.in/attached_assets/vendakkai.jpg"
         ],
         "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          15,
-          20
+        "tags": [
+          "combo"
         ],
+        "displayQty": 0.25,
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -302,10 +401,10 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 45,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 15,
+        "displayAmount": 10,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🍆",
@@ -315,11 +414,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          15,
-          20
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -329,10 +424,10 @@
           "en": "Ridge Gourd",
           "ta": "பீர்க்கங்காய்"
         },
-        "price": 45,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 12,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -355,10 +450,10 @@
           "en": "Ginger",
           "ta": "இஞ்சி"
         },
-        "price": 100,
+        "price": 110,
         "unitValue": 1,
         "displayUnitValue": 120,
-        "displayAmount": 15,
+        "displayAmount": 11,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🫚",
@@ -399,7 +494,7 @@
           "en": "Green Chilli",
           "ta": "மிளகாய்"
         },
-        "price": 80,
+        "price": 75,
         "unitValue": 1,
         "displayUnitValue": 100,
         "displayAmount": 7,
@@ -429,7 +524,7 @@
         "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 8,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥬",
@@ -440,6 +535,7 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
+          10,
           15,
           20
         ],
@@ -455,7 +551,7 @@
         "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 12,
+        "displayAmount": 10,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -467,8 +563,8 @@
         "isBudgetPick": false,
         "budgetOptions": [
           10,
-          20,
-          25
+          15,
+          20
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -482,7 +578,7 @@
         "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 17,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -493,6 +589,7 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
+          10,
           15,
           20
         ],
@@ -508,7 +605,7 @@
         "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 30,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -518,7 +615,11 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          10,
+          15,
+          20
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -528,10 +629,10 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 40,
+        "price": 43,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 40,
+        "displayAmount": 30,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
@@ -539,12 +640,12 @@
           "https://thevsv.in/attached_assets/tomatto.jpg"
         ],
         "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [
-          15,
-          20
+        "tags": [
+          "recommended",
+          "seasonal"
         ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -578,7 +679,7 @@
           "ta": "நீர்ப் பூசணி"
         },
         "price": 20,
-        "unitValue": 1,
+        "unitValue": 20,
         "displayUnitValue": 1,
         "displayAmount": 20,
         "displayUnit": "Pcs",
@@ -601,7 +702,7 @@
           "ta": "பூசணிக்காய்"
         },
         "price": 20,
-        "unitValue": 1,
+        "unitValue": 20,
         "displayUnitValue": 1,
         "displayAmount": 20,
         "displayUnit": "Pcs",
@@ -744,24 +845,20 @@
           "ta": "பெரிய வெங்காயம்"
         },
         "price": 30,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 30,
-        "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
         "images": [
           "https://thevsv.in/attached_assets/big_onion.jpg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "recommended"
+        ],
         "isBudgetPick": false,
         "budgetOptions": [
-          15,
-          20
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
+          20,
+          25
+        ]
       },
       {
         "id": "small-onions",
@@ -770,10 +867,6 @@
           "ta": "சின்ன வெங்காயம்"
         },
         "price": 65,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 60,
-        "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
         "images": [
@@ -783,14 +876,47 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          30,
-          40
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
+          20,
+          25
+        ]
       }
     ],
     "spinach": [
+      {
+        "id": "coriander",
+        "name": {
+          "en": "Coriander",
+          "ta": "கொத்தமல்லி"
+        },
+        "price": 20,
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "https://thevsv.in/attached_assets/coriander.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "combo"
+        ],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          5,
+          10,
+          15
+        ],
+        "combo": [
+          {
+            "categoryKey": "uncategorized",
+            "productId": "curry-leaves",
+            "quantity": 5
+          },
+          {
+            "categoryKey": "spinach",
+            "productId": "mint-leaves",
+            "quantity": 5
+          }
+        ]
+      },
       {
         "id": "paalak-keerai",
         "name": {
@@ -905,9 +1031,9 @@
         "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
-          28,
-          32,
-          40
+          20,
+          30,
+          35
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -915,15 +1041,42 @@
     ],
     "uncategorized": [
       {
+        "id": "curry-leaves",
+        "name": {
+          "en": "Curry Leaves",
+          "ta": "கறிவேப்பிலை"
+        },
+        "price": 15,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 10,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "https://thevsv.in/attached_assets/curry_leaves.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [
+          5,
+          10,
+          15
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
         "id": "cauliflower",
         "name": {
           "en": "Cauliflower",
           "ta": "காலிஃபிளவர்"
         },
-        "price": 50,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 50,
+        "displayAmount": 40,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "🥬",
@@ -932,11 +1085,8 @@
         ],
         "available": true,
         "tags": [],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          35,
-          45
-        ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -963,6 +1113,35 @@
           10,
           15,
           20
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "mint-leaves",
+        "name": {
+          "en": "Mint Leaves",
+          "ta": "புதினா"
+        },
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 15,
+        "displayUnit": "Bunch",
+        "unit": "Bunch",
+        "icon": "🌿",
+        "images": [
+          "https://thevsv.in/attached_assets/mint_leaves.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "combo"
+        ],
+        "isBudgetPick": true,
+        "budgetOptions": [
+          5,
+          10,
+          15
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -999,7 +1178,7 @@
         "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 20,
+        "displayAmount": 18,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -1009,11 +1188,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          28,
-          32,
-          40
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -1061,17 +1236,35 @@
           "https://thevsv.in/attached_assets/muttai.jpg"
         ],
         "available": true,
-        "tags": [],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          30,
-          60,
-          90,
-          120,
-          180
+        "tags": [
+          "easy-pick"
         ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
         "isCombo": false,
-        "comboMinimum": 0
+        "comboMinimum": 0,
+        "easyPick": {
+          "enabled": true,
+          "unit": "Pcs",
+          "presets": [
+            {
+              "value": 6,
+              "label": "6Pcs"
+            },
+            {
+              "value": 12,
+              "label": "12Pcs"
+            },
+            {
+              "value": 18,
+              "label": "18Pcs"
+            },
+            {
+              "value": 30,
+              "label": "30Pcs"
+            }
+          ]
+        }
       },
       {
         "id": "country-chicken-egg",
@@ -1079,10 +1272,10 @@
           "en": "Country Chicken Egg",
           "ta": "நாட்டுக்கோழி முட்டை"
         },
-        "price": 13,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 13,
+        "price": 12,
+        "unitValue": 12,
+        "displayUnitValue": 12,
+        "displayAmount": 12,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
@@ -1097,96 +1290,12 @@
         "comboMinimum": 0
       }
     ],
-    "mushroom": [],
-    "leaves": [
-      {
-        "id": "curry-leaves",
-        "name": {
-          "en": "Curry Leaves",
-          "ta": "கறிவேப்பிலை"
-        },
-        "price": 15,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 15,
-        "displayUnit": "Bunch",
-        "unit": "Bunch",
-        "icon": "🌿",
-        "images": [
-          "https://thevsv.in/attached_assets/curry_leaves.jpg"
-        ],
-        "available": true,
-        "tags": [],
-        "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          25
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
-      },
-      {
-        "id": "mint-leaves",
-        "name": {
-          "en": "Mint Leaves",
-          "ta": "புதினா"
-        },
-        "price": 20,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 20,
-        "displayUnit": "Bunch",
-        "unit": "Bunch",
-        "icon": "🌿",
-        "images": [
-          "https://thevsv.in/attached_assets/mint_leaves.jpg"
-        ],
-        "available": true,
-        "tags": [
-          "combo"
-        ],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          5,
-          10,
-          15
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
-      },
-      {
-        "id": "coriander",
-        "name": {
-          "en": "Coriander",
-          "ta": "கொத்தமல்லி"
-        },
-        "price": 20,
-        "unitValue": 1,
-        "displayUnitValue": 1,
-        "displayAmount": 20,
-        "displayUnit": "Bunch",
-        "unit": "Bunch",
-        "icon": "🌿",
-        "images": [
-          "https://thevsv.in/attached_assets/coriander.jpg"
-        ],
-        "available": true,
-        "tags": [
-          "combo"
-        ],
-        "isBudgetPick": true,
-        "budgetOptions": [
-          10,
-          25
-        ],
-        "isCombo": false,
-        "comboMinimum": 0
-      }
-    ]
+    "mushroom": []
   },
   "localization": {
     "en": {
       "logo": "Vs Vegetables",
+      "home": "Home",
       "allCategories": "All",
       "ooty": "Ooty Vegetables",
       "country": "Country Vegetables",
@@ -1205,8 +1314,11 @@
       "addToCart": "Add to Cart",
       "cartItems": "items in cart",
       "orderSummary": "Order Summary",
-      "total": "Total: ",
-      "deliveryTime": "Select Delivery Time:",
+      "total": "Total",
+      "deliveryTime": "Delivery Time",
+      "newOrder": "New Order from Vs Vegetables",
+      "delivery": "Delivery",
+      "items": "Items",
       "morning": "Morning",
       "afternoon": "Afternoon",
       "evening": "Evening",
@@ -1221,6 +1333,7 @@
     },
     "ta": {
       "logo": "VS Vegetables",
+      "home": "அனைத்தும்",
       "allCategories": "அனைத்தும்",
       "ooty": "ஊட்டி காய்கறிகள்",
       "country": "நாட்டு காய்கறிகள்",
@@ -1239,8 +1352,11 @@
       "addToCart": "கார்ட்டில் சேர்க்க",
       "cartItems": "கார்ட்டில் பொருட்கள்",
       "orderSummary": "ஆர்டர் சுருக்கம்",
-      "total": "மொத்தம்: ",
-      "deliveryTime": "டெலிவரி நேரம் தேர்ந்தெடுக்கவும்:",
+      "total": "மொத்தம்",
+      "deliveryTime": "டெலிவரி நேரம்",
+      "newOrder": "வி.எஸ் காய்கறிகள் - புதிய ஆர்டர்",
+      "delivery": "டெலிவரி",
+      "items": "பொருட்கள்",
       "morning": "காலை",
       "afternoon": "மதியம்",
       "evening": "மாலை",
@@ -1256,28 +1372,8 @@
   },
   "globalProductOrder": [
     {
-      "id": "vallarakeerai",
-      "categoryKey": "spinach"
-    },
-    {
-      "id": "siru-keerai",
-      "categoryKey": "spinach"
-    },
-    {
-      "id": "milagu-thakkali-keerai",
-      "categoryKey": "spinach"
-    },
-    {
-      "id": "paalak-keerai",
-      "categoryKey": "spinach"
-    },
-    {
-      "id": "big-onions",
-      "categoryKey": "onions"
-    },
-    {
-      "id": "tomatto",
-      "categoryKey": "country"
+      "id": "mushroom",
+      "categoryKey": "ooty"
     },
     {
       "id": "country-milk-paneer",
@@ -1292,12 +1388,16 @@
       "categoryKey": "country"
     },
     {
-      "id": "elephant-foot-yam",
+      "id": "tomatto",
       "categoryKey": "country"
     },
     {
-      "id": "mushroom",
-      "categoryKey": "ooty"
+      "id": "big-onions",
+      "categoryKey": "onions"
+    },
+    {
+      "id": "small-onions",
+      "categoryKey": "onions"
     },
     {
       "id": "fresh-carrots",
@@ -1364,12 +1464,16 @@
       "categoryKey": "country"
     },
     {
-      "id": "small-onions",
-      "categoryKey": "onions"
+      "id": "coriander",
+      "categoryKey": "spinach"
     },
     {
       "id": "fresh-coconut",
       "categoryKey": "coconuts"
+    },
+    {
+      "id": "curry-leaves",
+      "categoryKey": "uncategorized"
     },
     {
       "id": "cauliflower",
@@ -1377,6 +1481,10 @@
     },
     {
       "id": "country-coriander",
+      "categoryKey": "uncategorized"
+    },
+    {
+      "id": "mint-leaves",
       "categoryKey": "uncategorized"
     },
     {
@@ -1400,16 +1508,8 @@
       "categoryKey": "egg"
     },
     {
-      "id": "curry-leaves",
-      "categoryKey": "leaves"
-    },
-    {
-      "id": "mint-leaves",
-      "categoryKey": "leaves"
-    },
-    {
-      "id": "coriander",
-      "categoryKey": "leaves"
+      "id": "elephant-foot-yam",
+      "categoryKey": "country"
     },
     {
       "id": "raw-banana",
@@ -1426,6 +1526,80 @@
     {
       "id": "lemon",
       "categoryKey": "country"
+    },
+    {
+      "id": "paalak-keerai",
+      "categoryKey": "spinach"
+    },
+    {
+      "id": "vallarakeerai",
+      "categoryKey": "spinach"
+    },
+    {
+      "id": "siru-keerai",
+      "categoryKey": "spinach"
+    },
+    {
+      "id": "milagu-thakkali-keerai",
+      "categoryKey": "spinach"
     }
+  ],
+  "comboProducts": [],
+  "offerProducts": [],
+  "combos": [
+    {
+      "id": "sample-combo",
+      "name": {
+        "en": "Combo",
+        "ta": "Combo"
+      },
+      "price": 100,
+      "items": [
+        {
+          "productId": "fresh-carrots",
+          "categoryKey": "ooty",
+          "quantity": 0.25
+        },
+        {
+          "productId": "green-beans",
+          "categoryKey": "ooty",
+          "quantity": 0.25
+        },
+        {
+          "productId": "beet-root",
+          "categoryKey": "ooty",
+          "quantity": 0.25
+        },
+        {
+          "productId": "mushroom",
+          "categoryKey": "ooty",
+          "quantity": 1
+        }
+      ],
+      "image": {
+        "type": "auto",
+        "src": ""
+      }
+    }
+  ],
+  "offers": [],
+  "configVersion": "2.0",
+  "tagOrder": [
+    "new-arrival",
+    "combo",
+    "seasonal",
+    "budget-pick",
+    "offer",
+    "easy-pick"
+  ],
+  "categoryOrder": [
+    "country",
+    "spinach",
+    "onions",
+    "ooty",
+    "mushroom",
+    "egg",
+    "coconuts",
+    "uncategorized"
   ]
 }
