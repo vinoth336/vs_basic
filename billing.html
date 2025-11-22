@@ -1442,47 +1442,61 @@
         }
 
         async function saveAsImage() {
-            const previewContent = document.getElementById('previewContent');
-            const modalActions = previewContent.querySelector('.modal-actions');
-            
-            if (modalActions) {
-                modalActions.style.display = 'none';
-            }
-            
-            try {
-                const canvas = await html2canvas(previewContent, {
-                    backgroundColor: '#ffffff',
-                    scale: 2,
-                    logging: false,
-                    windowWidth: 800,
-                    windowHeight: previewContent.scrollHeight
-                });
-                
-                const customerName = document.getElementById('customerName').value.trim() || 'Customer';
-                const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-                const filename = `VS_Vegetables_Bill_${customerName}_${timestamp}.png`;
-                
-                canvas.toBlob(function(blob) {
-                    const url = URL.createObjectURL(blob);
-                    const link = document.createElement('a');
-                    link.href = url;
-                    link.download = filename;
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                    URL.revokeObjectURL(url);
-                    
-                    alert(`Bill saved as image: ${filename}`);
-                });
-            } catch (error) {
-                console.error('Error generating image:', error);
-                alert('Failed to generate image. Please try again.');
-            } finally {
-                if (modalActions) {
-                    modalActions.style.display = '';
-                }
-            }
+    const previewContent = document.getElementById('previewContent');
+    const modalActions = previewContent.querySelector('.modal-actions');
+
+    // --- Add margins before screenshot ---
+    const originalMarginTop = previewContent.style.marginTop;
+    const originalMarginBottom = previewContent.style.marginBottom;
+
+    previewContent.style.marginTop = "30px";     // change value as you need
+    previewContent.style.marginBottom = "30px";  // change value as you need
+
+    if (modalActions) {
+        modalActions.style.display = 'none';
+    }
+
+    try {
+        const canvas = await html2canvas(previewContent, {
+            backgroundColor: '#ffffff',
+            scale: 2,
+            logging: false,
+            windowWidth: 800,
+            windowHeight: previewContent.scrollHeight
+        });
+
+        const customerName = document.getElementById('customerName').value.trim() || 'Customer';
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+        const filename = `VS_Vegetables_Bill_${customerName}_${timestamp}.png`;
+
+        canvas.toBlob(function(blob) {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            alert(`Bill saved as image: ${filename}`);
+        });
+
+    } catch (error) {
+        console.error('Error generating image:', error);
+        alert('Failed to generate image. Please try again.');
+    } finally {
+
+        // restore original margins
+        previewContent.style.marginTop = originalMarginTop;
+        previewContent.style.marginBottom = originalMarginBottom;
+
+        if (modalActions) {
+            modalActions.style.display = '';
         }
+    }
+}
+
 
         function printPreview() {
             const modalContent = document.getElementById('previewContent').cloneNode(true);
