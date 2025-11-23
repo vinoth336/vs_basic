@@ -1284,11 +1284,43 @@
           "https://thevsv.in/attached_assets/nattu_kozhi_muttai.jpg"
         ],
         "available": true,
-        "tags": [],
+        "tags": [
+          "easy-pick"
+        ],
         "isBudgetPick": false,
         "budgetOptions": [],
         "isCombo": false,
-        "comboMinimum": 0
+        "comboMinimum": 0,
+        "easyPick": {
+          "enabled": true,
+          "unit": "Pcs",
+          "presets": [
+            {
+              "value": 6,
+              "label": "6Pcs"
+            },
+            {
+              "value": 10,
+              "label": "10Pcs"
+            },
+            {
+              "value": 12,
+              "label": "12Pcs"
+            },
+            {
+              "value": 18,
+              "label": "18Pcs"
+            },
+            {
+              "value": 20,
+              "label": "20Pcs"
+            },
+            {
+              "value": 30,
+              "label": "30Pcs"
+            }
+          ]
+        }
       }
     ],
     "mushroom": []
