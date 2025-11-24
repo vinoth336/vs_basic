@@ -378,7 +378,7 @@
         "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 10,
+        "displayAmount": 13,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🌶️",
@@ -389,7 +389,6 @@
         "tags": [
           "combo"
         ],
-        "displayQty": 0.25,
         "isBudgetPick": false,
         "budgetOptions": [],
         "isCombo": false,
