@@ -656,6 +656,7 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
+        "displayQty": 1,
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -868,6 +869,7 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
+        "displayQty": 1,
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -891,6 +893,7 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [],
+        "displayQty": 1,
         "isCombo": false,
         "comboMinimum": 0
       }
@@ -1649,3 +1652,4 @@
     "uncategorized"
   ]
 }
+
