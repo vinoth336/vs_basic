@@ -401,10 +401,10 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 40,
+        "price": 45,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 10,
+        "displayAmount": 12,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🍆",
@@ -414,7 +414,11 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          13,
+          18,
+          25
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -477,7 +481,11 @@
           "en": "DrumStick",
           "ta": "முருங்கைக்காய்"
         },
-        "price": 15,
+        "price": 20,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 20,
+        "displayUnit": "Bunch",
         "unit": "Bunch",
         "icon": "🥒",
         "images": [
@@ -486,7 +494,13 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": []
+        "budgetOptions": [
+          13,
+          18,
+          25
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       },
       {
         "id": "green-chilli",
@@ -494,10 +508,10 @@
           "en": "Green Chilli",
           "ta": "மிளகாய்"
         },
-        "price": 75,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 100,
-        "displayAmount": 7,
+        "displayAmount": 8,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🌶️",
@@ -629,10 +643,10 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 43,
+        "price": 68,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 43,
+        "displayAmount": 68,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
@@ -747,10 +761,10 @@
           "en": "Raw Banana",
           "ta": "வாழைக்காய்"
         },
-        "price": 12,
+        "price": 13,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 12,
+        "displayAmount": 13,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
@@ -841,10 +855,10 @@
           "en": "Big Onions",
           "ta": "பெரிய வெங்காயம்"
         },
-        "price": 30,
+        "price": 35,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 30,
+        "displayAmount": 35,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
@@ -1074,10 +1088,10 @@
           "en": "Cauliflower",
           "ta": "காலிஃபிளவர்"
         },
-        "price": 40,
+        "price": 45,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 40,
+        "displayAmount": 45,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "🥬",
