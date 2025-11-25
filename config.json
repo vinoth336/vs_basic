@@ -1,4 +1,4 @@
-{
+w2qm{
   "settings": {
     "freeDelivery": {
       "enabled": true,
@@ -266,10 +266,10 @@
           "en": "Potato",
           "ta": "Ooty உருளைக் கிழங்கு"
         },
-        "price": 40,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 15,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥔",
@@ -280,7 +280,7 @@
         "tags": [
           "new-arrival"
         ],
-        "displayQty": 0.5,
+        "displayQty": 0.25,
         "isBudgetPick": false,
         "budgetOptions": [],
         "isCombo": false,
