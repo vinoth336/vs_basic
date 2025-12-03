@@ -846,6 +846,29 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "bitter-gourd",
+        "name": {
+          "en": "Bitter Gourd",
+          "ta": "பாகற்காய்"
+        },
+        "price": 60,
+        "unitValue": 1,
+        "displayUnitValue": 250,
+        "displayAmount": 15,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/pavakkai.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "onions": [
@@ -1652,4 +1675,3 @@
     "uncategorized"
   ]
 }
-
