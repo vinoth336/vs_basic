@@ -903,10 +903,10 @@
           "en": "Small Onions",
           "ta": "சின்ன வெங்காயம்"
         },
-        "price": 55,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 55,
+        "displayAmount": 60,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
