@@ -205,10 +205,10 @@
           "en": "Green Beans",
           "ta": "பீன்ஸ்"
         },
-        "price": 60,
+        "price": 90,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 15,
+        "displayAmount": 23,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🫘",
@@ -216,11 +216,7 @@
           "https://thevsv.in/attached_assets/green_beans.png"
         ],
         "available": true,
-        "tags": [
-          "seasonal",
-          "budget-pick"
-        ],
-        "displayQty": 0.25,
+        "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
           10,
@@ -375,10 +371,10 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 50,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 14,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🌶️",
@@ -390,7 +386,11 @@
           "combo"
         ],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          10,
+          15,
+          20
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -400,10 +400,10 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 45,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 12,
+        "displayAmount": 14,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🍆",
@@ -414,9 +414,9 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          13,
-          18,
-          25
+          10,
+          15,
+          20
         ],
         "isCombo": false,
         "comboMinimum": 0
@@ -427,10 +427,10 @@
           "en": "Ridge Gourd",
           "ta": "பீர்க்கங்காய்"
         },
-        "price": 50,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 20,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -534,10 +534,10 @@
           "en": "Radish",
           "ta": "முள்ளங்கி"
         },
-        "price": 50,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 13,
+        "displayAmount": 14,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥬",
@@ -548,7 +548,6 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          10,
           15,
           20
         ],
@@ -561,10 +560,10 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 40,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 10,
+        "displayAmount": 15,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -575,7 +574,6 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          10,
           15,
           20
         ],
@@ -598,7 +596,7 @@
         "images": [
           "https://thevsv.in/attached_assets/kovakkai.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
@@ -615,10 +613,10 @@
           "en": "Broad Beans",
           "ta": "அவரைக்காய்"
         },
-        "price": 80,
+        "price": 90,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 20,
+        "displayAmount": 23,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -629,7 +627,6 @@
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
-          10,
           15,
           20
         ],
@@ -642,10 +639,10 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 50,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 50,
+        "displayAmount": 60,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
@@ -655,8 +652,10 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
-        "displayQty": 1,
+        "budgetOptions": [
+          15,
+          20
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -878,10 +877,10 @@
           "en": "Big Onions",
           "ta": "பெரிய வெங்காயம்"
         },
-        "price": 35,
+        "price": 38,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 35,
+        "displayAmount": 38,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
@@ -891,8 +890,10 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [],
-        "displayQty": 1,
+        "budgetOptions": [
+          15,
+          20
+        ],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -1248,7 +1249,7 @@
         "images": [
           "https://thevsv.in/attached_assets/paneer.jpg"
         ],
-        "available": true,
+        "available": false,
         "tags": [
           "new-arrival"
         ],
@@ -1265,7 +1266,7 @@
           "en": "Egg",
           "ta": "முட்டை"
         },
-        "price": 7,
+        "price": 7.25,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 7,
