@@ -362,6 +362,89 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "red-radish",
+        "name": {
+          "en": "Red Radish",
+          "ta": "சிவப்பு முள்ளங்கி"
+        },
+        "price": 80,
+        "unitValue": 1,
+        "displayUnitValue": 250,
+        "displayAmount": 20,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/red_radish.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "new-arrival"
+        ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "red-cabbage",
+        "name": {
+          "en": "Red Cabbage",
+          "ta": "சிவப்பு முட்டைக்கோஸ்"
+        },
+        "price": 60,
+        "unitValue": 1,
+        "displayUnitValue": 350,
+        "displayAmount": 21,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/red_cabbage.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "new-arrival"
+        ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "peeled-peas",
+        "name": {
+          "en": "Peeled peas",
+          "ta": "உரித்த பட்டாணி"
+        },
+        "price": 450,
+        "unitValue": 1,
+        "displayUnitValue": 100,
+        "displayAmount": 45,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/peelead_peas.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "new-arrival",
+          "budget-pick"
+        ],
+        "displayQty": 0.1,
+        "isBudgetPick": true,
+        "budgetOptions": [
+          60,
+          90,
+          150,
+          200,
+          250
+        ],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "country": [
