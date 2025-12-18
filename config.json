@@ -973,6 +973,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
+        "displayQty": 1,
         "budgetOptions": [
           15,
           20
