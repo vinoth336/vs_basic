@@ -672,7 +672,7 @@
         "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 15,
+        "displayAmount": 20,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -682,11 +682,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          15,
-          20
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
