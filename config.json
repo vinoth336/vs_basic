@@ -2,7 +2,7 @@
   "settings": {
     "freeDelivery": {
       "enabled": true,
-      "minimumOrder": 120,
+      "minimumOrder": 199,
       "message": {
         "en": "Free delivery on orders above ₹{amount}!",
         "ta": "₹{amount} க்கு மேல் ஆர்டருக்கு இலவச டெலிவரி!"
