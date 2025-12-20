@@ -6168,6 +6168,28 @@ ${formattedJson}`;
 
             priceStockChanges[key].price = price;
 
+            // Recalculate displayAmount for this product
+            const products = config.products[categoryKey] || [];
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                const masterUnit = product.unit || "Kg";
+                const masterUnitValue = parseFloat(product.unitValue) || 1;
+                const displayUnit = product.displayUnit || "Grams";
+                const displayUnitValue = parseFloat(product.displayUnitValue) || 0;
+
+                if (price && displayUnitValue) {
+                    let conversionFactor = 1;
+                    if (masterUnit === "Kg" && displayUnit === "Grams") {
+                        conversionFactor = 1000;
+                    } else if (masterUnit === "Grams" && displayUnit === "Kg") {
+                        conversionFactor = 0.001;
+                    }
+                    const convertedDisplayValue = displayUnitValue / conversionFactor;
+                    const proportionalPrice = (price * convertedDisplayValue) / masterUnitValue;
+                    priceStockChanges[key].displayAmount = parseFloat(proportionalPrice.toFixed(2));
+                }
+            }
+
             // Check if this is different from original
             const isActuallyModified =
                 price !== originalData.price ||
@@ -6502,6 +6524,10 @@ ${formattedJson}`;
 
                         if (changes.price !== undefined) {
                             product.price = changes.price;
+                        }
+
+                        if (changes.displayAmount !== undefined) {
+                            product.displayAmount = changes.displayAmount;
                         }
 
                         if (changes.available !== undefined) {
@@ -7213,11 +7239,11 @@ ${formattedJson}`;
             const proportionalPrice =
                 (price * convertedDisplayValue) / masterUnitValue;
 
-            // Round up to nearest integer to prevent losses
-            const roundedPrice = Math.ceil(proportionalPrice);
+            // Use 2 decimal places for displayAmount
+            const formattedPrice = parseFloat(proportionalPrice.toFixed(2));
 
             document.getElementById("product-display-amount").value =
-                roundedPrice;
+                formattedPrice;
         }
 
         // ===========================================
