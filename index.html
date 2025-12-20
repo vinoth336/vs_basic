@@ -338,6 +338,38 @@
             min-height: 340px;
         }
 
+        /* Combo Image Grid Fallback */
+        .combo-image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 4px;
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 4px;
+        }
+
+        .combo-grid-item {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            background: white;
+            border: 1px solid #eee;
+        }
+
+        .combo-grid-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: #f8f9fa;
+            color: #ccc;
+        }
+
         .product-info {
             flex: 1;
             display: flex;
@@ -1579,6 +1611,38 @@
             return html;
         }
 
+        // Render Combo Grid Fallback
+        function renderComboGrid(combo) {
+            const items = combo.items || [];
+            let images = [];
+
+            // Collect up to 4 images from combo items
+            for (const item of items) {
+                if (images.length >= 4) break;
+                const product = findProductByIdAndCategory(item.productId, item.categoryKey);
+                if (product && product.images && product.images[0]) {
+                    images.push(product.images[0]);
+                } else if (product && product.image) {
+                    images.push(product.image);
+                }
+            }
+
+            if (images.length === 0) {
+                return '<div class="product-emoji">🎁</div>';
+            }
+
+            let gridHtml = '<div class="combo-image-grid">';
+            for (let i = 0; i < 4; i++) {
+                if (images[i]) {
+                    gridHtml += `<img class="combo-grid-item" src="${images[i]}" alt="Item ${i + 1}">`;
+                } else {
+                    gridHtml += '<div class="combo-grid-item combo-grid-placeholder">🥬</div>';
+                }
+            }
+            gridHtml += '</div>';
+            return gridHtml;
+        }
+
         // Render Combo Section
         function renderComboSection(title, combos) {
             let html = `
@@ -1602,7 +1666,7 @@
                         <div class="product-card" onclick="showComboDetail('${combo.id}')">
                             ${hasImage
                         ? `<img class="product-image" src="${combo.image.src}" alt="${comboName}" style="border-radius: 8px;">`
-                        : '<div class="product-emoji">🎁</div>'}
+                        : renderComboGrid(combo)}
                             <div class="product-info">
                                 <div class="product-name">${comboName}</div>
                                 <div class="product-unit" style="font-size: 0.7rem; color: #666;">${itemNames}</div>
@@ -2084,7 +2148,10 @@
             if (combo.image && combo.image.src) {
                 imageContainer.innerHTML = `<img src="${combo.image.src}" alt="${comboName}" style="max-width: 100%; max-height: 250px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">`;
             } else {
-                imageContainer.innerHTML = '<div style="font-size: 64px;">🎁</div>';
+                imageContainer.innerHTML = renderComboGrid(combo);
+                // Adjust grid height for modal
+                const grid = imageContainer.querySelector('.combo-image-grid');
+                if (grid) grid.style.height = '250px';
             }
 
             // Display items list
