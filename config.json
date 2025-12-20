@@ -483,7 +483,7 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 55,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 14,
@@ -536,7 +536,7 @@
           "en": "Ginger",
           "ta": "இஞ்சி"
         },
-        "price": 110,
+        "price": 100,
         "unitValue": 1,
         "displayUnitValue": 120,
         "displayAmount": 11,
@@ -563,7 +563,7 @@
           "en": "DrumStick",
           "ta": "முருங்கைக்காய்"
         },
-        "price": 20,
+        "price": 30,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 20,
@@ -617,7 +617,7 @@
           "en": "Radish",
           "ta": "முள்ளங்கி"
         },
-        "price": 55,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 14,
@@ -643,7 +643,7 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 60,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -669,7 +669,7 @@
           "en": "GooseBerry",
           "ta": "கோவக்காய்"
         },
-        "price": 60,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -679,7 +679,7 @@
         "images": [
           "https://thevsv.in/attached_assets/kovakkai.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
@@ -1171,7 +1171,7 @@
           "en": "Curry Leaves",
           "ta": "கறிவேப்பிலை"
         },
-        "price": 15,
+        "price": 10,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 10,
