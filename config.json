@@ -175,10 +175,10 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 80,
+        "price": 70,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 20,
+        "displayAmount": 17.5,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥕",
@@ -186,11 +186,7 @@
           "https://thevsv.in/attached_assets/carrot.jpeg"
         ],
         "available": true,
-        "tags": [
-          "recommended",
-          "budget-pick"
-        ],
-        "displayQty": 0.25,
+        "tags": [],
         "isBudgetPick": true,
         "budgetOptions": [
           20,
@@ -205,10 +201,10 @@
           "en": "Green Beans",
           "ta": "பீன்ஸ்"
         },
-        "price": 90,
+        "price": 70,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 23,
+        "displayAmount": 17.5,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🫘",
@@ -563,10 +559,10 @@
           "en": "DrumStick",
           "ta": "முருங்கைக்காய்"
         },
-        "price": 30,
+        "price": 25,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 20,
+        "displayAmount": 25,
         "displayUnit": "Bunch",
         "unit": "Bunch",
         "icon": "🥒",
@@ -1217,7 +1213,7 @@
           "en": "Country Coriander",
           "ta": "நாட்டு மல்லி இலை"
         },
-        "price": 30,
+        "price": 25,
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 25,
