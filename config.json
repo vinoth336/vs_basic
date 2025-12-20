@@ -1345,7 +1345,7 @@
         "price": 7.25,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 7,
+        "displayAmount": 7.25,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
