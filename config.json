@@ -944,6 +944,31 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "fiber-removed-banana-flower",
+        "name": {
+          "en": "Fiber-removed Banana Flower",
+          "ta": "நார் நீக்கப்பட்ட வாழைப்பூ"
+        },
+        "price": 35,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 35,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/banana-flowers-taken-out-from-the-maroon-bracts.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "new-arrival"
+        ],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "onions": [
