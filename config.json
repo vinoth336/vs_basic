@@ -175,7 +175,7 @@
           "en": "Fresh Carrots",
           "ta": "கேரட்"
         },
-        "price": 70,
+        "price": 68,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 17.5,
@@ -201,7 +201,7 @@
           "en": "Green Beans",
           "ta": "பீன்ஸ்"
         },
-        "price": 70,
+        "price": 68,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 17.5,
@@ -258,10 +258,10 @@
           "en": "Potato",
           "ta": "Ooty உருளைக் கிழங்கு"
         },
-        "price": 60,
+        "price": 56,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 15,
+        "displayAmount": 14,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥔",
@@ -284,7 +284,7 @@
           "en": "Beet Root",
           "ta": "பீட்ரூட்"
         },
-        "price": 75,
+        "price": 65,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -450,7 +450,7 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 55,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 14,
@@ -506,7 +506,7 @@
           "en": "Ridge Gourd",
           "ta": "பீர்க்கங்காய்"
         },
-        "price": 80,
+        "price": 65,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 20,
@@ -639,7 +639,7 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 50,
+        "price": 45,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -714,10 +714,10 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 60,
+        "price": 63,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 60,
+        "displayAmount": 63,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
