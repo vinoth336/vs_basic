@@ -955,8 +955,8 @@
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 35,
-        "displayUnit": "Pcs",
-        "unit": "Pcs",
+        "displayUnit": "Box",
+        "unit": "Box",
         "icon": "📦",
         "images": [
           "https://thevsv.in/attached_assets/banana-flowers-taken-out-from-the-maroon-bracts.jpg"
