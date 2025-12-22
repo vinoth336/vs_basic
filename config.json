@@ -725,6 +725,7 @@
           "https://thevsv.in/attached_assets/tomatto.jpg"
         ],
         "available": true,
+        "displayQty": 1,
         "tags": [],
         "isBudgetPick": false,
         "budgetOptions": [
