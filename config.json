@@ -537,6 +537,7 @@
         "displayUnitValue": 120,
         "displayAmount": 11,
         "displayUnit": "Grams",
+        "displayQty": 0.1,
         "unit": "Kg",
         "icon": "🫚",
         "images": [
@@ -592,6 +593,7 @@
         "displayAmount": 8,
         "displayUnit": "Grams",
         "unit": "Kg",
+        "displayQty": 0.1,
         "icon": "🌶️",
         "images": [
           "https://thevsv.in/attached_assets/green_chilli.jpg"
