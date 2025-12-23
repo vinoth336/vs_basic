@@ -1195,14 +1195,14 @@
         }
     </style>
 </head>
-    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XPX5XVQ319"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-XPX5XVQ319');
+    gtag('config', 'G-XPX5XVQ319');
 </script>
 
 <body>
@@ -2613,7 +2613,9 @@
                         if (product) {
                             const defaultDisplayQty = product.unit === "Kg" ? 0.25 : 1;
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
-                            const pricePerUnit = product.price / productDisplayQty;
+                            const pricePerUnit = (product.displayAmount !== undefined && product.displayAmount !== null)
+                                ? product.displayAmount / productDisplayQty
+                                : product.price / productDisplayQty;
                             return sum + pricePerUnit * quantity;
                         }
                     }
@@ -2695,7 +2697,9 @@
                         if (product) {
                             const defaultDisplayQty = product.unit === "Kg" ? 0.25 : 1;
                             const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
-                            const pricePerUnit = product.price / productDisplayQty;
+                            const pricePerUnit = (product.displayAmount !== undefined && product.displayAmount !== null)
+                                ? product.displayAmount / productDisplayQty
+                                : product.price / productDisplayQty;
                             return sum + (pricePerUnit * quantity);
                         }
                     }
