@@ -560,10 +560,10 @@
           "en": "DrumStick",
           "ta": "முருங்கைக்காய்"
         },
-        "price": 25,
+        "price": 30,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 25,
+        "displayAmount": 30,
         "displayUnit": "Bunch",
         "unit": "Bunch",
         "icon": "🥒",
@@ -641,7 +641,7 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 45,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 15,
@@ -690,7 +690,7 @@
           "en": "Broad Beans",
           "ta": "அவரைக்காய்"
         },
-        "price": 90,
+        "price": 80,
         "unitValue": 1,
         "displayUnitValue": 250,
         "displayAmount": 23,
@@ -716,10 +716,10 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 63,
+        "price": 66,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 63,
+        "displayAmount": 66,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
