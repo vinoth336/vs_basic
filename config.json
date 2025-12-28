@@ -980,10 +980,10 @@
           "en": "Big Onions",
           "ta": "பெரிய வெங்காயம்"
         },
-        "price": 45,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 45,
+        "displayAmount": 40,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🧅",
@@ -993,11 +993,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "displayQty": 1,
-        "budgetOptions": [
-          15,
-          20
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -1271,7 +1267,7 @@
         "price": 20,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 15,
+        "displayAmount": 20,
         "displayUnit": "Bunch",
         "unit": "Bunch",
         "icon": "🌿",
@@ -1370,10 +1366,10 @@
           "en": "Egg",
           "ta": "முட்டை"
         },
-        "price": 7.25,
+        "price": 7.6,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 7.25,
+        "displayAmount": 7.6,
         "displayUnit": "Pcs",
         "unit": "Pcs",
         "icon": "📦",
