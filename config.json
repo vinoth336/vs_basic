@@ -985,6 +985,7 @@
         "displayUnitValue": 1,
         "displayAmount": 40,
         "displayUnit": "Kg",
+        "displayQty": 1,
         "unit": "Kg",
         "icon": "🧅",
         "images": [
