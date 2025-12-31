@@ -1536,6 +1536,7 @@
       "onions": "Onions & Small Onions",
       "spinach": "Spinach",
       "coconuts": "Coconuts",
+      "fruits": "Fruits",
       "nuts": "Nuts & Dry Fruits",
       "budget": "Budget Veggies",
       "heroTitle": "Fresh Vegetables Delivered to Your Door",
@@ -1574,6 +1575,7 @@
       "onions": "வெங்காயம் & சின்ன வெங்காயம்",
       "spinach": "கீரை வகைகள்",
       "coconuts": "தேங்காய்",
+      "fruits": "பழங்கள்",
       "nuts": "கொட்டைகள் & உலர் பழங்கள்",
       "budget": "பட்ஜெட் காய்கறிகள்",
       "heroTitle": "",
@@ -1834,6 +1836,7 @@
     "mushroom",
     "egg",
     "coconuts",
+    "fruits",
     "uncategorized"
   ]
 }
