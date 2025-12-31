@@ -171,7 +171,8 @@
         "en": "Fruits",
         "ta": "பழங்கள்"
       },
-      "icon": "",
+      "icon": "🥝",
+      "image": "attached_assets/stock_images/fresh_mushrooms_whit_ddd407cc.jpg",
       "order": 9,
       "visible": true
     }
