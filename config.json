@@ -165,6 +165,15 @@
       "image": "attached_assets/stock_images/fresh_mushrooms_whit_ddd407cc.jpg",
       "order": 2,
       "visible": true
+    },
+    "fruits": {
+      "name": {
+        "en": "Fruits",
+        "ta": "பழங்கள்"
+      },
+      "icon": "",
+      "order": 1000,
+      "visible": true
     }
   },
   "products": {
@@ -1464,7 +1473,57 @@
         }
       }
     ],
-    "mushroom": []
+    "mushroom": [],
+    "fruits": [
+      {
+        "id": "apple",
+        "name": {
+          "en": "Apple",
+          "ta": "ஆப்பிள்"
+        },
+        "price": 200,
+        "unitValue": 1,
+        "displayUnitValue": 500,
+        "displayAmount": 100,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/apple.jpg"
+        ],
+        "available": true,
+        "tags": [
+          "new-arrival"
+        ],
+        "isBudgetPick": true,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      },
+      {
+        "id": "pomegranate",
+        "name": {
+          "en": "Pomegranate",
+          "ta": "மாதுளை"
+        },
+        "price": 250,
+        "unitValue": 1,
+        "displayUnitValue": 500,
+        "displayAmount": 125,
+        "displayUnit": "Grams",
+        "unit": "Kg",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/pomegranate.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
+      }
+    ]
   },
   "localization": {
     "en": {
