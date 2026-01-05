@@ -720,6 +720,7 @@
         "unitValue": 1,
         "displayUnitValue": 1,
         "displayAmount": 60,
+        "displayQty": 1,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
