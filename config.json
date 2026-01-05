@@ -425,10 +425,10 @@
           "en": "Peeled peas",
           "ta": "உரித்த பட்டாணி"
         },
-        "price": 450,
+        "price": 300,
         "unitValue": 1,
         "displayUnitValue": 100,
-        "displayAmount": 45,
+        "displayAmount": 30,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -437,10 +437,8 @@
         ],
         "available": true,
         "tags": [
-          "new-arrival",
-          "budget-pick"
+          "new-arrival"
         ],
-        "displayQty": 0.1,
         "isBudgetPick": true,
         "budgetOptions": [
           60,
@@ -460,10 +458,10 @@
           "en": "LadyFinger (Okra)",
           "ta": "வெண்டைக்காய்"
         },
-        "price": 60,
+        "price": 50,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 14,
+        "displayAmount": 12.5,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🌶️",
@@ -476,7 +474,6 @@
         ],
         "isBudgetPick": false,
         "budgetOptions": [
-          10,
           15,
           20
         ],
@@ -489,10 +486,10 @@
           "en": "Brinjal",
           "ta": "கத்தரிக்காய்"
         },
-        "price": 50,
+        "price": 30,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 14,
+        "displayAmount": 7.5,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🍆",
@@ -502,11 +499,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          10,
-          15,
-          20
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -516,10 +509,10 @@
           "en": "Ridge Gourd",
           "ta": "பீர்க்கங்காய்"
         },
-        "price": 65,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 20,
+        "displayAmount": 13.75,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -625,10 +618,10 @@
           "en": "Radish",
           "ta": "முள்ளங்கி"
         },
-        "price": 50,
+        "price": 30,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 14,
+        "displayAmount": 7.5,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥬",
@@ -638,10 +631,7 @@
         "available": true,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          15,
-          20
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -651,10 +641,10 @@
           "en": "Snake Gourd",
           "ta": "புடலங்காய்"
         },
-        "price": 50,
+        "price": 40,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 15,
+        "displayAmount": 10,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "📦",
@@ -700,10 +690,10 @@
           "en": "Broad Beans",
           "ta": "அவரைக்காய்"
         },
-        "price": 80,
+        "price": 55,
         "unitValue": 1,
         "displayUnitValue": 250,
-        "displayAmount": 23,
+        "displayAmount": 13.75,
         "displayUnit": "Grams",
         "unit": "Kg",
         "icon": "🥒",
@@ -726,10 +716,10 @@
           "en": "Tomatto",
           "ta": "தக்காளி"
         },
-        "price": 66,
+        "price": 60,
         "unitValue": 1,
         "displayUnitValue": 1,
-        "displayAmount": 66,
+        "displayAmount": 60,
         "displayUnit": "Kg",
         "unit": "Kg",
         "icon": "🍅",
@@ -737,13 +727,9 @@
           "https://thevsv.in/attached_assets/tomatto.jpg"
         ],
         "available": true,
-        "displayQty": 1,
         "tags": [],
         "isBudgetPick": false,
-        "budgetOptions": [
-          15,
-          20
-        ],
+        "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
       },
@@ -1360,12 +1346,15 @@
         "images": [
           "https://thevsv.in/attached_assets/paneer.jpg"
         ],
-        "available": false,
+        "available": true,
         "tags": [
           "new-arrival"
         ],
         "isBudgetPick": false,
-        "budgetOptions": [],
+        "budgetOptions": [
+          15,
+          20
+        ],
         "isCombo": false,
         "comboMinimum": 0
       }
