@@ -1355,7 +1355,7 @@
         // Load Configuration
         async function loadConfig() {
             try {
-                const response = await fetch("config.json");
+                const response = await fetch("config.json?v=" + new Date().getTime());
                 config = await response.json();
                 console.log(
                     "Loaded external configuration from config.json",
