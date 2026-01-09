@@ -3001,7 +3001,7 @@ Generating preview...</pre>
         // Load configuration from config.json
         async function loadConfiguration() {
             try {
-                const response = await fetch("config.json?v=" + new Date().getTime() );
+                const response = await fetch("config.json?v=" + new Date().getTime());
                 if (response.ok) {
                     config = await response.json();
                 } else {
@@ -3949,7 +3949,7 @@ Generating preview...</pre>
             document.getElementById("product-unit-value").value =
                 product.unitValue || "1";
             document.getElementById("product-display-unit-value").value =
-                product.displayUnitValue || "";
+                product.displayQty || product.displayUnitValue || "";
             document.getElementById("product-display-amount").value =
                 product.displayAmount || "";
             document.getElementById("product-display-unit").value =
@@ -4064,6 +4064,8 @@ Generating preview...</pre>
                 price: parseFloat(formData.get("price")) || 0,
                 unitValue: parseFloat(formData.get("unitValue")) || 1,
                 displayUnitValue:
+                    parseFloat(formData.get("displayUnitValue")) || null,
+                displayQty:
                     parseFloat(formData.get("displayUnitValue")) || null,
                 displayAmount:
                     parseFloat(formData.get("displayAmount")) || null,
