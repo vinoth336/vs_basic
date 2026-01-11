@@ -2576,15 +2576,19 @@
                     const product = findProductById(productId);
                     if (product) {
                         const productName = product.name[currentLanguage] || product.name.en;
-                        const defaultDisplayQty = product.unit === "Kg" ? 0.25 : 1;
-                        const productDisplayQty = product.displayQty !== undefined ? product.displayQty : defaultDisplayQty;
+
+                        // Use the same calculation logic as showCartSummary
+                        const cartQty = getCartQuantity(product);
                         const pricePerUnit = (product.displayAmount !== undefined && product.displayAmount !== null)
-                            ? product.displayAmount / productDisplayQty
-                            : product.price / productDisplayQty;
+                            ? product.displayAmount / cartQty
+                            : product.price / cartQty;
                         const itemTotal = pricePerUnit * quantity;
                         total += itemTotal;
-                        const displayQty = quantity.toFixed(2).replace(/\.?0+$/, "");
-                        message += `• ${productName}: ${displayQty} ${product.unit} × ₹${pricePerUnit.toFixed(2)} = ₹${itemTotal.toFixed(2)}\n`;
+
+                        // Format quantity properly using helper function
+                        const formattedQuantity = formatCartQuantity(product, quantity);
+
+                        message += `• ${productName}: ${formattedQuantity} × ₹${pricePerUnit.toFixed(2)} = ₹${itemTotal.toFixed(2)}\n`;
                     }
                 }
             });
