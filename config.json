@@ -983,6 +983,29 @@
         "budgetOptions": [],
         "isCombo": false,
         "comboMinimum": 0
+      },
+      {
+        "id": "chow-chow",
+        "name": {
+          "en": "Chow Chow",
+          "ta": "சௌசௌ"
+        },
+        "price": 13,
+        "unitValue": 1,
+        "displayUnitValue": 1,
+        "displayAmount": 13,
+        "displayUnit": "Pcs",
+        "unit": "Pcs",
+        "icon": "📦",
+        "images": [
+          "https://thevsv.in/attached_assets/chow_chow.jpg"
+        ],
+        "available": true,
+        "tags": [],
+        "isBudgetPick": false,
+        "budgetOptions": [],
+        "isCombo": false,
+        "comboMinimum": 0
       }
     ],
     "onions": [
